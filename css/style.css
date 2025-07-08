@@ -7,6 +7,7 @@ body {
     padding: 0;
     text-align: center;
     max-width: 90vw;
+    overflow-y: hidden;
 }
 
 /* Header desktop */
