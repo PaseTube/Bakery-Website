@@ -1,7 +1,5 @@
 # Bakery-Website
 
-# Bakery-Website
-
 A simple, responsive website for a bakery.
 
 ## Features
@@ -15,6 +13,14 @@ A simple, responsive website for a bakery.
 1. Clone or download this repository.
 2. Open [`index.html`](index.html) in your web browser.
 
+### Using Live Server Extension
+
+For live reloading and instant preview, you can use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in Visual Studio Code:
+
+1. Install the **Live Server** extension from the VS Code Extensions Marketplace.
+2. Right-click on `index.html` and select **"Open with Live Server"**.
+3. Your default browser will open and display the website. Any changes you make will be reflected instantly.
+
 ## Folder Structure
 
 - [`index.html`](index.html): Main HTML file
@@ -26,4 +32,4 @@ Edit [`index.html`](index.html) and [`css/style.css`](css/style.css) to update c
 
 ## License
 
-This project is open source and available under the
+This project is open source and available under the [MIT License](LICENSE).
