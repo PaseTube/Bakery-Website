@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="nav-logo">
-            <a href="#"><img src="https://picsum.photos/200/300" alt="Logo"></a>
+            <a href="#"><img class="logo-image" src="/img/svg/logo.svg" alt="Logo"></a>
         </div>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <label for="nav-toggle" class="nav-burger">
@@ -53,15 +53,23 @@
                 </div>
                 <div class="hero-menu-cta">
                     <div class="card">
-                        <img class="cta-img" src="https://picsum.photos/100/100" alt="Bakery Icon">
+                        <img class="cta-img" src="/img/svg/logo.svg" alt="Bakery Icon">
                         <details>
-                            <summary>View Menu</summary>
+                            <summary>
+                                Open Menu
+                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14M13 5l7 7-7 7" />
+                                </svg>
+                            </summary>
                             <div class="cta-menu">
-                                <div><a href="#">🥐 Croissants (Butter & Almond)</a></div>
-                                <div><a href="#">🍫 Pain au Chocolat</a></div>
-                                <div><a href="#">🥖 Sourdough Loaf</a></div>
-                                <div><a href="#">🥧 Quiche Lorraine</a></div>
-                                <div><a href="#">🍩 Cinnamon Rolls</a></div>
+                                <div><a href="#">🥐 Croissants (Butter & Almond)</a><br>&euro; 2,50 p/s</div>
+                                <div><a href="#">🍫 Pain au Chocolat</a><br>&euro; 2,80 p/s</div>
+                                <div><a href="#">🥖 Sourdough Loaf</a><br>&euro; 4,20 p/s</div>
+                                <div><a href="#">🥧 Quiche Lorraine</a><br>&euro; 3,90 p/s</div>
+                                <div><a href="#">🍩 Cinnamon Rolls</a><br>&euro; 2,60 p/s</div>
+
                             </div>
                         </details>
                     </div>

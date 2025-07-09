@@ -7,7 +7,8 @@ body {
     padding: 0;
     text-align: center;
     max-width: 90vw;
-    overflow-y: hidden;
+    overflow-y: visible;
+    overflow-x: hidden;
 }
 
 /* Header desktop */
@@ -24,6 +25,10 @@ header {
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
+}
+
+.logo-image{
+    filter: brightness(0) invert(1);
 }
 
 nav {
@@ -176,10 +181,11 @@ nav {
         display: none;
         flex-direction: column;
         align-items: center;
-        background: black;
+        background: transparent;
         padding: 100px 20px 20px;
         height: auto;
         position: absolute;
+        backdrop-filter: blur(2px);
         top: 0;
         left: 0;
         right: 0;
@@ -189,8 +195,13 @@ nav {
     .nav-links {
         flex-direction: column;
         align-items: center;
-        gap: 16px;
+        gap: 30px;
         width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        text-shadow: black 3px 1px 2px;
     }
 
     .nav-buttons {
