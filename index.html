@@ -6,12 +6,13 @@
     <title>Bakery Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/hero.css" />
 </head>
 
 <body>
     <header>
         <div class="nav-logo">
-            <a href="#"><img src="https://picsum.photos/200/300" alt="Logo"></a>
+            <a href="#"><img class="logo-image" src="/img/svg/logo.svg" alt="Logo"></a>
         </div>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <label for="nav-toggle" class="nav-burger">
@@ -26,14 +27,71 @@
                 <li><a class="nav-link" href="#">Gallery</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="#">Menu</a>
-                <a href="#">Contact Us</a>
+                <a class="main-button" href="#">Menu</a>
+                <a class="contact" href="#">Contact Us</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Main content here -->
+        <section id="hero">
+            <!-- Hero section content goes here -->
+            <div class="hero-content">
+                <div class="hero-header">
+                    <h1>Bistro | Bakery</h1>
+                </div>
+                <div class="hero-text-container">
+                    <div class="hero-text">
+                        <p class="hero-description">
+                            Pulling on influence from around the globe, with the chef’s talents, pedigrees and passions,
+                            6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a
+                            variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
+                            cakes) and tarts.
+                        </p>
+                        <a class="main-button" href="#">Explore more</a>
+                    </div>
+                </div>
+                <div class="hero-menu-cta">
+                    <div class="card">
+                        <img class="cta-img" src="/img/svg/logo.svg" alt="Bakery Icon">
+                        <details>
+                            <summary>
+                                Open Menu
+                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14M13 5l7 7-7 7" />
+                                </svg>
+                            </summary>
+                            <div class="cta-menu">
+                                <div><a href="#">🥐 Croissants (Butter & Almond)</a><br>&euro; 2,50 p/s</div>
+                                <div><a href="#">🍫 Pain au Chocolat</a><br>&euro; 2,80 p/s</div>
+                                <div><a href="#">🥖 Sourdough Loaf</a><br>&euro; 4,20 p/s</div>
+                                <div><a href="#">🥧 Quiche Lorraine</a><br>&euro; 3,90 p/s</div>
+                                <div><a href="#">🍩 Cinnamon Rolls</a><br>&euro; 2,60 p/s</div>
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+            <div class="scroll-down">
+                <!-- Muis icoon -->
+                <svg class="mouse" width="24" height="40" viewBox="0 0 24 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="22" height="38" rx="11" stroke="white" stroke-width="2" />
+                    <line x1="12" y1="6" x2="12" y2="12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+
+                <!-- Pijltje naar beneden -->
+                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </section>
     </main>
 </body>
 
