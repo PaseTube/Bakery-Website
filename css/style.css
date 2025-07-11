@@ -29,7 +29,7 @@ header {
     gap: 24px;
 }
 
-.logo-image{
+.logo-image {
     filter: brightness(0) invert(1);
 }
 
@@ -558,22 +558,22 @@ details[open] .cta-menu {
 /* ---------- ABOUT SECTION ---------- */
 
 section#our-story {
-  background-color: #243231;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 30px;
-  align-items: center;
-  width: 100%;
-  padding: 50px 50px;
-  position: relative;
-  box-sizing: border-box;
-  flex-wrap: wrap;
+    background-color: #243231;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    padding: 50px 50px;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .story-content {
@@ -584,29 +584,29 @@ section#our-story {
 }
 
 .story-content h2 {
-  color: #fff;
-  font-family: playfair-display, serif;
-  font-size: 36px;
-  text-align: left;
-  margin-bottom: 20px;
+    color: #fff;
+    font-family: playfair-display, serif;
+    font-size: 36px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .story-content p {
-  color: #fff;
-  max-width: 400px;
-  text-align: left;
-  margin-bottom: 20px;
+    color: #fff;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .story-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
 }
 
-.big-story-image{
+.big-story-image {
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -618,129 +618,148 @@ section#our-story {
 
 /* image wrapper */
 .image-wrapper {
-  text-align: center;
+    text-align: center;
 }
 
 .image-wrapper img {
-  width: 100%;
-  max-width: 150px;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 150px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
 }
 
 .image-caption {
-  color: #eee;
-  font-size: 16px;
-  margin-top: 8px;
+    color: #eee;
+    font-size: 16px;
+    margin-top: 8px;
 }
 
 .story-image img:first-of-type {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 
 .image-wrapper img.image-after-text {
-  width: 100%;
-  max-width: 150px;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 150px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
 }
 
 
 
 .our-story {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Responsive tweaks */
 
 @media (max-width: 1160px) {
-  section#our-story {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
-  }
+    section#our-story {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+    }
 
-  .story-image{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .story-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .story-image img:first-of-type {
-  width: 600px;
-  max-width: 400px;
-  height: 400px;
+    .story-image img:first-of-type {
+        width: 600px;
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .image-wrapper img.image-after-text {
+        width: 600px;
+        max-width: 400px;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .story-content {
+        align-items: flex-start;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .story-image {
+        justify-content: center;
+    }
 }
 
-.image-wrapper img.image-after-text {
-  width: 600px;
-  max-width: 400px;
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
-}
-
-  .story-content {
-    align-items: flex-start;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .story-image {
-    justify-content: center;
-  }
-}
 @media (max-width: 768px) {
-  section#our-story {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
-  }
+    section#our-story {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+    }
 
-  .story-content {
-    align-items: left;
-    text-align: left;
-  }
+    .story-content {
+        align-items: left;
+        text-align: left;
+    }
 
-  .story-content h2,
-  .story-content p {
-    text-align: left;
-  }
+    .story-content h2,
+    .story-content p {
+        text-align: left;
+    }
 
-  .story-image {
-    justify-content: center;
-  }
+    .story-image {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
-  .story-content h2 {
-    font-size: 28px;
-  }
+    .story-content h2 {
+        font-size: 28px;
+    }
 
-  .story-content p {
-    font-size: 16px;
-  }
+    .story-content p {
+        font-size: 16px;
+    }
 
-  .story-image {
-    flex-direction: column;
-    align-items: center;
-  }
+    .story-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .story-image img:first-of-type {
+        width: 100%;
+        max-width: 200px;
+        height: 100%;
+        min-height: 200px;
+        object-fit: cover;
+    }
+
+    .image-wrapper img.image-after-text {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
 }
