@@ -1,4 +1,3 @@
-/* ---------- HERO SECTION ---------- */
 /* hero background */
 section#hero {
     background-image: url("../img/hero.webp");
@@ -288,6 +287,17 @@ details[open] .cta-menu {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+
+    .hero-text-container {
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+    }
+
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
