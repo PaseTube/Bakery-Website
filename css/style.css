@@ -11,3 +11,7 @@ body {
     overflow-y: visible;
     overflow-x: hidden;
 }
+
+.text-black {
+    color: black !important;
+}
