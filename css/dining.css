@@ -1,5 +1,6 @@
 /* First part of the section */
 section#dine-with-us-1 {
+    background-color: white;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -7,18 +8,20 @@ section#dine-with-us-1 {
     justify-content: space-between;
     align-items: flex-end;
     text-align: left;
-    background-color: white;
+    min-height: 750px;
+    height: auto;
     width: 100%;
-    height: 800px;
     position: relative;
-    padding: 50px 50px 50px 50px;
+    padding: 100px 50px 100px 50px;
     box-sizing: border-box;
 }
 
 .dine-cards {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
 }
@@ -27,15 +30,13 @@ section#dine-with-us-1 {
     box-sizing: border-box;
     width: 700px;
     max-width: calc(100vw - 100px);
-    margin-left: 0;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 20px;
     text-align: left;
-    display: flex;
-    flex-direction: column;
 }
-
 
 .dine-text h2 {
     font-size: 80px;
@@ -44,12 +45,6 @@ section#dine-with-us-1 {
     font-family: playfair-display, serif;
     color: black;
     margin: 0;
-}
-
-.dine-cards {
-    gap: 50px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .dine-cards .cards {
@@ -61,7 +56,7 @@ section#dine-with-us-1 {
     height: 400px;
     background-color: #fff;
     padding: 20px;
-    border: 2px solid #5a3e1b;
+    border: 2px solid #f0f0f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -69,7 +64,6 @@ section#dine-with-us-1 {
     transform: translateY(-6px);
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
 }
-
 
 .cards img {
     width: 100%;
@@ -81,10 +75,9 @@ section#dine-with-us-1 {
 
 .cards h3 {
     font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin: 10px 0;
     font-weight: 900;
+    color: black;
+    margin: 10px 0 0;
 }
 
 .cards a {
@@ -122,12 +115,24 @@ section#dine-with-us-1 {
     object-fit: cover;
 }
 
+@media (max-width: 1082px) {
+    .dine-cards {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1846px) {
+    .dine-video{
+        width: 350px;
+    }
+}
+
 @media (max-width: 1800px) {
     section#dine-with-us-1 {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        align-items: flex-end;
         height: auto;
-        padding: 50px 50px 50px 50px;
     }
 
     .dine-text {
@@ -137,35 +142,41 @@ section#dine-with-us-1 {
     }
 
     .dine-video {
-        width: 100%;
-        height: 400px;
+        width: 300px;
+        height: 600px;
     }
-
+}
+@media (max-width: 1746px) {
     .dine-cards {
         justify-content: center;
         align-items: center;
     }
 
+    .dine-video {
+        width: 100%;
+        height: 400px;
+    }
 }
-
 /* END of the First Part */
 
 
 /* Second part of the Dining section */
 
 section#dine-with-us-2 {
+    background-color: white;
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    text-align: center;
+    min-height: 750px;
+    height: auto;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    background-color: white;
     width: 100%;
-    height: auto;
     position: relative;
-    padding: 100px 50px 100px 50px;
+    padding: 0 50px 0px 50px;
     box-sizing: border-box;
+
 }
 
 .dine-content-2 {
@@ -176,7 +187,7 @@ section#dine-with-us-2 {
     width: 100%;
 }
 
-.dine-text-2{
+.dine-text-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,14 +215,12 @@ section#dine-with-us-2 {
     flex-wrap: wrap;
     gap: 50px;
     justify-content: center;
-    align-items: center;
-    /* align-items: stretch; */
+    align-items: flex-start;
     width: 100%;
 }
 
 .dine-cards-2 .cards-2 {
-    min-width: 250px;
-    max-width: 100%;
+    width: 400px;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -220,35 +229,57 @@ section#dine-with-us-2 {
     background-color: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .cards-2 h3 {
     font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin: 10px 0;
     font-weight: 900;
+    color: black;
     margin-top: 20px;
 }
 
 .cards-2 img {
-    width: 400px;
+    width: 100%;
     height: 100%;
     min-height: 500px;
     object-fit: cover;
     object-position: center;
 }
 
+@media (max-width: 1025px) {
+    .dine-cards-2 .cards-2 {
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+        text-align: left;
+    }
+
+    .dine-text-2 {
+        text-align: left;
+    }
+
+    .dine-text-2 p {
+        text-align: left;
+        width: 100%;
+        max-width: none;
+    }
+}
+
 @media (max-width: 768px) {
     .dine-cards-2 .cards-2 {
         flex-direction: column;
         max-width: 100%;
-    }
-
-    .dine-text-2{
+        align-items: center;
         text-align: left;
     }
 
-    .dine-text-2 .hero-description{
+    .dine-text-2 {
         text-align: left;
+    }
+
+    .dine-text-2 p {
+        text-align: left;
+        width: 100%;
+        max-width: none;
     }
 }
 

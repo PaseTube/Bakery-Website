@@ -48,31 +48,6 @@ section#hero {
     margin: 0;
 }
 
-/* hero text container */
-/* .hero-text-container {
-    box-sizing: border-box;
-    width: 650px;
-    max-width: calc(100vw - 100px);
-    margin-left: 0;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-
-.hero-description {
-    margin-bottom: 50px;
-    color: #fff;
-}
-
-.hero-text {
-    width: 400px;
-    color: #fff;
-} */
-
 /* hero cta */
 .hero-cta {
     position: absolute;

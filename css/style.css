@@ -1,7 +1,7 @@
 /* ---------- Globals ---------- */
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: white;
     color: #5a3e1b;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -54,6 +54,21 @@ body {
 
 
 /* ============ Global Text and text color quries ============ */
+
+@media (max-width: 1024px) {
+
+    .text-container {
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+    }
+
+    .text {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
 
 @media (max-width: 900px) {
 
