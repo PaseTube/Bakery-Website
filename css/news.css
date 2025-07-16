@@ -1,5 +1,0 @@
-section#news {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    padding: 50px 50px 50px 50px;
-}

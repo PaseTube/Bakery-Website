@@ -213,9 +213,9 @@ section#dine-with-us-2 {
 .dine-cards-2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-    align-items: flex-start;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -261,6 +261,19 @@ section#dine-with-us-2 {
         text-align: left;
         width: 100%;
         max-width: none;
+    }
+}
+
+
+@media (max-width: 1760px) {
+    .dine-cards-2 {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 900px) {
+    .dine-cards-2 {
+        justify-content: center;
     }
 }
 
