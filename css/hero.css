@@ -48,31 +48,6 @@ section#hero {
     margin: 0;
 }
 
-/* hero text container */
-.hero-text-container {
-    box-sizing: border-box;
-    width: 650px;
-    max-width: calc(100vw - 100px);
-    margin-left: 0;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-
-.hero-description {
-    margin-bottom: 50px;
-    color: #fff;
-}
-
-.hero-text {
-    width: 400px;
-    color: #fff;
-}
-
 /* hero cta */
 .hero-cta {
     position: absolute;
@@ -246,17 +221,6 @@ details[open] .cta-menu {
         font-size: 60px;
     }
 
-    .hero-text-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 768px) {
@@ -288,34 +252,11 @@ details[open] .cta-menu {
         display: flex;
         justify-content: center;
     }
-
-    .hero-text-container {
-        width: 100%;
-        max-width: none;
-        margin-right: 0;
-    }
-
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-    }
 }
 
 @media (max-width: 600px) {
     .hero-header h1 {
         font-size: 36px;
-    }
-
-    .hero-text-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
     }
 
     .hero-cta {
