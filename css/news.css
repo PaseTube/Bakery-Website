@@ -26,6 +26,11 @@ section#news {
     border: 0px;
 }
 
+.news-mail form input:focus {
+    border: 0;
+    outline: none;
+}
+
 .news-mail form a {
     margin-right: 5px;
 }
@@ -62,8 +67,6 @@ section#news {
         border: 2px solid rgba(116, 116, 116, 0.568);
         padding: 0px 0px 0px 0px;
         align-items: stretch;
-        max-width: 100%;
-        padding: 10px;
     }
 
     .news-mail form input {
@@ -74,6 +77,7 @@ section#news {
 
     .news-mail form a {
         margin-right: 0px;
+        text-align: center;
     }
 
 }
