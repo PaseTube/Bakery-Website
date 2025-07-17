@@ -1,6 +1,6 @@
 section#news {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     align-content: space-between;
     align-items: end;
     text-align: left;
@@ -10,7 +10,7 @@ section#news {
 }
 
 .news-header h2{
-    font-size: 45px;
+    font-size: 65px;
     font-family: 'Courier New', Courier, monospace;
     color: black;
     margin: 0;
@@ -67,6 +67,10 @@ section#news {
         align-content: space-around;
         align-items: center;
         gap: 0px;
+    }
+
+    .news-header h2{
+        font-size: 35px;
     }
     .news-mail {
         display: grid;
