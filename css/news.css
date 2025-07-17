@@ -2,11 +2,19 @@ section#news {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-content: space-between;
-    align-items: center;
+    align-items: end;
     text-align: left;
-    padding: 150px 50px 50px 50px;
+    padding: 150px 50px 0px 50px;
+    gap: 20px;
+    margin-bottom: 50px;
 }
 
+.news-header h2{
+    font-size: 45px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    margin: 0;
+}
 
 .news-mail {
     display: grid;
@@ -41,9 +49,10 @@ section#news {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        align-content: space-between;
-        justify-items: start;
+        align-content: space-around;
+        align-items: center;
         text-align: left;
+        gap: 5px;
         padding: 100px 50px 50px 50px;
     }
     .news-mail {
@@ -54,6 +63,11 @@ section#news {
 }
 
 @media (max-width: 768px) {
+    section#news{
+        align-content: space-around;
+        align-items: center;
+        gap: 0px;
+    }
     .news-mail {
         display: grid;
         justify-items: stretch;
