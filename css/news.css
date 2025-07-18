@@ -11,9 +11,18 @@ section#news {
 
 .news-header h2{
     font-size: 65px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif; 
     color: black;
     margin: 0;
+    font-weight: 900;
+}
+
+.news-subheader p{
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+    margin: 0;
+    font-weight: 400;
 }
 
 .news-mail {
@@ -25,7 +34,7 @@ section#news {
     display: grid;
     grid-template-columns: 2fr 1fr;
     border: 2px solid rgba(116, 116, 116, 0.568);
-    padding: 5px 0px 5px 0px;
+    padding: 10px 0px 10px 0px;
     align-items: center;
 }
 
