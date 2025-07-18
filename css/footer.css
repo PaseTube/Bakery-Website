@@ -98,6 +98,8 @@ section#links-footer {
 
 /* Last container operational */
 .operational {
+    padding: 0 !important;
+    display: grid;
     justify-items: end;
 }
 
