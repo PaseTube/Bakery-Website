@@ -171,6 +171,7 @@ nav {
         padding: 100px 20px 20px;
         height: auto;
         position: absolute;
+        background-color: #0000005e;
         backdrop-filter: blur(2px);
         top: 0;
         left: 0;
@@ -184,10 +185,10 @@ nav {
         gap: 30px;
         width: 100%;
         margin-bottom: 10px;
+        color: #000;
     }
 
     .nav-link {
-        text-shadow: black 3px 1px 2px;
         font-size: 24px;
         padding: 10px 0;
         color: #ffffff;
