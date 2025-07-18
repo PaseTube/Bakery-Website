@@ -1,0 +1,23 @@
+section#links-footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 50px 50px 50px 50px;
+    align-items: start;
+}
+
+
+.footer-logo-container{
+    display: grid;
+    justify-items: start;
+    gap: 10px;
+}
+
+.footer-nav-links,
+.quick-links{
+    justify-items: center;
+}
+
+.operational{
+    justify-items: end;
+}
