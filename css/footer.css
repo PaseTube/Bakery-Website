@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
-
 /* Footer grid layout */
 section#links-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 50px;
+    padding: 100px 50px 50px 50px;
     align-items: start;
+    background-color: #EAEAEA;
 }
 
 #links-footer > div:not(:first-child) {
@@ -39,42 +39,47 @@ section#links-footer {
     color: #24232396;
 }
 
-.footer-logo-container p a{
+.footer-logo-container p a {
     text-decoration: none;
     color: #24232396;
     font-weight: 700;
 }
 
-/* Footer nav links and quick links */
+/* Footer nav links, quick links, and operational */
 .footer-nav-links,
-.footer-quick-links {
+.footer-quick-links,
+.operational {
     display: grid;
     justify-items: center;
 }
 
 /* Center content with max-width and left-align text */
 .footer-nav-links .inner,
-.footer-quick-links .inner {
+.footer-quick-links .inner,
+.operational .inner {
     text-align: left;
 }
 
 /* Reset margins and padding */
 .footer-nav-links ul,
-.footer-quick-links ul {
+.footer-quick-links ul,
+.operational ul {
     margin: 0;
     padding: 0;
 }
 
 /* List style and spacing */
 .footer-nav-links ul li,
-.footer-quick-links ul li {
+.footer-quick-links ul li,
+.operational ul li {
     list-style: none;
     margin-bottom: 15px;
 }
 
 /* List Header Styling */
 .footer-nav-links ul li h1,
-.footer-quick-links ul li h1{
+.footer-quick-links ul li h1,
+.operational ul li h1 {
     margin-top: 0;
     list-style: none;
     margin-bottom: 20px;
@@ -87,7 +92,8 @@ section#links-footer {
 
 /* Link styling */
 .footer-nav-links ul li a,
-.footer-quick-links ul li a {
+.footer-quick-links ul li a,
+.operational ul li a {
     text-decoration: none;
     color: #24232396;
     font-family: 'IBM Plex Mono', monospace;
@@ -96,15 +102,16 @@ section#links-footer {
     font-size: 18px;
 }
 
-/* Last container operational */
+.operational ul li a .date-open{
+    cursor: default;
+}
+
+/* Last container operational specific padding (can override above if needed) */
 .operational {
     padding: 0 !important;
-    display: grid;
-    justify-items: end;
 }
 
 /* Media queries */
-
 @media (max-width: 1279px) {
     section#links-footer {
         display: flex;
@@ -132,6 +139,7 @@ section#links-footer {
         padding-bottom: 0;
         margin-bottom: 0;
     }
+
     #links-footer > div:not(:first-child) {
         border-left: 2px solid #0000003b;
         padding-left: 0px;
@@ -151,7 +159,8 @@ section#links-footer {
     }
 
     .footer-nav-links .inner,
-    .footer-quick-links .inner {
+    .footer-quick-links .inner,
+    .operational .inner {
         text-align: left;
         margin: 0;
         width: 100%;
@@ -159,19 +168,22 @@ section#links-footer {
     }
 
     .footer-nav-links ul,
-    .footer-quick-links ul {
+    .footer-quick-links ul,
+    .operational ul {
         padding-left: 0;
         margin-left: 0;
         display: block;
     }
 
     .footer-nav-links ul:first-child,
-    .footer-quick-links ul:first-child {
+    .footer-quick-links ul:first-child,
+    .operational ul:first-child {
         margin-bottom: 0;
     }
 
     .footer-nav-links ul:last-child,
-    .footer-quick-links ul:last-child {
+    .footer-quick-links ul:last-child,
+    .operational ul:last-child {
         margin-top: 0;
     }
 }
