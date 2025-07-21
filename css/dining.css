@@ -32,9 +32,9 @@ section#dine-with-us-1 {
     /* Use global text-container-base for shared styles */
 }
 
-.dine-text.text-container-base {
-    /* For future-proofing, allow both classes */
-}
+/*.dine-text.text-container-base {
+     For future-proofing, allow both classes 
+}*/
 
 
 .dine-text h2 {
@@ -43,9 +43,9 @@ section#dine-with-us-1 {
     /* Use global heading-main for shared styles */
 }
 
-.dine-text h2.heading-main {
-    /* For future-proofing, allow both classes */
-}
+/*.dine-text h2.heading-main {
+     For future-proofing, allow both classes 
+}*/
 
 
 .dine-cards .cards {
