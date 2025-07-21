@@ -70,7 +70,7 @@ section#dine-with-us-1 {
     height: 150px;
     object-fit: contain;
     object-position: left;
-    filter: invert(52%) sepia(74%) saturate(1000%) hue-rotate(2deg) brightness(90%) contrast(105%);
+    filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%);
 }
 
 .cards h3 {
