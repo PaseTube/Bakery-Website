@@ -37,6 +37,7 @@ section#our-story {
 
 .story-image img.image-after-text {
   height: 350px;
+  object-position: left;
 }
 
 .image-caption {
