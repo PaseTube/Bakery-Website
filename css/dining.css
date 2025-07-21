@@ -27,25 +27,26 @@ section#dine-with-us-1 {
 }
 
 .dine-text {
-    box-sizing: border-box;
     width: 700px;
     max-width: calc(100vw - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
-    text-align: left;
+    /* Use global text-container-base for shared styles */
 }
 
-.dine-text h2 {
-    font-size: 80px;
-    font-weight: bold;
-    word-spacing: 0.5px;
-    font-family: playfair-display, serif;
-    color: black;
-    margin: 0;
+.dine-text.text-container-base {
+    /* For future-proofing, allow both classes */
 }
+
+
+.dine-text h2 {
+    word-spacing: 0.5px;
+    color: black;
+    /* Use global heading-main for shared styles */
+}
+
+.dine-text h2.heading-main {
+    /* For future-proofing, allow both classes */
+}
+
 
 .dine-cards .cards {
     display: flex;
