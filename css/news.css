@@ -48,7 +48,10 @@ section#news {
     outline: none;
 }
 
-.news-mail form a {
+.news-mail form .main-button{
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
     margin-right: 5px;
 }
 
@@ -102,7 +105,7 @@ section#news {
         padding: 20px;
     }
 
-    .news-mail form a {
+    .news-mail form .main-button {
         margin-right: 0px;
         text-align: center;
     }

@@ -12,6 +12,12 @@ section#our-story {
     position: relative;
     padding: 50px 50px 50px 50px;
     box-sizing: border-box;
+
+    background-image: url('../img/svg/coffee-cup.svg');
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: 90%;
+    background-size: 250px;
 }
 
 
