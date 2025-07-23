@@ -125,10 +125,6 @@ nav {
     .nav-links {
         gap: 20px;
     }
-
-    .nav-buttons a {
-        padding: 10px 16px;
-    }
 }
 
 @media (max-width: 768px) {
