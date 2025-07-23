@@ -73,33 +73,22 @@ nav {
     gap: 16px;
 }
 
-.nav-buttons a:hover {
-    background: #ff8800;
-    color: #fff8f0;
-}
-
-.main-button {
-    text-decoration: none;
-    color: black;
-    background: #F0D67F;
-    padding: 10px 28px;
-    border-radius: 2px;
-    font-weight: 600;
-    font-size: 16px;
-    box-shadow: 0 2px 8px rgba(184, 107, 43, 0.08);
-    transition: background 0.2s, color 0.2s;
-}
-
 .nav-buttons .contact {
     text-decoration: none;
     color: black;
     background: #ffffff;
     padding: 10px 28px;
-    border-radius: 2px;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
     font-weight: 600;
     font-size: 16px;
-    box-shadow: 0 2px 8px rgba(184, 107, 43, 0.08);
     transition: background 0.2s, color 0.2s;
+}
+
+.nav-buttons .contact:hover {
+    color: black;
+    background: rgb(226, 226, 226);
 }
 
 /* Burger styles */

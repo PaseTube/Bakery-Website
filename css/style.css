@@ -42,6 +42,27 @@ body {
     justify-content: flex-start;
 }
 
+
+/* ============ Global Button Style ============ */
+.main-button {
+    text-decoration: none;
+    color: black;
+    background: #F0D67F;
+    padding: 10px 28px;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s;
+}
+
+
+.main-button:hover{
+    background-color: bisque;
+    cursor: pointer;
+}
+
 /* ============ Global Text and text color ============ */
 
 .text-black {

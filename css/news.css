@@ -49,11 +49,9 @@ section#news {
 }
 
 .news-mail form .main-button{
-    border: none;
-    padding-top: 14px;
-    padding-bottom: 14px;
     margin-right: 5px;
 }
+
 
 
 @media (max-width: 1279px) {
