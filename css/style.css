@@ -12,6 +12,8 @@ body {
     overflow-x: hidden;
 }
 
+
+
 /* ============ Global Section Base ============ */
 .section-base {
     width: 100%;
@@ -108,6 +110,16 @@ body {
 /* ============ Global Text and text color quries ============ */
 
 @media (max-width: 1024px) {
+
+    /* Force all section#idname to have 45px left/right padding at this breakpoint */
+    section[id] {
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+    }
+    header{
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+    }
 
     .text-container {
         width: 100%;

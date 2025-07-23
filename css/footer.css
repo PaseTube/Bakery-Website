@@ -7,7 +7,7 @@ section#links-footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 100px 50px 50px 50px;
+    padding: 100px 100px 50px 100px;
     align-items: start;
     background-color: #F6F6F6;
 }
@@ -202,7 +202,7 @@ section#main-footer {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr;
-    padding: 10px 50px 50px 50px;
+    padding: 10px 100px 50px 100px;
     align-items: end;
     /* justify-items: center; */
     background-color: #F6F6F6;
