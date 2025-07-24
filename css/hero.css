@@ -110,9 +110,6 @@ section#hero {
 .card .cta-img {
   width: 150px;
   height: 150px;
-  border: 1px solid black;
-  background-color: black;
-  filter: invert(1) brightness(2);
   object-fit: cover;
   margin-bottom: 16px;
   display: block;
