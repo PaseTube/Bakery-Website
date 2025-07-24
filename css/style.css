@@ -12,6 +12,8 @@ body {
     overflow-x: hidden;
 }
 
+
+
 /* ============ Global Section Base ============ */
 .section-base {
     width: 100%;
@@ -40,6 +42,28 @@ body {
     text-align: left;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+
+/* ============ Global Button Style ============ */
+.main-button {
+    text-decoration: none;
+    color: black;
+    background: #F0D67F;
+    padding: 10px 28px;
+    border: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s;
+    z-index: 1;
+}
+
+
+.main-button:hover{
+    background-color: bisque;
+    cursor: pointer;
 }
 
 /* ============ Global Text and text color ============ */
@@ -86,6 +110,16 @@ body {
 /* ============ Global Text and text color quries ============ */
 
 @media (max-width: 1024px) {
+
+    /* Force all section#idname to have 45px left/right padding at this breakpoint */
+    section[id] {
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+    }
+    header{
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+    }
 
     .text-container {
         width: 100%;

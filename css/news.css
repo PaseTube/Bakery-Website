@@ -4,7 +4,7 @@ section#news {
     align-content: space-between;
     align-items: end;
     text-align: left;
-    padding: 150px 50px 0px 50px;
+    padding: 150px 100px 0px 100px;
     gap: 20px;
     margin-bottom: 50px;
 }
@@ -49,11 +49,9 @@ section#news {
 }
 
 .news-mail form .main-button{
-    border: none;
-    padding-top: 14px;
-    padding-bottom: 14px;
     margin-right: 5px;
 }
+
 
 
 @media (max-width: 1279px) {

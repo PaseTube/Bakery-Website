@@ -10,14 +10,24 @@ section#our-story {
     align-items: center;
     width: 100%;
     position: relative;
-    padding: 50px 50px 50px 50px;
+    padding: 50px 100px 50px 100px;
     box-sizing: border-box;
+    
+}
 
+
+section#our-story::before {
+    content: '';
+    position: absolute;
+    inset: 0;
     background-image: url('../img/svg/coffee-cup.svg');
     background-repeat: no-repeat;
-    background-position-x: 90%;
-    background-position-y: 90%;
+    background-position: 90% 90%;
     background-size: 250px;
+    filter: brightness(0.5);
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 
