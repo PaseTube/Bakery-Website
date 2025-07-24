@@ -19,9 +19,9 @@
 <body>
     <header>
         <div class="nav-logo">
-            <a href="#"><img loading="lazy" class="logo-image" src="/img/svg/logo.svg" alt="Logo"></a>
+            <a href="#"><img loading="lazy" class="logo-image" src="/img/svg/logo.svg" alt="Bistro Bakery Logo" /></a>
         </div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" />
         <label for="nav-toggle" class="nav-burger">
             <span></span>
             <span></span>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="hero-menu-cta">
                     <div class="card">
-                        <img loading="lazy" class="cta-img" src="/img/svg/logo.svg" alt="Bakery Icon">
+                        <img loading="lazy" class="cta-img" src="/img/svg/logo.svg" alt="Menu card with bakery logo" />
                         <details>
                             <summary>
                                 Open Menu
@@ -105,9 +105,9 @@
         <!-- Our Story section -->
         <section id="our-story" class="our-story">
             <div class="story-image">
-                <img loading="lazy" class="big-story-image" src="/img/story-big.webp" alt="Bakery Image" />
+                <img loading="lazy" class="big-story-image" src="/img/story-big.webp" alt="Inside view of our artisan bakery kitchen" />
                 <div class="image-wrapper">
-                    <img loading="lazy" class="image-after-text" src="/img/story-person.webp" alt="Bakery Image" />
+                    <img loading="lazy" class="image-after-text" src="/img/story-person.webp" alt="Our master baker at work" />
                     <p class="image-caption">Freshly Baked!</p>
                 </div>
             </div>
@@ -207,19 +207,19 @@
             </div>
             <div class="dine-cards-2">
                 <div class=cards-2>
-                    <img loading="lazy" src=/img/diningcard-1.webp alt=Breakfast>
+                    <img loading="lazy" src=/img/diningcard-1.webp alt=Breakfast />
                     <h3>Croissants and Pastries</h3>
                 </div>
                 <div class=cards-2>
-                    <img loading="lazy" src=/img/diningcard-2.webp alt=Breakfast>
+                    <img loading="lazy" src=/img/diningcard-2.webp alt=Breakfast />
                     <h3>Rustic Artisan Bread</h3>
                 </div>
                 <div class=cards-2>
-                    <img loading="lazy" src=/img/diningcard-3.webp alt=Breakfast>
+                    <img loading="lazy" src=/img/diningcard-3.webp alt=Breakfast />
                     <h3>Assorted Breads and Rolls</h3>
                 </div>
                 <div class=cards-2>
-                    <img loading="lazy" src=/img/diningcard-4.webp alt=Breakfast>
+                    <img loading="lazy" src=/img/diningcard-4.webp alt=Breakfast />
                     <h3>Sourdough Bread</h3>
                 </div>
             </div>
@@ -238,8 +238,9 @@
             </div>
             <div class="news-mail">
                 <form action="#" method="post" class="news-form">
-                    <input type="email" placeholder="Enter your email" required />
-                    <button type="submit" class="main-button">Subscribe</button>
+                    <!-- <label for="newsletter-email" class="visually-hidden">Email address</label> -->
+                    <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-required="true" />
+                    <button type="submit" class="main-button" aria-label="Subscribe to newsletter">Subscribe</button>
                 </form>
             </div>
         </section>
@@ -249,7 +250,7 @@
     <footer>
         <section id="links-footer" class="links-footer section-base">
             <div class="footer-logo-container">
-                <a href="#"><img loading="lazy" src="/img/svg/logo.svg" width="100px" alt=""></a>
+                <a href="#"><img loading="lazy" src="/img/svg/logo.svg" width="100px" alt="Bistro Bakery Logo" /></a>
                 <p>600 Brickell Ave. Miami, FL 33131</p>
                 <p><a href="tel:(305) 778-4585">(305) 778-4585</a></p>
                 <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
