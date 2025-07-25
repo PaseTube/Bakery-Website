@@ -72,7 +72,6 @@ section#our-story::before {
         align-items: center;
         /* padding: 20px; */
     }
-
     .story-image {
         flex-direction: column;
         align-items: center;
