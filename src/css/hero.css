@@ -59,6 +59,14 @@ section#hero {
     color: #fff;
 }
 
+.product-list{
+    list-style-type: none;
+}
+
+.product-list li{
+    list-style: none;
+}
+
 .scroll-down {
     display: flex;
     flex-direction: column;
