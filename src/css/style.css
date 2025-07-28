@@ -12,12 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
-
-
 /* ============ Global Section Base ============ */
 .section-base {
     width: 100%;
