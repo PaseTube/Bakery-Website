@@ -1,0 +1,9 @@
+{
+  "favorites": [
+    { "id": 1, "name": "Sourdough Bread", "price": 5.50 },
+    { "id": 2, "name": "Classic Butter Croissant", "price": 3.25 },
+    { "id": 3, "name": "Red Velvet Cupcake", "price": 3.75 },
+    { "id": 4, "name": "Cinnamon Roll with Cream Cheese Glaze", "price": 4.00 },
+    { "id": 5, "name": "Fresh Fruit Tart", "price": 5.00 }
+  ]
+}
