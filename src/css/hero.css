@@ -1,6 +1,6 @@
 /* hero background */
 section#hero {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/hero.webp");
+     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../../public/Images/hero.webp");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
