@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
 
     burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
+        nav.classList.toggle('open');
         burger.classList.toggle('open');
     });
 });

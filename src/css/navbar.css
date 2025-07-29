@@ -113,12 +113,12 @@ nav {
 }
 
 .header {
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .header.scrolled {
-  background: #243231;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: #243231;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Media Queries */
@@ -165,7 +165,7 @@ nav {
         z-index: 1000;
     }
 
-    nav.nav-open {
+    nav.open {
         display: flex;
     }
 
@@ -225,5 +225,18 @@ nav {
         width: 100%;
         gap: 12px;
         margin-top: 16px;
+    }
+
+    #main-nav {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    #main-nav.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 }
