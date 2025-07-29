@@ -1,6 +1,6 @@
 /* hero background */
 section#hero {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/Images/hero.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/Images/hero.webp");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -59,12 +59,15 @@ section#hero {
     color: #fff;
 }
 
-.product-list{
+#product-list {
     list-style-type: none;
+
 }
 
-.product-list li{
+#product-list li {
     list-style: none;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .scroll-down {
@@ -116,11 +119,11 @@ section#hero {
 }
 
 .card .cta-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 16px;
-  display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    display: block;
 }
 
 
