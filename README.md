@@ -105,7 +105,6 @@ npm run api
 /
 ├── index.html
 ├── package.json
-├── vite.config.js
 └── src/
     ├── main.js
     ├── css/
