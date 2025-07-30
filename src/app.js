@@ -7,5 +7,6 @@ import './css/dining.css';
 import './css/news.css';
 import './css/footer.css';
 // JAVASCRIPTS!
-import './js/main.js';
+import './js/fetch.js';
 import './js/nav-menu.js';
+import './js/menu.js';

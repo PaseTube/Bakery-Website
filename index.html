@@ -68,7 +68,22 @@
                     <div class="card">
                         <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
                             alt="Bistro Bakery menu card logo illustration" />
-                        <details>
+                        <button id="openPopup">
+                            Open Menu 
+                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14M13 5l7 7-7 7" />
+                                </svg>
+                        </button>
+
+                        <div id="popup" class="popup hidden">
+                            <div class="popup-content" id="product-card">
+                                <button id="closePopup">Close</button>
+                            </div>
+                        </div>
+
+                        <!-- <details>
                             <summary>
                                 Open Menu
                                 <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -80,7 +95,7 @@
                             <div class="cta-menu">
                                 <ul id="product-list"></ul>
                             </div>
-                        </details>
+                        </details> -->
                     </div>
                 </div>
 
