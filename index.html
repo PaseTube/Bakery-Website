@@ -56,7 +56,7 @@
                 <div class="text-container">
                     <div class="text">
                         <p class="text-description">
-                            Pulling on influence from around the globe, with the chef’s talents, pedigrees and passions,
+                            Pulling on influence from around the globe, with the chef's talents, pedigrees and passions,
                             6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a
                             variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
                             cakes) and tarts.
@@ -68,34 +68,38 @@
                     <div class="card">
                         <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
                             alt="Bistro Bakery menu card logo illustration" />
-                        <button id="openPopup">
-                            Open Menu 
-                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
+                        <button id="openPopup" class="openPopup">
+                            Open Menu
+                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 5l7 7-7 7" />
+                            </svg>
                         </button>
 
+                        <!-- SLIDESHOW POPUP -->
                         <div id="popup" class="popup hidden">
-                            <div class="popup-content" id="product-card">
-                                <button id="closePopup">Close</button>
+                            <div class="pop-container">
+                                <div class="popup-content">
+                                <button id="closePopup" class="close-btn">&times;</button>
+                                <div class="slide-counter">
+                                    <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
+                                </div>
+
+                                <div class="slideshow-container">
+                                    <div id="slidesContainer">
+                                        <div class="loading">
+                                            <div class="spinner"></div>
+                                        </div>
+                                    </div>
+
+                                    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                                    <button class="nav-btn next" id="nextBtn">&#10095;</button>
+                                </div>
+
+                                <div class="dots-container" id="dotsContainer"></div>
+                            </div>
                             </div>
                         </div>
-
-                        <!-- <details>
-                            <summary>
-                                Open Menu
-                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
-                            </summary>
-                            <div class="cta-menu">
-                                <ul id="product-list"></ul>
-                            </div>
-                        </details> -->
                     </div>
                 </div>
 
