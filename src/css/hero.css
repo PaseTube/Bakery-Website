@@ -157,15 +157,28 @@ section#hero {
 
 
 .popup-content {
-    background: white;
     padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
     width: 90vw;
-    height: auto;
+    height: 600px;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
     box-shadow: none;
+    align-content: end;
+}
+
+.popup-mask {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 20px;
+}
+.popup-content > *:not(.popup-mask) {
+    z-index: 2;
 }
 
 .openPopup {
@@ -189,12 +202,13 @@ section#hero {
     border: none;
     font-size: 30px;
     cursor: pointer;
-    color: #666;
+    color: #ffffff;
     z-index: 1001;
+    background-color: #333;
 }
 
 .close-btn:hover {
-    color: #000;
+    color: #ffbebe;
 }
 
 .slideshow-container {
@@ -208,28 +222,22 @@ section#hero {
 .slide {
     display: none;
     text-align: center;
-    padding: 20px;
+    padding: 2rem;
     animation: fadeIn 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.164);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .slide.active {
     display: block;
 }
 
-.slide img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
 .slide h3 {
     font-size: 28px;
     margin: 15px 0 10px 0;
     margin-bottom: 20px;
-    color: #333;
+    color: white;
     font-family: 'Playfair Display', serif;
 }
 
@@ -242,7 +250,7 @@ section#hero {
 
 .slide .description {
     font-size: 16px;
-    color: #666;
+    color: white;
     line-height: 1.6;
     max-width: 500px;
     margin: 0 auto 20px auto;

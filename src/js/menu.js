@@ -7,14 +7,15 @@ class MenuSlideshow {
         this.slides = [];
         this.data = [];
         this.autoSlideInterval = null;
-        
+
         this.initializeElements();
         this.bindEvents();
     }
 
     initializeElements() {
-        // Get DOM elements
         this.popup = document.querySelector('#popup');
+        this.popupContrainer = document.querySelector('#popup');
+        this.popupContent = this.popupContrainer.querySelector('.popup-content');
         this.openBtn = document.querySelector('#openPopup');
         this.closeBtn = document.querySelector('#closePopup');
         this.slidesContainer = document.querySelector('#slidesContainer');
@@ -26,24 +27,18 @@ class MenuSlideshow {
     }
 
     bindEvents() {
-        // Open popup event
         this.openBtn.addEventListener('click', () => this.openPopup());
-        
-        // Close popup events
         this.closeBtn.addEventListener('click', () => this.closePopup());
         this.popup.addEventListener('click', (e) => {
             if (e.target === this.popup) this.closePopup();
         });
 
-        // Navigation events
         this.prevBtn.addEventListener('click', () => this.previousSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (!this.popup.classList.contains('show')) return;
-            
-            switch(e.key) {
+            switch (e.key) {
                 case 'ArrowLeft':
                     this.previousSlide();
                     break;
@@ -60,8 +55,7 @@ class MenuSlideshow {
     async openPopup() {
         this.popup.classList.remove('hidden');
         this.popup.classList.add('show');
-        
-        // Load data and create slideshow
+
         await this.loadSlideshow();
         this.startAutoSlide();
     }
@@ -77,9 +71,16 @@ class MenuSlideshow {
     async loadSlideshow() {
         try {
             this.data = await getData();
-            
+
             if (this.data.length === 0) {
-                this.slidesContainer.innerHTML = '<div class="slide active"><h3>No menu items found</h3></div>';
+                this.popupContent.style.background = `url('https://picsum.photos/200') center center / cover no-repeat`;
+                this.popupContent.style.position = 'relative';
+
+                const mask = document.createElement('div');
+                mask.className = 'popup-mask';
+                this.popupContent.appendChild(mask);
+
+                this.slidesContainer.innerHTML = `<div class="slide active"><h3>No menu items found</h3></div>`;
                 return;
             }
 
@@ -95,12 +96,11 @@ class MenuSlideshow {
 
     createSlides() {
         this.slidesContainer.innerHTML = '';
-        
-        this.data.forEach((item, index) => {
+
+        this.data.forEach((item) => {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-                <img src="${item.image}" alt="${item.name}" loading="lazy">
                 <h3>${item.name}</h3>
                 <div class="price">€${item.price.toFixed(2).replace('.', ',')}</div>
                 <div class="description">${item.description || ''}</div>
@@ -113,7 +113,7 @@ class MenuSlideshow {
 
     createDots() {
         this.dotsContainer.innerHTML = '';
-        
+
         this.data.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.className = 'dot';
@@ -123,22 +123,29 @@ class MenuSlideshow {
     }
 
     showSlide(index) {
-        // Hide all slides
         this.slides.forEach(slide => slide.classList.remove('active'));
-        
-        // Show current slide
+
         if (this.slides[index]) {
             this.slides[index].classList.add('active');
         }
 
-        // Update dots
+        const currentItem = this.data[index];
+        this.popupContent.style.background = `url('${currentItem.image}') center center / cover no-repeat`;
+        this.popupContent.style.position = 'relative';
+        this.popupContent.style.color = 'white';
+
+        if (!this.popupContent.querySelector('.popup-mask')) {
+            const mask = document.createElement('div');
+            mask.className = 'popup-mask';
+            this.popupContent.appendChild(mask);
+        }
+
         const dots = this.dotsContainer.querySelectorAll('.dot');
         dots.forEach(dot => dot.classList.remove('active'));
         if (dots[index]) {
             dots[index].classList.add('active');
         }
 
-        // Update counter
         this.currentSlideSpan.textContent = index + 1;
         this.updateSlideCounter();
     }
@@ -168,7 +175,7 @@ class MenuSlideshow {
     startAutoSlide() {
         this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
-        }, 5000); // Change slide every 5 seconds
+        }, 5000);
     }
 
     stopAutoSlide() {
@@ -184,7 +191,6 @@ class MenuSlideshow {
     }
 }
 
-// Initialize the slideshow when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     new MenuSlideshow();
 });
