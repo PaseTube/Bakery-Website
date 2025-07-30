@@ -14,15 +14,15 @@ class MenuSlideshow {
 
     initializeElements() {
         // Get DOM elements
-        this.popup = document.getElementById('popup');
-        this.openBtn = document.getElementById('openPopup');
-        this.closeBtn = document.getElementById('closePopup');
-        this.slidesContainer = document.getElementById('slidesContainer');
-        this.dotsContainer = document.getElementById('dotsContainer');
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        this.currentSlideSpan = document.getElementById('currentSlide');
-        this.totalSlidesSpan = document.getElementById('totalSlides');
+        this.popup = document.querySelector('#popup');
+        this.openBtn = document.querySelector('#openPopup');
+        this.closeBtn = document.querySelector('#closePopup');
+        this.slidesContainer = document.querySelector('#slidesContainer');
+        this.dotsContainer = document.querySelector('#dotsContainer');
+        this.prevBtn = document.querySelector('#prevBtn');
+        this.nextBtn = document.querySelector('#nextBtn');
+        this.currentSlideSpan = document.querySelector('#currentSlide');
+        this.totalSlidesSpan = document.querySelector('#totalSlides');
     }
 
     bindEvents() {

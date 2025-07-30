@@ -202,6 +202,7 @@ section#hero {
     width: 100%;
     max-width: 800px;
     margin: auto;
+    padding: 20px 0;
 }
 
 .slide {
@@ -227,6 +228,7 @@ section#hero {
 .slide h3 {
     font-size: 28px;
     margin: 15px 0 10px 0;
+    margin-bottom: 20px;
     color: #333;
     font-family: 'Playfair Display', serif;
 }
@@ -235,7 +237,7 @@ section#hero {
     font-size: 24px;
     color: #d4af37;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 10px 20px;
 }
 
 .slide .description {
@@ -244,6 +246,11 @@ section#hero {
     line-height: 1.6;
     max-width: 500px;
     margin: 0 auto 20px auto;
+}
+
+.slide-show-btn {
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-btn {
@@ -367,7 +374,7 @@ section#hero {
     transition: all 0.4s ease;
 }
 
-.sub-hero{
+.sub-hero {
     display: flex;
     justify-content: space-between;
 }
@@ -385,11 +392,12 @@ section#hero {
     .hero-header h1 {
         font-size: 60px;
     }
-    .sub-hero{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
+    .sub-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
 }
 
@@ -421,6 +429,28 @@ section#hero {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+
+@media (max-width: 1060px) {
+    .slide-show-btn {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        position: initial;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(212, 175, 55, 0.8);
+        border: none;
+        color: white;
+        font-size: 24px;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        z-index: 1000;
     }
 }
 
