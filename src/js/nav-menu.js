@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.getElementById('burger');
-    const nav = document.getElementById('main-nav');
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('main-nav');
 
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('open');
-        burger.classList.toggle('open');
-    });
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
 });
 
 // Scroll add class list
@@ -27,6 +27,8 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll('section').forEach(section => {
+document.querySelectorAll('.fade-in-section').forEach(section => {
   observer.observe(section);
 });
+
+

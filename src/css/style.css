@@ -13,16 +13,15 @@ body {
 }
 
 /* ============ Fade Animations ============ */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+.fade-in-section.visible {
+  opacity: 1;
 }
+
 
 /* ============ Global Section Base ============ */
 .section-base {
@@ -71,7 +70,7 @@ section.visible {
 }
 
 
-.main-button:hover {
+.main-button:hover{
     background-color: bisque;
     cursor: pointer;
 }
@@ -127,8 +126,7 @@ section.visible {
         padding-left: 45px !important;
         padding-right: 45px !important;
     }
-
-    header {
+    header{
         padding-left: 45px !important;
         padding-right: 45px !important;
     }
