@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const nav = document.getElementById('main-nav');
@@ -8,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Scroll add class list
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
   if (window.scrollY > 50) {
@@ -17,7 +17,6 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
-
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -30,5 +29,4 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in-section').forEach(section => {
   observer.observe(section);
 });
-
 
