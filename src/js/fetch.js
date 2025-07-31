@@ -1,9 +1,11 @@
 export async function getData() {
   const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000/favorites' 
+    ? 'http://localhost:3000' 
     : '';
 
-  const url = `${baseUrl}/api/favorites`;
+  const url = process.env.NODE_ENV === 'development' 
+    ? `${baseUrl}/favorites`
+    : `${baseUrl}/api/favorites`;
 
   try {
     const response = await fetch(url);
@@ -21,12 +23,15 @@ export async function getData() {
   }
 }
 
+
 export async function getDiningData() {
   const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000/dining' 
+    ? 'http://localhost:3000' 
     : '';
 
-  const url = `${baseUrl}/api/dining`;
+  const url = process.env.NODE_ENV === 'development' 
+    ? `${baseUrl}/dining`
+    : `${baseUrl}/api/dining`;
 
   try {
     const response = await fetch(url);
@@ -39,7 +44,7 @@ export async function getDiningData() {
     return json;
 
   } catch (error) {
-    console.error('Error fetching dining data:', error.message);
+    console.error('Error fetching favorites data:', error.message);
     return [];
   }
 }
