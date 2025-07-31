@@ -8,10 +8,10 @@
   ], 
 
   "dining": [
-    {"id": 1, "image": "../public/Images/diningcard-1.webp", "name": "Croissants and Pastries"},
-    {"id": 2, "image": "../public/Images/diningcard-2.webp", "name": "Rustic Artisan Bread"},
-    {"id": 3, "image": "../public/Images/diningcard-3.webp", "name": "Assorted Breads and Rolls"},
-    {"id": 4, "image": "../public/Images/diningcard-4.webp", "name": "Sourdough Bread"}
+    {"id": 1, "image": "public/Images/diningcard-1.webp", "name": "Croissants and Pastries"},
+    {"id": 2, "image": "public/Images/diningcard-2.webp", "name": "Rustic Artisan Bread"},
+    {"id": 3, "image": "public/Images/diningcard-3.webp", "name": "Assorted Breads and Rolls"},
+    {"id": 4, "image": "public/Images/diningcard-4.webp", "name": "Sourdough Bread"}
   ],
    "profile": { "name": "typicode" }
 }
