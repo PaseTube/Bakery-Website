@@ -16,3 +16,21 @@ export async function getData() {
     return [];
   }
 }
+
+export async function getDiningData() {
+  const url = 'http://localhost:3000/dining';
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    return json;
+
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    return [];
+  }
+}

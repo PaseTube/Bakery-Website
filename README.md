@@ -64,6 +64,7 @@ cd Bakery-Website
 
 ```bash
 npm install
+npm install json-server --save-dev
 ```
 
 ---
