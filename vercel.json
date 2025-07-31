@@ -1,14 +1,13 @@
 {
   "functions": {
-    "api/server.js": {
-      "memory": 1024,
-      "includeFiles": "db.json"
+    "api/*.js": {
+      "memory": 1024
     }
   },
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "api/server.js"
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     }
   ]
 }

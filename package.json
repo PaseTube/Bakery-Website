@@ -3,10 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "api/server.js",
   "scripts": {
     "dev": "vite",
-    "start": "node api/server.js",
     "api": "json-server --watch db.json --port 3000",
     "build": "vite build",
     "preview": "vite preview"
