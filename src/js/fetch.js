@@ -1,6 +1,6 @@
 // Fetches and creates element for the menu products (favorites)
 export async function getData() {
-  const url = 'http://localhost:3000/favorites';
+  const url = '/api/favorites';
   try {
     const response = await fetch(url);
 
@@ -18,7 +18,7 @@ export async function getData() {
 }
 
 export async function getDiningData() {
-  const url = 'http://localhost:3000/dining';
+  const url = '/api/dining';
   try {
     const response = await fetch(url);
 
