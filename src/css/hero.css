@@ -60,7 +60,7 @@ section#hero {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-background 10s infinite alternate linear;
+    animation: animate-background 5s infinite alternate linear;
 }
 
 @keyframes animate-background {
