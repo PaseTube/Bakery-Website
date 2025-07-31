@@ -10,4 +10,4 @@ import './css/footer.css';
 import './js/fetch.js';
 import './js/nav-menu.js';
 import './js/menu.js';
-import './js/dining.js'
+import './js/dining-card.js'
