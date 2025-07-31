@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "start": "node api/server.js",
-    "api": "json-server --watch src/json/db.json --port 3000",
+    "api": "json-server --watch db.json --port 3000",
     "build": "vite build",
     "preview": "vite preview"
   },
