@@ -131,8 +131,9 @@ class MenuSlideshow {
 
         const currentItem = this.data[index];
         this.popupContent.style.background = `url('${currentItem.image}') center center / cover no-repeat`;
-        this.popupContent.style.position = 'relative';
+        this.popupContent.style.position = 'center center';
         this.popupContent.style.color = 'white';
+        this.popupContent.style.width = '1400px';
 
         if (!this.popupContent.querySelector('.popup-mask')) {
             const mask = document.createElement('div');

@@ -153,6 +153,7 @@ section#hero {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.527);
 }
 
 
@@ -177,7 +178,8 @@ section#hero {
     pointer-events: none;
     border-radius: 20px;
 }
-.popup-content > *:not(.popup-mask) {
+
+.popup-content>*:not(.popup-mask) {
     z-index: 2;
 }
 
