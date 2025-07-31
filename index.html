@@ -55,55 +55,59 @@
                 </div>
                 <div class="sub-hero">
                     <div class="text-container">
-                    <div class="text">
-                        <p class="text-description">
-                            Pulling on influence from around the globe, with the chef's talents, pedigrees and passions,
-                            6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a
-                            variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
-                            cakes) and tarts.
-                        </p>
-                        <a class="main-button" href="#">Explore more</a>
+                        <div class="text">
+                            <p class="text-description">
+                                Pulling on influence from around the globe, with the chef's talents, pedigrees and
+                                passions,
+                                6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and
+                                a
+                                variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
+                                cakes) and tarts.
+                            </p>
+                            <a class="main-button" href="#">Explore more</a>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-menu-cta">
-                    <div class="card">
-                        <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
-                            alt="Bistro Bakery menu card logo illustration" />
-                        <button id="openPopup" class="openPopup">
-                            Open Menu
-                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M13 5l7 7-7 7" />
-                            </svg>
-                        </button>
+                    <div class="hero-menu-cta">
+                        <div class="card">
+                            <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
+                                alt="Bistro Bakery menu card logo illustration" />
+                            <button id="openPopup" class="openPopup">
+                                Open Menu
+                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14M13 5l7 7-7 7" />
+                                </svg>
+                            </button>
 
-                        <!-- SLIDESHOW POPUP -->
-                        <div id="popup" class="popup hidden">
-                            <div class="pop-container" id="pop-container">
-                                <div class="popup-content">
-                                <button id="closePopup" class="close-btn">&times;</button>
-                                <div class="slide-counter">
-                                    <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
-                                </div>
-
-                                <div class="slideshow-container">
-                                    <div id="slidesContainer">
-                                        <div class="loading">
-                                            <div class="spinner"></div>
+                            <!-- SLIDESHOW POPUP -->
+                            <div id="popup" class="popup hidden">
+                                <div class="pop-container" id="pop-container">
+                                    <div class="popup-content">
+                                        <button id="closePopup" class="close-btn">&times;</button>
+                                        <div class="slide-counter">
+                                            <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
                                         </div>
+
+                                        <div class="slideshow-container">
+                                            <div id="slidesContainer">
+                                                <div class="loading">
+                                                    <div class="spinner"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slide-show-btn">
+                                                <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                                                <button class="nav-btn next" id="nextBtn">&#10095;</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="dots-container" id="dotsContainer"></div>
                                     </div>
-
-                                    <div class="slide-show-btn">
-                                        <button class="nav-btn prev" id="prevBtn">&#10094;</button>
-                                        <button class="nav-btn next" id="nextBtn">&#10095;</button>
-                                    </div></div>
-
-                                <div class="dots-container" id="dotsContainer"></div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
 
             </div>
@@ -213,12 +217,15 @@
                     </div>
                 </div>
             </div>
-            <div class="dine-video video-wrapper fade-in-section">
-                <video autoplay muted loop playsinline>
+            <div class="dine-video video-wrapper">
+                <video id="heroVideo" muted playsinline>
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+
+                <button id="playButton" class="play-button" aria-label="Play Video">▶</button>
             </div>
+
         </section>
         <!-- End of First Part -->
         <!-- Second Part -->

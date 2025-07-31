@@ -10,4 +10,5 @@ import './css/footer.css';
 import './js/fetch.js';
 import './js/nav-menu.js';
 import './js/menu.js';
-import './js/dining-card.js'
+import './js/dining-card.js';
+import './js/main.js';
