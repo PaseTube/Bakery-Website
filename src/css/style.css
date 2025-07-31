@@ -12,6 +12,16 @@ body {
     overflow-x: hidden;
 }
 
+/* ============ Fade Animations ============ */
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+}
+
 /* ============ Global Section Base ============ */
 .section-base {
     width: 100%;

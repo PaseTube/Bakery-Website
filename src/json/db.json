@@ -1,9 +1,9 @@
 {
   "favorites": [
-    { "id": 1, "name": "Sourdough Bread", "price": 5.50 },
-    { "id": 2, "name": "Classic Butter Croissant", "price": 3.25 },
-    { "id": 3, "name": "Red Velvet Cupcake", "price": 3.75 },
-    { "id": 4, "name": "Cinnamon Roll with Cream Cheese Glaze", "price": 4.00 },
-    { "id": 5, "name": "Fresh Fruit Tart", "price": 5.00 }
+    { "id": 1, "image": "https://plus.unsplash.com/premium_photo-1700767181915-8a1bc379cae7?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Sourdough Bread", "price": 5.50 },
+    { "id": 2, "image": "https://plus.unsplash.com/premium_photo-1695239201521-49524a277499?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Classic Butter Croissant", "price": 3.25 },
+    { "id": 3, "image": "https://images.unsplash.com/photo-1714386148315-2f0e3eebcd5a?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Red Velvet Cupcake", "price": 3.75 },
+    { "id": 4, "image": "https://plus.unsplash.com/premium_photo-1675706599587-4209694a6917?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Cinnamon Roll with Cream Cheese Glaze", "price": 4.00 },
+    { "id": 5, "image": "https://plus.unsplash.com/premium_photo-1663100418600-4465ed878a6b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Fresh Fruit Tart", "price": 5.00 }
   ]
 }

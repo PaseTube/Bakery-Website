@@ -16,21 +16,21 @@
 
 <body>
     <header class="header" id="navbar">
-        <div class="nav-logo">
+        <div class="nav-logo fade-in-section">
             <a href="#">
                 <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
             </a>
         </div>
 
         <!-- Hamburger -->
-        <div class="nav-burger" id="burger">
+        <div class="nav-burger fade-in-section" id="burger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
         <!-- Nav Menu -->
-        <nav id="main-nav">
+        <nav id="main-nav fade-in-section">
             <ul class="nav-links">
                 <li><a class="nav-link" href="#">Home</a></li>
                 <li><a class="nav-link" href="#">Chef</a></li>
@@ -49,14 +49,15 @@
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
             <!-- Hero section content goes here -->
-            <div class="hero-content">
+            <div class="hero-content fade-in-section">
                 <div class="hero-header">
-                    <h1>Bistro | Bakery</h1>
+                    <h1 class="masked-text">Bistro | Bakery</h1>
                 </div>
-                <div class="text-container">
+                <div class="sub-hero">
+                    <div class="text-container">
                     <div class="text">
                         <p class="text-description">
-                            Pulling on influence from around the globe, with the chef’s talents, pedigrees and passions,
+                            Pulling on influence from around the globe, with the chef's talents, pedigrees and passions,
                             6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a
                             variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
                             cakes) and tarts.
@@ -68,35 +69,41 @@
                     <div class="card">
                         <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
                             alt="Bistro Bakery menu card logo illustration" />
-                        <button id="openPopup">
-                            Open Menu 
-                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
+                        <button id="openPopup" class="openPopup">
+                            Open Menu
+                            <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 5l7 7-7 7" />
+                            </svg>
                         </button>
 
+                        <!-- SLIDESHOW POPUP -->
                         <div id="popup" class="popup hidden">
-                            <div class="popup-content" id="product-card">
-                                <button id="closePopup">Close</button>
+                            <div class="pop-container" id="pop-container">
+                                <div class="popup-content">
+                                <button id="closePopup" class="close-btn">&times;</button>
+                                <div class="slide-counter">
+                                    <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
+                                </div>
+
+                                <div class="slideshow-container">
+                                    <div id="slidesContainer">
+                                        <div class="loading">
+                                            <div class="spinner"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide-show-btn">
+                                        <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                                        <button class="nav-btn next" id="nextBtn">&#10095;</button>
+                                    </div></div>
+
+                                <div class="dots-container" id="dotsContainer"></div>
+                            </div>
                             </div>
                         </div>
-
-                        <!-- <details>
-                            <summary>
-                                Open Menu
-                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
-                            </summary>
-                            <div class="cta-menu">
-                                <ul id="product-list"></ul>
-                            </div>
-                        </details> -->
                     </div>
+                </div>
                 </div>
 
             </div>
@@ -120,7 +127,7 @@
 
         <!-- Our Story section -->
         <section id="our-story" class="our-story">
-            <div class="story-image">
+            <div class="story-image fade-in-section">
                 <img loading="lazy" class="big-story-image" src="/Images/story-big.webp"
                     alt="Interior of the Bistro Bakery's artisan kitchen" />
                 <div class="image-wrapper">
@@ -129,7 +136,7 @@
                     <p class="image-caption">Freshly Baked!</p>
                 </div>
             </div>
-            <div class="text-container">
+            <div class="text-container fade-in-section">
                 <h2>Our Story</h2>
                 <p class="text-description">
                     Welcome to our bakery, where passion meets tradition. Our story began with a simple love for baking,
@@ -144,7 +151,7 @@
         <!-- Dine With Us section -->
         <!-- First Part -->
         <section id="dine-with-us-1" class="dine-with-us-1">
-            <div class="dine-content">
+            <div class="dine-content fade-in-section">
                 <div class="text-container">
                     <h2 class="text-black">Why Dine with Us?</h2>
                     <p class="text-description text-black">
@@ -206,7 +213,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dine-video video-wrapper">
+            <div class="dine-video video-wrapper fade-in-section">
                 <video autoplay muted loop playsinline>
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -216,7 +223,7 @@
         <!-- End of First Part -->
         <!-- Second Part -->
         <section id="dine-with-us-2" class="dine-with-us-2">
-            <div class="dine-content-2">
+            <div class="dine-content-2 fade-in-section">
                 <div class="dine-text-2">
                     <h2>Our customers' favorite dishes</h2>
                     <p class="text-black">
@@ -226,7 +233,7 @@
                     </p>
                 </div>
             </div>
-            <div class="dine-cards-2">
+            <div class="dine-cards-2 fade-in-section">
                 <div class=cards-2>
                     <img loading="lazy" src=/Images/diningcard-1.webp
                         alt="Plate with freshly baked croissants and pastries" />
@@ -253,14 +260,14 @@
 
         <!-- Start of the News section -->
         <section id="news" class="news section-base">
-            <div class="news-header">
+            <div class="news-header fade-in-section">
                 <h2>Subscribe to our Newsletter</h2>
             </div>
-            <div class="news-subheader">
+            <div class="news-subheader fade-in-section">
                 <p>"Discover the latest updates, events, and stories from our bakery.</br> Subscribe to our Newsletter
                     now."</p>
             </div>
-            <div class="news-mail">
+            <div class="news-mail fade-in-section">
                 <form action="#" method="post" class="news-form">
                     <!-- <label for="newsletter-email" class="visually-hidden">Email address</label> -->
                     <input type="email" id="newsletter-email" placeholder="Enter your email" required
@@ -274,7 +281,7 @@
 
     <footer role="contentinfo">
         <section id="links-footer" class="links-footer section-base">
-            <div class="footer-logo-container">
+            <div class="footer-logo-container fade-in-section">
                 <a href="#"><img loading="lazy" src="/Images/svg/logo.svg" width="100px"
                         alt="Bistro Bakery logo in footer" /></a>
                 <p>600 Brickell Ave. Miami, FL 33131</p>
@@ -282,7 +289,7 @@
                 <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
             </div>
 
-            <div class="footer-nav-links">
+            <div class="footer-nav-links fade-in-section">
                 <div class="inner">
                     <ul>
                         <li>
@@ -298,7 +305,7 @@
                 </div>
             </div>
 
-            <div class="footer-quick-links">
+            <div class="footer-quick-links fade-in-section">
                 <div class="inner">
                     <ul>
                         <li>
@@ -314,7 +321,7 @@
                 </div>
             </div>
 
-            <div class="operational">
+            <div class="operational fade-in-section">
                 <div class="inner">
                     <ul>
                         <li>
@@ -337,7 +344,7 @@
             </div>
         </section>
         <section id="main-footer" class="main-footer section-base">
-            <div class="footer-socials">
+            <div class="footer-socials fade-in-section">
                 <ul>
                     <!-- fa-facebook border looks wierd so using the official -->
                     <li><a href="#" class="fa fa-facebook-official"></a></li>
@@ -346,7 +353,7 @@
                     <li><a href="#" class="fa fa-linkedin"></a></li>
                 </ul>
             </div>
-            <div class="copy-rights">
+            <div class="copy-rights fade-in-section">
                 Copyright <span>&#xA9; BISTRO | BAKERY.</span> All Rights Reserved.
             </div>
         </section>
