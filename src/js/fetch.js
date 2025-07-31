@@ -1,6 +1,6 @@
 export async function getData() {
   const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+    ? 'http://localhost:3000/favorites' 
     : '';
 
   const url = `${baseUrl}/api/favorites`;
@@ -23,7 +23,7 @@ export async function getData() {
 
 export async function getDiningData() {
   const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+    ? 'http://localhost:3000/dining' 
     : '';
 
   const url = `${baseUrl}/api/dining`;
