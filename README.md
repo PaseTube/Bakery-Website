@@ -1,4 +1,4 @@
-# Bakery-Website
+<!-- # Bakery-Website
 
 A simple, responsive website for a bakery.
 
@@ -33,7 +33,7 @@ Edit [`index.html`](index.html) and [`css/style.css`](css/style.css) to update c
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
+ -->
 
 # 🍞 Bakery Website (Vite + JSON Server)
 
