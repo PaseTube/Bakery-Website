@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-  // Enable CORS
+  // Enable CORS for development/testing
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
@@ -19,12 +19,14 @@ export default function handler(req, res) {
   }
 
   try {
-    // Read the db.json file
+    // Correct path to root-level db.json
     const filePath = path.join(process.cwd(), 'db.json');
+
+    // Read and parse the file
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(fileContent);
-    
-    // Return the dining data
+
+    // Return the "dining" array from db.json
     res.status(200).json(data.dining || []);
   } catch (error) {
     console.error('Error reading db.json:', error);
