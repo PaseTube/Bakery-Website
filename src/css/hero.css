@@ -19,6 +19,8 @@ section#hero {
     box-sizing: border-box;
 }
 
+
+
 /* hero container */
 .hero-content {
     display: flex;
