@@ -1,4 +1,18 @@
+const openBtn = document.querySelector('#openModal');
+const closeBtn = document.querySelector('#closeModal');
+const modal = document.querySelector('#modal');
 
+// Open and close gallery
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.classList.add("open");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("open");
+});
+
+// burger menu
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burger');
   const nav = document.getElementById('main-nav');
@@ -9,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// scroll effect
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
   if (window.scrollY > 50) {
@@ -26,6 +41,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
+// fadein effect
 document.querySelectorAll('.fade-in-section').forEach(section => {
   observer.observe(section);
 });

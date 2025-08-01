@@ -34,8 +34,11 @@
             <ul class="nav-links">
                 <li><a class="nav-link" href="#">Home</a></li>
                 <li><a class="nav-link" href="#">Chef</a></li>
-                <li><a class="nav-link" href="#">Gallery</a></li>
+                <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
             </ul>
+
+            
+
             <div class="nav-buttons">
                 <a class="main-button" href="#">Menu</a>
                 <a class="contact" href="#">Contact Us</a>
@@ -46,7 +49,16 @@
 
 
 
+
     <main role="main">
+
+        <!-- Move modal here OUTSIDE of ul -->
+            <div id="modal" class="modal">
+                <div class="modal-inner">
+                    <button class="main-button" id="closeModal">Close</button>
+                    <!-- load images! -->
+                </div>
+            </div>
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
             <!-- Hero section content goes here -->

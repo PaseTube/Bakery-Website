@@ -59,6 +59,28 @@ nav {
     border-bottom: 2px solid transparent;
 }
 
+.modal {
+    position: fixed;
+    top: 150px;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    width: 50vw;
+    height: 40vw;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.modal.open {
+    opacity: 1;
+    display: grid;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 99999;
+    overflow: hidden;
+}
 .nav-link.active,
 .nav-link:hover {
     color: #ffffff;
@@ -133,6 +155,18 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+    .modal {
+        position: fixed;
+        top: 500px;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        height: 40vw;
+        padding: 20px 0px;
+    }
+
     .nav-burger {
         display: flex;
     }
