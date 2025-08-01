@@ -67,7 +67,7 @@ nav {
     z-index: 99999;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     overflow-y: auto;
 
     width: 90vw;
@@ -86,10 +86,10 @@ nav {
     display: block;
 }
 
-
 .modal .modal-inner .button-container {
-    position: fixed;
-    right: 5%;
+    position: sticky;
+    top: 5px;
+    right: 0%;
 }
 
 .modal .modal-inner .button-container button {
@@ -110,8 +110,12 @@ nav {
     border-radius: 12px;
     flex: 1 1 150px;
     max-height: 150px;
+    transition: all 0.3s ease-in-out;
 }
 
+.gallery-random img:hover {
+    transform: scale(1.1);
+}
 
 .nav-link.active,
 .nav-link:hover {
@@ -189,9 +193,10 @@ nav {
 @media (max-width: 768px) {
 
 
-    .gallery-random {
-        padding: 10px;
-        margin: 0px -10px;
+    .modal .modal-inner .button-container {
+        position: sticky;
+        background-color: white;
+        z-index: 1001;
     }
 
     .gallery-random img {
