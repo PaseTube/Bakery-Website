@@ -1,6 +1,7 @@
 const openBtn = document.querySelector('#openModal');
 const closeBtn = document.querySelector('#closeModal');
 const modal = document.querySelector('#modal');
+const galleryImg = document.querySelector('#gallery-random');
 
 // Open and close gallery
 openBtn.addEventListener("click", (e) => {
@@ -46,3 +47,18 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
   observer.observe(section);
 });
 
+
+// gallery loader
+const numberOfImages = 10;
+for (let i = 0; i < numberOfImages; i++) {
+  const img = document.createElement("img");
+
+  // Use random images from Unsplash (change to any API or source)
+  const randomId = Math.floor(Math.random() * 1000);
+  img.src = `https://picsum.photos/300/200?random=${randomId}`;
+  img.alt = "Random bakery image";
+  img.loading = `lazy`;
+
+
+  galleryImg.appendChild(img);
+}
