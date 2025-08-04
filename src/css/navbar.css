@@ -59,6 +59,129 @@ nav {
     border-bottom: 2px solid transparent;
 }
 
+.modal {
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 20px 20px 20px;
+    overflow-y: auto;
+
+    width: 90vw;
+    max-width: 1400px;
+    max-height: 80vh;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 10px 10px #29002e80;
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+}
+
+.modal .modal-inner .button-container {
+    position: sticky;
+    top: 5px;
+    right: 0%;
+}
+
+.modal .modal-inner .button-container button {
+    margin: 10px 0;
+}
+
+.gallery-random {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-random img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    flex: 1 1 150px;
+    max-height: 150px;
+    transition: all 0.3s ease-in-out;
+}
+
+.gallery-random img:hover {
+    transform: scale(1.1);
+}
+
+
+.chef-modal {
+  position: fixed;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: white;
+  border-radius: 20px;
+  overflow-y: auto;
+  width: 90vw;
+  max-width: 1400px;
+  max-height: 80vh;
+  opacity: 0;
+  pointer-events: none;
+  overflow: visible;
+  transition: opacity 0.3s ease;
+  box-shadow: 10px 10px #29002e80;
+}
+
+.chef-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.modal-inner-wrapper {
+  position: relative; /* important */
+  padding-top: 80px; /* space for floating image */
+}
+
+.image-cont {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 120px;
+  background-image: url('/Images/chef-image.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10000;
+  pointer-events: none;
+  filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%);
+}
+
+
+.chef-container{
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 50px;
+}
+
+.chef-container .chef-image img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .nav-link.active,
 .nav-link:hover {
     color: #ffffff;
@@ -133,6 +256,28 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+
+    .modal .modal-inner .button-container {
+        position: sticky;
+        background-color: white;
+        z-index: 1001;
+    }
+
+    .gallery-random img {
+        max-height: 120px;
+        flex-basis: 45%;
+        /* 2 images per row approximately */
+    }
+
+    .modal {
+        width: 95vw;
+        max-width: 90vw;
+        max-height: 80vh;
+        top: 5vh;
+        scroll-behavior: smooth;
+    }
+
     .nav-burger {
         display: flex;
     }

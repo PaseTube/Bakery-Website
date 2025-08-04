@@ -60,7 +60,7 @@ section#dine-with-us-1 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width: 243px;
+    width: 220px;
     height: 400px;
     background-color: #fff;
     padding: 20px;
@@ -140,7 +140,7 @@ section#dine-with-us-1 {
     transition: opacity 0.3s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     width: 80px;
     height: 80px;
 }

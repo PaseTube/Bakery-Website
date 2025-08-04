@@ -22,20 +22,23 @@
             </a>
         </div>
 
-        <!-- Hamburger -->
+        <!-- Burger Menu -->
         <div class="nav-burger fade-in-section" id="burger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <!-- Nav Menu -->
-        <nav id="main-nav fade-in-section">
+        <!-- Nav -->
+        <nav id="main-nav" class="fade-in-section">
             <ul class="nav-links">
                 <li><a class="nav-link" href="#">Home</a></li>
-                <li><a class="nav-link" href="#">Chef</a></li>
-                <li><a class="nav-link" href="#">Gallery</a></li>
+                <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
+                <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
             </ul>
+
+
+
             <div class="nav-buttons">
                 <a class="main-button" href="#">Menu</a>
                 <a class="contact" href="#">Contact Us</a>
@@ -46,9 +49,52 @@
 
 
     <main role="main">
+        <!-- Chef modal -->
+        <div id="chef-modal" class="chef-modal">
+            <div class="modal-inner-wrapper">
+                <div class="image-cont"></div>
+
+                <div class="modal-inner">
+                    <div class="button-container">
+                        <button class="main-button" id="closeChefModal">Close</button>
+                    </div>
+                    <div class="chef-container" id="chef-container">
+                        <div class="chef-image">
+                            <img loading="lazy" src="/Images/story-person.webp" alt="Chef in the kitchen preparing food" />
+                        </div>
+                        <div class="chef-text">
+                            <h2>Meet Our Chef</h2>
+                            <p>
+                                Our head chef, with over 15 years of experience in the culinary arts, brings a passion
+                                for
+                                baking and a commitment to quality. Every pastry is crafted with care, using traditional
+                                techniques and the finest ingredients.
+                            </p>
+                            <p>
+                                Join us for a taste of our signature creations, from flaky croissants to decadent tarts,
+                                all made fresh daily.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- gallery modal  -->
+        <div id="modal" class="modal">
+            <div class="modal-inner">
+                <div class="button-container">
+                    <button class="main-button" id="closeModal">Close</button>
+                </div>
+                <div class="gallery-random" id="gallery-random">
+                    <!-- load images! -->
+                </div>
+            </div>
+        </div>
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
-            <!-- Hero section content goes here -->
+            <!-- Hero section content -->
             <div class="hero-content fade-in-section">
                 <div class="hero-header">
                     <h1 class="masked-text">Bistro | Bakery</h1>
