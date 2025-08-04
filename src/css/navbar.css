@@ -14,6 +14,27 @@ header {
     gap: 24px;
 }
 
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 2s all ease-in-out;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
 .logo-image {
     filter: brightness(0) invert(1);
 }
@@ -119,53 +140,55 @@ nav {
 
 
 .chef-modal {
-  position: fixed;
-  top: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  background-color: white;
-  border-radius: 20px;
-  overflow-y: auto;
-  width: 90vw;
-  max-width: 1400px;
-  max-height: 80vh;
-  opacity: 0;
-  pointer-events: none;
-  overflow: visible;
-  transition: opacity 0.3s ease;
-  box-shadow: 10px 10px #29002e80;
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    width: 90vw;
+    max-width: 1400px;
+    max-height: 80vh;
+    opacity: 0;
+    pointer-events: none;
+    overflow: visible;
+    transition: opacity 0.3s ease;
+    box-shadow: 10px 10px #29002e80;
 }
 
 .chef-modal.open {
-  opacity: 1;
-  pointer-events: auto;
-  display: block;
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
 }
 
 .modal-inner-wrapper {
-  position: relative; /* important */
-  padding-top: 80px; /* space for floating image */
+    position: relative;
+    /* important */
+    padding-top: 80px;
+    /* space for floating image */
 }
 
 .image-cont {
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 520px;
-  height: 120px;
-  background-image: url('/Images/chef-image.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 10000;
-  pointer-events: none;
-  filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%);
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    height: 120px;
+    background-image: url('/Images/chef-image.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10000;
+    pointer-events: none;
+    filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%);
 }
 
 
-.chef-container{
+.chef-container {
     padding: 35px;
     display: flex;
     justify-content: space-between;
@@ -174,7 +197,7 @@ nav {
     gap: 50px;
 }
 
-.chef-container .chef-image img{
+.chef-container .chef-image img {
     width: 300px;
     height: 300px;
     object-fit: cover;
