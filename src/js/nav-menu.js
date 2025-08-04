@@ -2,6 +2,9 @@ const openBtn = document.querySelector('#openModal');
 const closeBtn = document.querySelector('#closeModal');
 const modal = document.querySelector('#modal');
 const galleryImg = document.querySelector('#gallery-random');
+const openChefBtn = document.querySelector('#openChefModal');
+const chefModal = document.querySelector('#chef-modal');
+const closeChefBtn = document.querySelector('#closeChefModal');
 
 // Open and close gallery
 openBtn.addEventListener("click", (e) => {
@@ -12,6 +15,17 @@ openBtn.addEventListener("click", (e) => {
 closeBtn.addEventListener("click", () => {
   modal.classList.remove("open");
 });
+
+// Open Chef modal
+openChefBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  chefModal.classList.add("open");
+});
+
+closeChefBtn.addEventListener("click", () => {
+  chefModal.classList.remove("open");
+}
+);
 
 // burger menu
 document.addEventListener('DOMContentLoaded', () => {
