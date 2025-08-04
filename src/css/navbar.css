@@ -187,7 +187,7 @@ nav {
     filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%);
 }
 
-.modal-inner {
+.modal-inner-wrapper .modal-inner {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -340,6 +340,10 @@ nav {
 
     .chef-modal-container {
         max-height: calc(80vh - 120px);
+    }
+
+    .modal-inner-wrapper .modal-inner{
+        padding: 0;
     }
 
     .nav-burger {
