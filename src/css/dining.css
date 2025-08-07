@@ -1,19 +1,6 @@
-/* First part of the section */
 section#dine-with-us-1 {
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    text-align: left;
-    min-height: 750px;
-    height: auto;
-    width: 100%;
-    position: relative;
-    padding: 100px 100px 100px 100px;
-    box-sizing: border-box;
+
 
     background-image: url('../img/svg/croissant.svg');
     background-repeat: no-repeat;
@@ -21,6 +8,23 @@ section#dine-with-us-1 {
     background-position-y: 10%;
     background-size: 250px;
     background-blend-mode: normal;
+}
+
+section#dine-with-us-1 .section-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    text-align: left;
+    min-height: 750px;
+    height: auto;
+    width: 100%;
+    /* Remove individual padding since section-container handles it */
+    padding: 100px 0;
+    box-sizing: border-box;
 }
 
 .dine-cards {
@@ -60,7 +64,7 @@ section#dine-with-us-1 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width: 220px;
+    width: 200px;
     height: 400px;
     background-color: #fff;
     padding: 20px;
@@ -114,7 +118,7 @@ section#dine-with-us-1 {
     align-items: center;
     justify-content: center;
     height: 600px;
-    width: 300px;
+    width: 200px;
 }
 
 .video-wrapper video {
@@ -164,7 +168,7 @@ section#dine-with-us-1 {
 
 
 @media (max-width: 1818px) {
-    section#dine-with-us-1 {
+    section#dine-with-us-1 .section-container {
         flex-direction: row;
         align-items: flex-end;
         height: auto;
@@ -174,11 +178,6 @@ section#dine-with-us-1 {
         width: 100%;
         max-width: none;
         text-align: left;
-    }
-
-    .dine-video {
-        width: 250px !important;
-        height: 600px;
     }
 }
 
@@ -241,19 +240,13 @@ section#dine-with-us-1 {
 
 section#dine-with-us-2 {
     background-color: white;
-    display: flex;
-    gap: 20px;
-    text-align: center;
     min-height: 750px;
     height: auto;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    padding: 0 100px 0px 100px;
+
     box-sizing: border-box;
 
+    padding-top: 50px;
+    padding-bottom: 100px;
     background-image: url('../img/svg/pancakes.svg');
     background-repeat: no-repeat;
     background-position-x: right;
@@ -261,6 +254,18 @@ section#dine-with-us-2 {
     background-size: 250px;
     background-blend-mode: normal;
 
+}
+
+section#dine-with-us-2 .section-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .dine-content-2 {
@@ -304,11 +309,13 @@ section#dine-with-us-2 {
 }
 
 .dine-cards-2 .cards-2 {
-    width: 400px;
-    height: 600px;
+    width: 320px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    text-align: left;
     justify-content: space-between;
     background-color: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -351,8 +358,15 @@ section#dine-with-us-2 {
 
 @media (max-width: 1760px) {
     .dine-cards-2 {
-        justify-content: space-around;
+        justify-content: space-between;
     }
+
+    .dine-cards-2 .cards-2 {
+        width: 300px;
+        height: 400px;
+        padding: 90px 0;
+    }
+
 }
 
 @media (max-width: 900px) {

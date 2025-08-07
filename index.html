@@ -15,37 +15,43 @@
 </head>
 
 <body>
+    <div id="loader">
+        <img src="Images/bakery-shop.gif" alt="Bakery" id="loader-image">
+    </div>
+
     <!-- scroll back to top button -->
     <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
     <header class="header" id="navbar">
-        <div class="nav-logo fade-in-section">
-            <a href="#">
-                <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
-            </a>
-        </div>
-
-        <!-- Burger Menu -->
-        <div class="nav-burger fade-in-section" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <!-- Nav -->
-        <nav id="main-nav" class="fade-in-section">
-            <ul class="nav-links">
-                <li><a class="nav-link" href="#">Home</a></li>
-                <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
-                <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
-            </ul>
-
-
-
-            <div class="nav-buttons">
-                <a class="main-button" href="#">Menu</a>
-                <a class="contact" href="#">Contact Us</a>
+        <div class="section-container">
+            <div class="nav-logo fade-in-section">
+                <a href="#">
+                    <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
+                </a>
             </div>
-        </nav>
+
+            <!-- Burger Menu -->
+            <div class="nav-burger fade-in-section" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav -->
+            <nav id="main-nav" class="fade-in-section">
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="#">Home</a></li>
+                    <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
+                    <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
+                </ul>
+
+
+
+                <div class="nav-buttons">
+                    <a class="main-button" href="#">Menu</a>
+                    <a class="contact" href="#">Contact Us</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
 
@@ -124,200 +130,216 @@
         </div>
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
-            <!-- Hero section content -->
-            <div class="hero-content fade-in-section">
-                <div class="hero-header">
-                    <h1 class="masked-text">Bistro | Bakery</h1>
-                </div>
-                <div class="sub-hero">
-                    <div class="text-container">
-                        <div class="text">
-                            <p class="text-description">
-                                Pulling on influence from around the globe, with the chef's talents, pedigrees and
-                                passions,
-                                6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and
-                                a
-                                variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small
-                                cakes) and tarts.
-                            </p>
-                            <a class="main-button" href="#">Explore more</a>
-                        </div>
+            <div class="section-container">
+                <!-- Hero section content -->
+                <div class="hero-content fade-in-section">
+                    <div class="hero-header">
+                        <h1 class="masked-text">Bistro | Bakery</h1>
                     </div>
-                    <div class="hero-menu-cta">
-                        <div class="card">
-                            <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
-                                alt="Bistro Bakery menu card logo illustration" />
-                            <button id="openPopup" class="openPopup">
-                                Open Menu
-                                <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                    <div class="sub-hero">
+                        <div class="text-container">
+                            <div class="text">
+                                <p class="text-description">
+                                    Pulling on influence from around the globe, with the chef's talents, pedigrees and
+                                    passions,
+                                    6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche,
+                                    and
+                                    a
+                                    variety of flaky croissants; signature desserts such as macaroons, petit gateaux
+                                    (small
+                                    cakes) and tarts.
+                                </p>
+                                <a class="main-button" href="#">Explore more</a>
+                            </div>
+                        </div>
+                        <div class="hero-menu-cta">
+                            <div class="card">
+                                <img loading="lazy" class="cta-img" src="/Images/svg/logo.svg"
+                                    alt="Bistro Bakery menu card logo illustration" />
+                                <button id="openPopup" class="openPopup">
+                                    Open Menu
+                                    <svg class="arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M5 12h14M13 5l7 7-7 7" />
+                                    </svg>
+                                </button>
 
-                            <!-- SLIDESHOW POPUP -->
-                            <div id="popup" class="popup hidden">
-                                <div class="pop-container" id="pop-container">
-                                    <div class="popup-content">
-                                        <button id="closePopup" class="close-btn">&times;</button>
-                                        <div class="slide-counter">
-                                            <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
-                                        </div>
+                                <!-- SLIDESHOW POPUP -->
+                                <div id="popup" class="popup hidden">
+                                    <div class="pop-container" id="pop-container">
+                                        <div class="popup-content">
+                                            <button id="closePopup" class="close-btn">&times;</button>
+                                            <div class="slide-counter">
+                                                <span id="currentSlide">1</span> / <span id="totalSlides">0</span>
+                                            </div>
 
-                                        <div class="slideshow-container">
-                                            <div id="slidesContainer">
-                                                <div class="loading">
-                                                    <div class="spinner"></div>
+                                            <div class="slideshow-container">
+                                                <div id="slidesContainer">
+                                                    <div class="loading">
+                                                        <div class="spinner"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="slide-show-btn">
+                                                    <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+                                                    <button class="nav-btn next" id="nextBtn">&#10095;</button>
                                                 </div>
                                             </div>
 
-                                            <div class="slide-show-btn">
-                                                <button class="nav-btn prev" id="prevBtn">&#10094;</button>
-                                                <button class="nav-btn next" id="nextBtn">&#10095;</button>
-                                            </div>
+                                            <div class="dots-container" id="dotsContainer"></div>
                                         </div>
-
-                                        <div class="dots-container" id="dotsContainer"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <div class="scroll-down">
+                    <!-- Muis icoon -->
+                    <svg class="mouse" width="24" height="40" viewBox="0 0 24 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="22" height="38" rx="11" stroke="white" stroke-width="2" />
+                        <line x1="12" y1="6" x2="12" y2="12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
 
-            </div>
-            <div class="scroll-down">
-                <!-- Muis icoon -->
-                <svg class="mouse" width="24" height="40" viewBox="0 0 24 40" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="1" width="22" height="38" rx="11" stroke="white" stroke-width="2" />
-                    <line x1="12" y1="6" x2="12" y2="12" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-
-                <!-- Pijltje naar beneden -->
-                <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+                    <!-- Pijltje naar beneden -->
+                    <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
             </div>
         </section>
         <!-- End of Hero section -->
 
         <!-- Our Story section -->
         <section id="our-story" class="our-story">
-            <div class="story-image fade-in-section">
-                <img loading="lazy" class="big-story-image" src="/Images/story-big.webp"
-                    alt="Interior of the Bistro Bakery's artisan kitchen" />
-                <div class="image-wrapper">
-                    <img loading="lazy" class="image-after-text" src="/Images/story-person.webp"
-                        alt="Head baker preparing dough in the bakery" />
-                    <p class="image-caption">Freshly Baked!</p>
+            <div class="section-container">
+                <div class="container-story">
+                    <div class="story-image fade-in-section">
+                        <img loading="lazy" class="big-story-image" src="/Images/story-big.webp"
+                            alt="Interior of the Bistro Bakery's artisan kitchen" />
+                        <div class="image-wrapper">
+                            <img loading="lazy" class="image-after-text" src="/Images/story-person.webp"
+                                alt="Head baker preparing dough in the bakery" />
+                            <p class="image-caption">Freshly Baked!</p>
+                        </div>
+                    </div>
+                    <div class="text-container fade-in-section">
+                        <h2>Our Story</h2>
+                        <p class="text-description">
+                            Welcome to our bakery, where passion meets tradition. Our story began with a simple love for
+                            baking,
+                            and has grown into a cherished community hub. We take pride in using the finest ingredients
+                            to
+                            create
+                            artisanal breads, pastries, and desserts that bring joy to every bite.
+                        </p>
+                        <a class="main-button" href="#">Explore more</a>
+                    </div>
                 </div>
-            </div>
-            <div class="text-container fade-in-section">
-                <h2>Our Story</h2>
-                <p class="text-description">
-                    Welcome to our bakery, where passion meets tradition. Our story began with a simple love for baking,
-                    and has grown into a cherished community hub. We take pride in using the finest ingredients to
-                    create
-                    artisanal breads, pastries, and desserts that bring joy to every bite.
-                </p>
-                <a class="main-button" href="#">Explore more</a>
             </div>
         </section>
         <!-- End of Our Story section -->
         <!-- Dine With Us section -->
         <!-- First Part -->
         <section id="dine-with-us-1" class="dine-with-us-1">
-            <div class="dine-content fade-in-section">
-                <div class="text-container">
-                    <h2 class="text-black">Why Dine with Us?</h2>
-                    <p class="text-description text-black">
-                        Nestled in the heart of the downtown, BISTRO offers an intimate dining experience where
-                        culinary artistry meets cozy charm.
-                    </p>
+            <div class="section-container">
+                <div class="dine-content fade-in-section">
+                    <div class="text-container">
+                        <h2 class="text-black">Why Dine with Us?</h2>
+                        <p class="text-description text-black">
+                            Nestled in the heart of the downtown, BISTRO offers an intimate dining experience where
+                            culinary artistry meets cozy charm.
+                        </p>
+                    </div>
+                    <div class="dine-cards">
+                        <div class="cards">
+                            <img loading="lazy" src="/Images/svg/food.svg"
+                                alt="Fresh vegetables and baked goods icon" />
+                            <h3>Fresh, Local Ingredients:</h3>
+                            <a href="#">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="cards">
+                            <img loading="lazy" src="/Images/svg/person-stars.svg"
+                                alt="Chef with star rating symbol representing artisan quality" />
+                            <h3>Artisan Craftsmanship:</h3>
+                            <a href="#">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="cards">
+                            <img loading="lazy" src="/Images/svg/rainbow.svg"
+                                alt="Colorful rainbow icon symbolizing welcoming atmosphere" />
+                            <h3>Inviting Atmosphere:</h3>
+                            <a href="#">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="cards">
+                            <img loading="lazy" src="/Images/svg/people.svg"
+                                alt="Community of people icon for friendly service" />
+                            <h3>Community-Oriented:</h3>
+                            <a href="#">
+                                Explore more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="dine-cards">
-                    <div class="cards">
-                        <img loading="lazy" src="/Images/svg/food.svg" alt="Fresh vegetables and baked goods icon" />
-                        <h3>Fresh, Local Ingredients:</h3>
-                        <a href="#">
-                            Explore more
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="cards">
-                        <img loading="lazy" src="/Images/svg/person-stars.svg"
-                            alt="Chef with star rating symbol representing artisan quality" />
-                        <h3>Artisan Craftsmanship:</h3>
-                        <a href="#">
-                            Explore more
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="cards">
-                        <img loading="lazy" src="/Images/svg/rainbow.svg"
-                            alt="Colorful rainbow icon symbolizing welcoming atmosphere" />
-                        <h3>Inviting Atmosphere:</h3>
-                        <a href="#">
-                            Explore more
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="cards">
-                        <img loading="lazy" src="/Images/svg/people.svg"
-                            alt="Community of people icon for friendly service" />
-                        <h3>Community-Oriented:</h3>
-                        <a href="#">
-                            Explore more
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793L9.146 4.354a.5.5 0 1 1 .708-.708l4.5 4.5a.5.5 0 0 1 0 .708l-4.5 4.5a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="dine-video video-wrapper">
-                <video id="heroVideo" muted playsinline>
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <div class="dine-video video-wrapper">
+                    <video id="heroVideo" muted playsinline>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
 
-                <button id="playButton" class="play-button" aria-label="Play Video">▶</button>
+                    <button id="playButton" class="play-button" aria-label="Play Video">▶</button>
+                </div>
             </div>
 
         </section>
         <!-- End of First Part -->
         <!-- Second Part -->
         <section id="dine-with-us-2" class="dine-with-us-2">
-            <div class="dine-content-2 fade-in-section">
-                <div class="dine-text-2">
-                    <h2>Our customers' favorite dishes</h2>
-                    <p class="text-black">
-                        Weather you're in the mood for a hearty breakfast, a leisurely lunch, or an intimate dinner, our
-                        culinary
-                        team is dedicated to providing an unforgettable gastronomic journey.
-                    </p>
+            <div class="section-container">
+                <div class="dine-content-2 fade-in-section">
+                    <div class="dine-text-2">
+                        <h2>Our customers' favorite dishes</h2>
+                        <p class="text-black">
+                            Weather you're in the mood for a hearty breakfast, a leisurely lunch, or an intimate dinner,
+                            our
+                            culinary
+                            team is dedicated to providing an unforgettable gastronomic journey.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="dine-cards-2 fade-in-section cards-api">
-                <!-- loading data from api -->
+                <div class="dine-cards-2 fade-in-section cards-api">
+                    <!-- loading data from api -->
+                </div>
             </div>
         </section>
         <!-- End of Second Part -->
@@ -325,20 +347,24 @@
 
         <!-- Start of the News section -->
         <section id="news" class="news section-base">
-            <div class="news-header fade-in-section">
-                <h2>Subscribe to our Newsletter</h2>
-            </div>
-            <div class="news-subheader fade-in-section">
-                <p>"Discover the latest updates, events, and stories from our bakery.</br> Subscribe to our Newsletter
-                    now."</p>
-            </div>
-            <div class="news-mail fade-in-section">
-                <form action="#" method="post" class="news-form">
-                    <!-- <label for="newsletter-email" class="visually-hidden">Email address</label> -->
-                    <input type="email" id="newsletter-email" placeholder="Enter your email" required
-                        aria-required="true" />
-                    <button type="submit" class="main-button" aria-label="Subscribe to newsletter">Subscribe</button>
-                </form>
+            <div class="section-container">
+                <div class="news-header fade-in-section">
+                    <h2>Subscribe to our Newsletter</h2>
+                </div>
+                <div class="news-subheader fade-in-section">
+                    <p>"Discover the latest updates, events, and stories from our bakery.</br> Subscribe to our
+                        Newsletter
+                        now."</p>
+                </div>
+                <div class="news-mail fade-in-section">
+                    <form action="#" method="post" class="news-form">
+                        <!-- <label for="newsletter-email" class="visually-hidden">Email address</label> -->
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required
+                            aria-required="true" />
+                        <button type="submit" class="main-button"
+                            aria-label="Subscribe to newsletter">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </section>
         <!-- End of the News section -->
@@ -346,80 +372,84 @@
 
     <footer role="contentinfo">
         <section id="links-footer" class="links-footer section-base">
-            <div class="footer-logo-container fade-in-section">
-                <a href="#"><img loading="lazy" src="/Images/svg/logo.svg" width="100px"
-                        alt="Bistro Bakery logo in footer" /></a>
-                <p>600 Brickell Ave. Miami, FL 33131</p>
-                <p><a href="tel:(305) 778-4585">(305) 778-4585</a></p>
-                <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
-            </div>
-
-            <div class="footer-nav-links fade-in-section">
-                <div class="inner">
-                    <ul>
-                        <li>
-                            <h1>Menu</h1>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
+            <div class="section-container">
+                <div class="footer-logo-container fade-in-section">
+                    <a href="#"><img loading="lazy" src="/Images/svg/logo.svg" width="100px"
+                            alt="Bistro Bakery logo in footer" /></a>
+                    <p>600 Brickell Ave. Miami, FL 33131</p>
+                    <p><a href="tel:(305) 778-4585">(305) 778-4585</a></p>
+                    <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
                 </div>
-            </div>
 
-            <div class="footer-quick-links fade-in-section">
-                <div class="inner">
-                    <ul>
-                        <li>
-                            <h1>Quick Links</h1>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Opportunities</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Location & Contact</a></li>
-                    </ul>
+                <div class="footer-nav-links fade-in-section">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <h1>Menu</h1>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">News</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="operational fade-in-section">
-                <div class="inner">
-                    <ul>
-                        <li>
-                            <h1>Operational</h1>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><a>Mon-Fri 8:00AM - 4:00PM</a></li>
-                        <li><a>Sat-Sun 8:00AM - 4:00PM</a></li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <h1>You need a consult</h1>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
-                    </ul>
+                <div class="footer-quick-links fade-in-section">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <h1>Quick Links</h1>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Menu</a></li>
+                            <li><a href="#">Opportunities</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Location & Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="operational fade-in-section">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <h1>Operational</h1>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a>Mon-Fri 8:00AM - 4:00PM</a></li>
+                            <li><a>Sat-Sun 8:00AM - 4:00PM</a></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <h1>You need a consult</h1>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="main-footer" class="main-footer section-base">
-            <div class="footer-socials fade-in-section">
-                <ul>
-                    <!-- fa-facebook border looks wierd so using the official -->
-                    <li><a href="#" class="fa fa-facebook-official"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                    <li><a href="#" class="fa fa-linkedin"></a></li>
-                </ul>
-            </div>
-            <div class="copy-rights fade-in-section">
-                Copyright <span>&#xA9; BISTRO | BAKERY.</span> All Rights Reserved.
+            <div class="section-container">
+                <div class="footer-socials fade-in-section">
+                    <ul>
+                        <!-- fa-facebook border looks wierd so using the official -->
+                        <li><a href="#" class="fa fa-facebook-official"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="copy-rights fade-in-section">
+                    Copyright <span>&#xA9; BISTRO | BAKERY.</span> All Rights Reserved.
+                </div>
             </div>
         </section>
     </footer>

@@ -8,6 +8,9 @@ header {
     padding: 20px 100px 20px 100px;
     z-index: 1000;
     box-sizing: border-box;
+}
+
+header .section-container{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -33,6 +36,15 @@ header {
 
 #backToTopBtn:hover {
     background-color: #555;
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .logo-image {

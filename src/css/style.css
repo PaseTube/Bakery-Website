@@ -12,14 +12,66 @@ body {
     overflow-x: hidden;
 }
 
+
+#loader {
+    position: fixed;
+    z-index: 9999;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 1s ease;
+}
+
+#loader-image {
+    width: 300px;
+    height: auto;
+    transition: transform 2.5s ease-in-out;
+    transform-origin: 33% 75%;
+    image-rendering: auto;
+    /* or 'smooth', depending on browser */
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+#loader.zoomed #loader-image {
+    transform: scale(50);
+}
+
+
+#site-content {
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+
+#site-content.visible {
+    opacity: 1;
+}
+
+
+@keyframes zoomIntoWindow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+
 /* ============ Fade Animations ============ */
 .fade-in-section {
-  opacity: 0;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-section.visible {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* ============ Global Section Base ============ */
@@ -29,6 +81,41 @@ body {
     display: flex;
     position: relative;
     height: auto;
+}
+
+/* ============ NEW: Global Section Container ============ */
+.section-container {
+    max-width: 1400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* Section container for limiting width */
+.section-container-old {
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .section-container-old {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .section-container-old {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
 }
 
 /* ============ Global Heading Main ============ */
@@ -69,7 +156,7 @@ body {
 }
 
 
-.main-button:hover{
+.main-button:hover {
     background-color: bisque;
     cursor: pointer;
 }
@@ -125,7 +212,8 @@ body {
         padding-left: 45px !important;
         padding-right: 45px !important;
     }
-    header{
+
+    header {
         padding-left: 45px !important;
         padding-right: 45px !important;
     }
@@ -172,6 +260,13 @@ body {
 }
 
 @media (max-width: 600px) {
+
+    .section-container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     .text-container {
         width: 100%;
         max-width: 100%;
