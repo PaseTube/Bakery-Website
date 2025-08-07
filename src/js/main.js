@@ -1,7 +1,7 @@
 // Video Play Button Controller
 document.addEventListener('DOMContentLoaded', function () {
-    const video = document.getElementById('heroVideo');
-    const playButton = document.getElementById('playButton');
+    const video = document.querySelector('#heroVideo');
+    const playButton = document.querySelector('#playButton');
     const videoWrapper = document.querySelector('.dine-video.video-wrapper');
 
     // Check if elements exist
@@ -70,43 +70,56 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+(function () {
+    const loaderOverlay = document.querySelector('#loader-overlay');
+    const loaderText = document.querySelector('#loader-text');
+    const word = "Bistro | Bakery";
 
-window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      const siteContent = document.getElementById('site-content');
+    // Add bouncing letters with random delay
+    for (let i = 0; i < word.length; i++) {
+        const span = document.createElement("span");
+        span.textContent = word[i];
+        span.style.animationDelay = `${Math.random() * 0.5}s`;
+        loaderText.appendChild(span);
+    }
 
-      setTimeout(() => {
-        loader.classList.add('zoomed');
+    // Step 1: Background to green
+    setTimeout(() => {
+        loaderOverlay.style.backgroundColor = '#243231';
+        loaderText.style.color = "white";
+    }, 500);
 
-        // Fade in site content after zoom and fade-out complete
+    // Step 2: End loading
+    setTimeout(() => {
+        loaderText.querySelectorAll("span").forEach(span => {
+            span.style.animation = "none";
+            span.style.transform = "translateY(0)";
+        });
+        loaderText.style.transform = "scale(4)";
+        loaderText.style.opacity = "0";
+
+        // Step 3: Fade out loader
         setTimeout(() => {
-          siteContent.classList.add('visible');
-        }, 2700);
-
-        // Remove loader entirely after everything is done
-        setTimeout(() => {
-          loader.remove();
-          document.body.style.overflow = 'auto';
-        }, 1800);
-      }, 1900); 
-    });
-
-
+            loaderOverlay.style.opacity = "0";
+            setTimeout(() => loaderOverlay.remove(), 1500);
+        }, 1500);
+    }, 3000);
+})();
 
 // Custom Cursor Implementation
 const cursor = document.querySelector('#cursor');
 
 document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
 });
 
 document.addEventListener('mousedown', () => {
-  cursor.classList.add('pressed');
+    cursor.classList.add('pressed');
 });
 
 document.addEventListener('mouseup', () => {
-  cursor.classList.remove('pressed');
+    cursor.classList.remove('pressed');
 });
 
 
