@@ -1,8 +1,8 @@
 section#dine-with-us-1 {
     background-color: white;
 
-
-    background-image: url('../img/svg/croissant.svg');
+    padding: 100px 50px 50px 50px;
+    background-image: url('/Images/svg/croissant.svg');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 10%;
@@ -23,7 +23,7 @@ section#dine-with-us-1 .section-container {
     height: auto;
     width: 100%;
     /* Remove individual padding since section-container handles it */
-    padding: 100px 0;
+
     box-sizing: border-box;
 }
 
@@ -194,6 +194,10 @@ section#dine-with-us-1 .section-container {
 }
 
 @media (max-width: 768px) {
+    section#dine-with-us-1 {
+        padding: 100px 50px 50px 50px;
+    }
+
     .text-container h2 {
         font-size: 35px;
         text-align: left;
@@ -245,8 +249,7 @@ section#dine-with-us-2 {
 
     box-sizing: border-box;
 
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding: 100px 50px 50px 50px;
     background-image: url('../img/svg/pancakes.svg');
     background-repeat: no-repeat;
     background-position-x: right;
@@ -260,7 +263,7 @@ section#dine-with-us-2 .section-container {
     display: flex;
     gap: 20px;
     text-align: center;
-    
+
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -376,6 +379,7 @@ section#dine-with-us-2 .section-container {
 }
 
 @media (max-width: 768px) {
+
     .dine-cards-2 .cards-2 {
         flex-direction: column;
         max-width: 100%;

@@ -7,15 +7,9 @@ section#hero {
     object-fit: cover;
     min-height: 750px;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
     /* Remove individual padding since section-container handles it */
-    padding: 0;
+
+    padding: 100px 50px 50px 50px;
     box-sizing: border-box;
 }
 
@@ -25,10 +19,10 @@ section#hero {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    height: 100%;
+    gap: 20px;
     width: 100%;
     position: relative;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: auto;
 }
 
@@ -102,6 +96,7 @@ section#hero {
     align-items: center;
     gap: 8px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .arrow path {

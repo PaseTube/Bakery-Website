@@ -1,6 +1,5 @@
 section#news {
     padding: 150px 100px 0px 100px;
-    gap: 20px;
     margin-bottom: 50px;
 }
 
@@ -10,6 +9,7 @@ section#news .section-container {
     align-content: space-between;
     align-items: end;
     text-align: left;
+    gap: 20px;
 }
 
 

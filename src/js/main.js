@@ -93,4 +93,20 @@ window.addEventListener('load', () => {
 
 
 
+// Custom Cursor Implementation
+const cursor = document.querySelector('#cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+document.addEventListener('mousedown', () => {
+  cursor.classList.add('pressed');
+});
+
+document.addEventListener('mouseup', () => {
+  cursor.classList.remove('pressed');
+});
+
 
