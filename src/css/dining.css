@@ -112,6 +112,111 @@ section#dine-with-us-1 .section-container {
     transform: translateX(4px);
 }
 
+/* Card list */
+.bakery-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.bakery-card {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.bakery-card:hover {
+    transform: scale(1.05);
+}
+
+.bakery-card img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/* Popup overlay */
+.bakery-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.bakery-popup.active {
+    display: flex;
+}
+
+/* Popup overlay */
+.bakery-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.bakery-popup.active {
+    display: flex;
+}
+
+/* Popup content box */
+.bakery-popup-content {
+    background: white;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close button */
+.bakery-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Popup inner content */
+.bakery-popup-inner img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.bakery-popup-inner h2 {
+    margin-bottom: 10px;
+}
+
+.bakery-popup-inner p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.bakery-no-data {
+    color: #666;
+    font-style: italic;
+}
+
 .dine-video.video-wrapper {
     position: relative;
     display: flex;

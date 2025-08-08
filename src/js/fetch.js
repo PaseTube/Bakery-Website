@@ -48,3 +48,30 @@ export async function getDiningData() {
     return [];
   }
 }
+
+
+
+export async function getBakeryData() {
+  const baseUrl = process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3000' 
+    : '';
+
+  const url = process.env.NODE_ENV === 'development' 
+    ? `${baseUrl}/bakeryGoods`
+    : `${baseUrl}/api/bakeryGoods`;
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    return json;
+
+  } catch (error) {
+    console.error('Error fetching favorites data:', error.message);
+    return [];
+  }
+}

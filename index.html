@@ -17,7 +17,7 @@
 <body>
     <div id="loader-overlay" style="background-color: white;">
         <!-- <div id="loader-text"><img src="/Images/bakery-shop.gif" alt=""></div> -->
-         <div id="loader-text"></div>
+        <div id="loader-text"></div>
     </div>
     <!-- cursor -->
     <div class="custom-cursor" id="cursor">
@@ -69,14 +69,14 @@
                 <div class="modal-inner">
                     <div class="button-container">
                         <button class="main-button" id="closeChefModal">Close</button>
-                                <article class="menu__card">
-                                    <figure>
-                                        <img src="/Images/bread.png" alt="Vers gebakken brood" />
-                                        <figcaption>Onze specialiteit: ambachtelijk brood</figcaption>
-                                    </figure>
-                                    <div class="text-container">
-                                    </div>
-                                </article>
+                        <article class="menu__card">
+                            <figure>
+                                <img src="/Images/bread.png" alt="Vers gebakken brood" />
+                                <figcaption>Onze specialiteit: ambachtelijk brood</figcaption>
+                            </figure>
+                            <div class="text-container">
+                            </div>
+                        </article>
                         <div class="chef-container" id="chef-container">
                             <div class="chef-image">
                                 <img loading="lazy" src="/Images/story-person.webp"
@@ -267,7 +267,7 @@
                         </p>
                     </div>
                     <div class="dine-cards">
-                        <div class="cards">
+                        <div class="cards" data-id="1">
                             <img loading="lazy" src="/Images/svg/food.svg"
                                 alt="Fresh vegetables and baked goods icon" />
                             <h3>Fresh, Local Ingredients:</h3>
@@ -280,7 +280,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <div class="cards">
+                        <div class="cards" data-id="2">
                             <img loading="lazy" src="/Images/svg/person-stars.svg"
                                 alt="Chef with star rating symbol representing artisan quality" />
                             <h3>Artisan Craftsmanship:</h3>
@@ -293,7 +293,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <div class="cards">
+                        <div class="cards" data-id="3">
                             <img loading="lazy" src="/Images/svg/rainbow.svg"
                                 alt="Colorful rainbow icon symbolizing welcoming atmosphere" />
                             <h3>Inviting Atmosphere:</h3>
@@ -306,7 +306,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <div class="cards">
+                        <div class="cards" data-id="4">
                             <img loading="lazy" src="/Images/svg/people.svg"
                                 alt="Community of people icon for friendly service" />
                             <h3>Community-Oriented:</h3>
@@ -321,6 +321,15 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Bakery Popup -->
+                <div id="bakery-popup" class="bakery-popup">
+                    <div class="bakery-popup-content">
+                        <button id="bakery-popup-close" class="bakery-popup-close">×</button>
+                        <div class="bakery-popup-inner">Loading...</div>
+                    </div>
+                </div>
+
                 <div class="dine-video video-wrapper">
                     <video id="heroVideo" muted playsinline>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
@@ -369,8 +378,10 @@
                 <div class="news-mail fade-in-section">
                     <form action="#" method="post" class="news-form">
                         <label for="newsletter-email" class="newsletter-label">E-mail adres:</label>
-                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required aria-required="true" />
-                        <button type="submit" class="main-button" aria-label="Subscribe to newsletter">Subscribe</button>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required
+                            aria-required="true" />
+                        <button type="submit" class="main-button"
+                            aria-label="Subscribe to newsletter">Subscribe</button>
                     </form>
                 </div>
             </div>
