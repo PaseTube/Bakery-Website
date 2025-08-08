@@ -1,16 +1,77 @@
-/* Get Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;500;700&family=Playfair+Display:wght@400;700&display=swap');
+/* BEM Footer Nav Styling */
+.footer__nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: flex-start;
+}
+.footer__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #242323;
+    font-family: 'Playfair Display', serif;
+}
+.footer__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer__nav-list li a {
+    text-decoration: none;
+    color: #24232396;
+    font-size: 18px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer__nav-list li a:hover {
+    color: #000;
+}
 
 /* Footer grid layout */
 section#links-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
     padding: 100px 100px 50px 100px;
-    align-items: start;
     background-color: #F6F6F6;
 }
+
+    section#links-footer .section-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+        background-color: #F6F6F6;
+    }
+
+    /* BEM: wrapper voor navigatie in footer */
+    /* .footer__nav-wrapper {
+        
+    } */
+    .footer__heading {
+        font-size: 25px;
+        font-weight: 700;
+        font-family: 'Playfair Display';
+        color: black;
+        margin-bottom: 20px;
+    }
+    .footer__nav-list,
+    .footer__quick-list,
+    .footer__open-list,
+    .footer__consult-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer__nav-list li,
+    .footer__quick-list li,
+    .footer__open-list li,
+    .footer__consult-list li {
+        margin-bottom: 15px;
+    }
 
 .footer-quick-links .inner a:hover,
 .footer-nav-links .inner a:hover,
@@ -20,7 +81,7 @@ section#links-footer {
 }
 
 
-#links-footer > div:not(:first-child) {
+#links-footer .section-container > div:not(:first-child) {
     border-left: 2px solid #0000003b;
     padding-left: 30px;
     padding-right: 30px;
@@ -121,16 +182,20 @@ section#links-footer {
 
 /* Media queries */
 @media (max-width: 1279px) {
+
     section#links-footer {
+        padding: 50px;
+    }
+
+    section#links-footer .section-container {
         display: flex;
         flex-direction: column;
         gap: 50px;
-        padding: 50px;
         box-sizing: border-box;
         overflow-x: hidden;
     }
 
-    #links-footer > div {
+    #links-footer .section-container > div {
         width: 100%;
         max-width: 100%;
         border: none !important;
@@ -142,13 +207,13 @@ section#links-footer {
         box-sizing: border-box;
     }
 
-    #links-footer > div:last-child {
+    #links-footer .section-container > div:last-child {
         border-bottom: none !important;
         padding-bottom: 0;
         margin-bottom: 0;
     }
 
-    #links-footer > div:not(:first-child) {
+    #links-footer .section-container > div:not(:first-child) {
         border-left: 2px solid #0000003b;
         padding-left: 0px;
         padding-right: 0px;
@@ -199,14 +264,18 @@ section#links-footer {
 
 /* MAIN FOOTER */
 section#main-footer {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 1fr;
     padding: 10px 100px 50px 100px;
-    align-items: end;
     /* justify-items: center; */
     background-color: #F6F6F6;
 }
+
+section#main-footer .section-container{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr;
+    align-items: end;
+}
+
 
 .footer-socials{
     justify-items: start !important;
@@ -259,11 +328,16 @@ section#main-footer {
 /* media queries */
 
 @media (max-width: 1279px){
+    
     section#main-footer {
+        padding: 20px 50px 50px 50px;
+    }
+
+    section#main-footer .section-container{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 20px;
-        padding: 20px 50px 50px 50px;
+        
         align-items: start;
         justify-items: start;
         background-color: #F6F6F6;

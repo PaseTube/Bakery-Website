@@ -1,26 +1,30 @@
-/* First part of the section */
 section#dine-with-us-1 {
     background-color: white;
+
+    padding: 100px 50px 50px 50px;
+    background-image: url('/Images/svg/croissant.svg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 10%;
+    background-size: 250px;
+    background-blend-mode: normal;
+}
+
+section#dine-with-us-1 .section-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+    position: relative;
     text-align: left;
     min-height: 750px;
     height: auto;
     width: 100%;
-    position: relative;
-    padding: 100px 100px 100px 100px;
-    box-sizing: border-box;
+    /* Remove individual padding since section-container handles it */
 
-    background-image: url('../img/svg/croissant.svg');
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: 10%;
-    background-size: 250px;
-    background-blend-mode: normal;
+    box-sizing: border-box;
 }
 
 .dine-cards {
@@ -60,7 +64,7 @@ section#dine-with-us-1 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width: 220px;
+    width: 200px;
     height: 400px;
     background-color: #fff;
     padding: 20px;
@@ -108,13 +112,118 @@ section#dine-with-us-1 {
     transform: translateX(4px);
 }
 
+/* Card list */
+.bakery-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.bakery-card {
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.bakery-card:hover {
+    transform: scale(1.05);
+}
+
+.bakery-card img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/* Popup overlay */
+.bakery-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.bakery-popup.active {
+    display: flex;
+}
+
+/* Popup overlay */
+.bakery-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.bakery-popup.active {
+    display: flex;
+}
+
+/* Popup content box */
+.bakery-popup-content {
+    background: white;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close button */
+.bakery-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Popup inner content */
+.bakery-popup-inner img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.bakery-popup-inner h2 {
+    margin-bottom: 10px;
+}
+
+.bakery-popup-inner p {
+    font-size: 1rem;
+    color: #444;
+}
+
+.bakery-no-data {
+    color: #666;
+    font-style: italic;
+}
+
 .dine-video.video-wrapper {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 600px;
-    width: 300px;
+    width: 200px;
 }
 
 .video-wrapper video {
@@ -164,7 +273,7 @@ section#dine-with-us-1 {
 
 
 @media (max-width: 1818px) {
-    section#dine-with-us-1 {
+    section#dine-with-us-1 .section-container {
         flex-direction: row;
         align-items: flex-end;
         height: auto;
@@ -174,11 +283,6 @@ section#dine-with-us-1 {
         width: 100%;
         max-width: none;
         text-align: left;
-    }
-
-    .dine-video {
-        width: 250px !important;
-        height: 600px;
     }
 }
 
@@ -195,6 +299,10 @@ section#dine-with-us-1 {
 }
 
 @media (max-width: 768px) {
+    section#dine-with-us-1 {
+        padding: 100px 50px 50px 50px;
+    }
+
     .text-container h2 {
         font-size: 35px;
         text-align: left;
@@ -241,26 +349,31 @@ section#dine-with-us-1 {
 
 section#dine-with-us-2 {
     background-color: white;
-    display: flex;
-    gap: 20px;
-    text-align: center;
     min-height: 750px;
     height: auto;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    padding: 0 100px 0px 100px;
+
     box-sizing: border-box;
 
-    background-image: url('../img/svg/pancakes.svg');
+    padding: 100px 50px 50px 50px;
+    background-image: url('/Images/svg/pancakes.svg');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: 10%;
     background-size: 250px;
     background-blend-mode: normal;
 
+}
+
+section#dine-with-us-2 .section-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
 }
 
 .dine-content-2 {
@@ -304,11 +417,13 @@ section#dine-with-us-2 {
 }
 
 .dine-cards-2 .cards-2 {
-    width: 400px;
-    height: 600px;
+    width: 320px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    text-align: left;
     justify-content: space-between;
     background-color: transparent;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -351,8 +466,15 @@ section#dine-with-us-2 {
 
 @media (max-width: 1760px) {
     .dine-cards-2 {
-        justify-content: space-around;
+        justify-content: space-between;
     }
+
+    .dine-cards-2 .cards-2 {
+        width: 300px;
+        height: 400px;
+        padding: 90px 0;
+    }
+
 }
 
 @media (max-width: 900px) {
@@ -362,6 +484,7 @@ section#dine-with-us-2 {
 }
 
 @media (max-width: 768px) {
+
     .dine-cards-2 .cards-2 {
         flex-direction: column;
         max-width: 100%;

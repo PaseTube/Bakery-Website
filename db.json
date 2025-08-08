@@ -13,5 +13,13 @@
     {"id": 3, "image": "Images/diningcard-3.webp", "name": "Assorted Breads and Rolls"},
     {"id": 4, "image": "Images/diningcard-4.webp", "name": "Sourdough Bread"}
   ],
+
+  "bakeryGoods": [
+    {"id": 1, "image": "Images/bakerygoods-1.webp", "name": "Freshly Baked Bread"},
+    {"id": 2, "image": "Images/bakerygoods-2.webp", "name": "Artisan Pastries"},
+    {"id": 3, "image": "Images/bakerygoods-3.webp", "name": "Gourmet Cakes"},
+    {"id": 4, "image": "Images/bakerygoods-4.webp", "name": "Handcrafted Cookies"}
+  ],
+
    "profile": { "name": "typicode" }
 }

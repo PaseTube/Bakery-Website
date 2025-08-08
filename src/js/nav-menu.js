@@ -6,9 +6,36 @@ const openChefBtn = document.querySelector('#openChefModal');
 const chefModal = document.querySelector('#chef-modal');
 const closeChefBtn = document.querySelector('#closeChefModal');
 
+document.addEventListener("DOMContentLoaded", function () {
+  const topScrollBtn = document.querySelector("#backToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScrollBtn.style.display = "block";
+    } else {
+      topScrollBtn.style.display = "none";
+    }
+  });
+
+  window.topFunction = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+});
+
+
+// close all modals
+function closeAllModals() {
+  modal.classList.remove("open");
+  chefModal.classList.remove("open");
+  // if more add here!
+}
 // Open and close gallery
 openBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  closeAllModals();
   modal.classList.add("open");
 });
 
@@ -19,6 +46,7 @@ closeBtn.addEventListener("click", () => {
 // Open Chef modal
 openChefBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  closeAllModals();
   chefModal.classList.add("open");
 });
 
