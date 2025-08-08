@@ -51,7 +51,7 @@
 
 
                 <div class="nav-buttons">
-                    <a class="main-button" href="#">Menu</a>
+                    <a class="main-button" href="Menu.html">Menu</a>
                     <a class="contact" href="#">Contact Us</a>
                 </div>
             </nav>
@@ -69,8 +69,14 @@
                 <div class="modal-inner">
                     <div class="button-container">
                         <button class="main-button" id="closeChefModal">Close</button>
-                    </div>
-                    <div class="chef-modal-container">
+                                <article class="menu__card">
+                                    <figure>
+                                        <img src="/Images/bread.png" alt="Vers gebakken brood" />
+                                        <figcaption>Onze specialiteit: ambachtelijk brood</figcaption>
+                                    </figure>
+                                    <div class="text-container">
+                                    </div>
+                                </article>
                         <div class="chef-container" id="chef-container">
                             <div class="chef-image">
                                 <img loading="lazy" src="/Images/story-person.webp"
@@ -362,11 +368,9 @@
                 </div>
                 <div class="news-mail fade-in-section">
                     <form action="#" method="post" class="news-form">
-                        <!-- <label for="newsletter-email" class="visually-hidden">Email address</label> -->
-                        <input type="email" id="newsletter-email" placeholder="Enter your email" required
-                            aria-required="true" />
-                        <button type="submit" class="main-button"
-                            aria-label="Subscribe to newsletter">Subscribe</button>
+                        <label for="newsletter-email" class="newsletter-label">E-mail adres:</label>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required aria-required="true" />
+                        <button type="submit" class="main-button" aria-label="Subscribe to newsletter">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -386,13 +390,9 @@
                 </div>
 
                 <div class="footer-nav-links fade-in-section">
-                    <div class="inner">
-                        <ul>
-                            <li>
-                                <h1>Menu</h1>
-                            </li>
-                        </ul>
-                        <ul>
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Menu</h2>
+                        <ul class="footer__quick-list">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Gallery</a></li>
@@ -402,13 +402,9 @@
                 </div>
 
                 <div class="footer-quick-links fade-in-section">
-                    <div class="inner">
-                        <ul>
-                            <li>
-                                <h1>Quick Links</h1>
-                            </li>
-                        </ul>
-                        <ul>
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Quick Links</h2>
+                        <ul class="footer__quick-list">
                             <li><a href="#">Menu</a></li>
                             <li><a href="#">Opportunities</a></li>
                             <li><a href="#">Privacy Policy</a></li>
@@ -418,22 +414,14 @@
                 </div>
 
                 <div class="operational fade-in-section">
-                    <div class="inner">
-                        <ul>
-                            <li>
-                                <h1>Operational</h1>
-                            </li>
+                    <div class="footer__operational-wrapper">
+                        <h2 class="footer__heading">Operational</h2>
+                        <ul class="footer__open-list">
+                            <li>Mon-Fri 8:00AM - 4:00PM</li>
+                            <li>Sat-Sun 8:00AM - 4:00PM</li>
                         </ul>
-                        <ul>
-                            <li><a>Mon-Fri 8:00AM - 4:00PM</a></li>
-                            <li><a>Sat-Sun 8:00AM - 4:00PM</a></li>
-                        </ul>
-                        <ul>
-                            <li>
-                                <h1>You need a consult</h1>
-                            </li>
-                        </ul>
-                        <ul>
+                        <h2 class="footer__heading">You need a consult</h2>
+                        <ul class="footer__consult-list">
                             <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
                         </ul>
                     </div>

@@ -56,6 +56,9 @@ section#news .section-container {
     margin-right: 5px;
 }
 
+.newsletter-label{
+    display: none;
+}
 
 
 @media (max-width: 1279px) {

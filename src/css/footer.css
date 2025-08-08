@@ -1,6 +1,37 @@
-/* Get Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;500;700&family=Playfair+Display:wght@400;700&display=swap');
+/* BEM Footer Nav Styling */
+.footer__nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: flex-start;
+}
+.footer__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #242323;
+    font-family: 'Playfair Display', serif;
+}
+.footer__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer__nav-list li a {
+    text-decoration: none;
+    color: #24232396;
+    font-size: 18px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer__nav-list li a:hover {
+    color: #000;
+}
 
 /* Footer grid layout */
 section#links-footer {
@@ -8,13 +39,38 @@ section#links-footer {
     background-color: #F6F6F6;
 }
 
-section#links-footer .section-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: start;
-    background-color: #F6F6F6;
-}
+    section#links-footer .section-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-items: start;
+        background-color: #F6F6F6;
+    }
+
+    .footer__nav-wrapper {
+        /* BEM: wrapper voor navigatie in footer */
+    }
+    .footer__heading {
+        font-size: 25px;
+        font-weight: 700;
+        font-family: 'Playfair Display';
+        color: black;
+        margin-bottom: 20px;
+    }
+    .footer__nav-list,
+    .footer__quick-list,
+    .footer__open-list,
+    .footer__consult-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .footer__nav-list li,
+    .footer__quick-list li,
+    .footer__open-list li,
+    .footer__consult-list li {
+        margin-bottom: 15px;
+    }
 
 .footer-quick-links .inner a:hover,
 .footer-nav-links .inner a:hover,

@@ -250,7 +250,7 @@ section#dine-with-us-2 {
     box-sizing: border-box;
 
     padding: 100px 50px 50px 50px;
-    background-image: url('../img/svg/pancakes.svg');
+    background-image: url('/Images/svg/pancakes.svg');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: 10%;
