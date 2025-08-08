@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/Images/svg/logo.svg" type="image/svg" />
+    <title>Bakery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Bistro Bakery in Miami offers artisan pastries, breads, and cozy dining in the heart of downtown. Fresh, handmade, and unforgettable." />
+    <meta name="keywords"
+        content="Bistro Bakery, artisan bakery, Miami bakery, fresh pastries, sourdough bread, croissants, pain au chocolat, breakfast Miami, local bakery, handmade desserts, quiche, cinnamon rolls, bakery menu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <div id="loader-overlay" style="background-color: white;">
+        <!-- <div id="loader-text"><img src="/Images/bakery-shop.gif" alt=""></div> -->
+        <div id="loader-text"></div>
+    </div>
+    <!-- cursor -->
+    <div class="custom-cursor" id="cursor">
+        <img src="/Images/baguette.png" alt="cursor" width="50px">
+    </div>
+    <!-- scroll back to top button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+    <header class="header menu_page" id="navbar">
+        <div class="section-container">
+            <div class="nav-logo fade-in-section">
+                <a href="#">
+                    <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
+                </a>
+            </div>
+
+            <!-- Burger Menu -->
+            <div class="nav-burger fade-in-section" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav -->
+            <nav id="main-nav" class="fade-in-section">
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
+                    <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
+                </ul>
+
+
+
+                <div class="nav-buttons">
+                    <a class="main-button" href="Menu.html">Menu</a>
+                    <a class="contact" href="#">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main role="main">
+        <!-- Chef modal -->
+        <div id="chef-modal" class="chef-modal">
+            <div class="modal-inner-wrapper">
+                <div class="image-cont"></div>
+
+                <div class="modal-inner">
+                    <div class="button-container">
+                        <button class="main-button" id="closeChefModal">Close</button>
+                        <article class="menu__card">
+                            <figure>
+                                <img src="/Images/bread.png" alt="Vers gebakken brood" />
+                                <figcaption>Onze specialiteit: ambachtelijk brood</figcaption>
+                            </figure>
+                            <div class="text-container">
+                            </div>
+                        </article>
+                        <div class="chef-container" id="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion
+                                    for
+                                    baking and a commitment to quality. Every pastry is crafted with care, using
+                                    traditional
+                                    techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts,
+                                    all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="chef-container" id="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion
+                                    for
+                                    baking and a commitment to quality. Every pastry is crafted with care, using
+                                    traditional
+                                    techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts,
+                                    all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- gallery modal  -->
+        <div id="modal" class="modal">
+            <div class="modal-inner">
+                <div class="button-container">
+                    <button class="main-button" id="closeModal">Close</button>
+                </div>
+                <div class="gallery-random" id="gallery-random">
+                    <!-- load images! -->
+                </div>
+            </div>
+        </div>      
+    </main>
+
+    <footer role="contentinfo">
+       
+    </footer>
+    <!-- load vite models -->
+    <script type="module" src="/src/app.js"></script>
+</body>
+
+</html>

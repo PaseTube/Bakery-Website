@@ -16,6 +16,10 @@ body {
     overflow-x: hidden;
 }
 
+.menu_page{
+    background-color: #243231;
+}
+
 /* custom cursor */
 a,
 button,
