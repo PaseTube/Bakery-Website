@@ -47,9 +47,10 @@ section#links-footer {
         background-color: #F6F6F6;
     }
 
-    .footer__nav-wrapper {
-        /* BEM: wrapper voor navigatie in footer */
-    }
+    /* BEM: wrapper voor navigatie in footer */
+    /* .footer__nav-wrapper {
+        
+    } */
     .footer__heading {
         font-size: 25px;
         font-weight: 700;
