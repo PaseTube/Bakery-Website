@@ -8,10 +8,17 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
-    },
-    {
-      "source": "/Menu.html",
-      "destination": "/Menu.html"
     }
+  ],
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "src/css/*", "use": "@vercel/static" },
+    { "src": "src/js/*", "use": "@vercel/static" },
+    { "src": "public/Images/*", "use": "@vercel/static" },
+    { "src": "api/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/Menu", "dest": "/Menu.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
