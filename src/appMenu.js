@@ -13,3 +13,4 @@ import './js/nav-menu.js';
 import './js/menu.js';
 import './js/dining-card.js';
 import './js/main.js';
+import './js/menuItem.js';
