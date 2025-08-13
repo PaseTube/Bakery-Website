@@ -6,9 +6,5 @@
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" }
-  ],
-  "routes": [
-    { "src": "/menu(?:\\.html)?", "dest": "/menu.html" },
-    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
