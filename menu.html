@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/Images/svg/logo.svg" type="image/svg" />
+    <title>Bakery Website | Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Bistro Bakery in Miami offers artisan pastries, breads, and cozy dining in the heart of downtown. Fresh, handmade, and unforgettable." />
+    <meta name="keywords"
+        content="Bistro Bakery, artisan bakery, Miami bakery, fresh pastries, sourdough bread, croissants, pain au chocolat, breakfast Miami, local bakery, handmade desserts, quiche, cinnamon rolls, bakery menu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <div id="loader-overlay" style="background-color: white;">
+        <!-- <div id="loader-text"><img src="/Images/bakery-shop.gif" alt=""></div> -->
+        <div id="loader-text"></div>
+    </div>
+    <!-- cursor -->
+    <div class="custom-cursor" id="cursor">
+        <img src="/Images/baguette.png" alt="cursor" width="50px">
+    </div>
+    <!-- scroll back to top button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+    <header class="header" id="navbar">
+        <div class="section-container">
+            <div class="nav-logo fade-in-section">
+                <a href="#">
+                    <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
+                </a>
+            </div>
+
+            <!-- Burger Menu -->
+            <div class="nav-burger fade-in-section" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav -->
+            <nav id="main-nav" class="fade-in-section">
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
+                    <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
+                </ul>
+
+
+
+                <div class="nav-buttons">
+                    <a class="main-button" href="Menu.html">Menu</a>
+                    <!-- does nothing for now -->
+                    <a class="contact" href="#">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main role="main">
+        <!-- Chef modal -->
+        <div id="chef-modal" class="chef-modal">
+            <div class="modal-inner-wrapper">
+                <div class="image-cont"></div>
+
+                <div class="modal-inner">
+                    <button class="main-button" id="closeChefModal">Close</button>
+
+                    <div class="chef-modal-container">
+                        <div class="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts, all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts, all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- einde chef-modal-container -->
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- gallery modal  -->
+        <div id="modal" class="modal">
+            <div class="modal-inner">
+                <div class="button-container">
+                    <button class="main-button" id="closeModal">Close</button>
+                </div>
+                <div class="gallery-random" id="gallery-random">
+                    <!-- load images! -->
+                </div>
+            </div>
+        </div>
+
+        <section class="menu">
+            <div class="section-container">
+                <h1 class="menu-title">Menu</h1>
+                <p class="menu-description">Discover our selection of freshly baked goods, from artisan breads
+                    to delectable pastries. Each item is crafted with care, using the finest ingredients to ensure
+                    quality and flavor. Whether you're looking for a quick breakfast, a sweet treat, or a savory snack,
+                    our menu has something for everyone.</p>
+
+                <label for="tagFilter" class="menu-description">Filter by Tag:</label>
+                <select id="tagFilter" class="tag-filter">
+                    <option value="">All</option>
+                    <!-- Options will be loaded dynamically from JS -->
+                </select>
+                <div class="menu-items">
+                    <!-- loading from js -->
+                </div>
+
+                <div class="extended-menu">
+                    <h2 class="section-subtitle">Specialty Items</h2>
+                    <div class="menu-items specials">
+                        <!-- loading from js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <footer role="contentinfo">
+        <section id="links-footer" class="links-footer section-base">
+            <div class="section-container">
+                <div class="footer-logo-container fade-in-section">
+                    <a href="#"><img loading="lazy" src="/Images/svg/logo.svg" width="100px"
+                            alt="Bistro Bakery logo in footer" /></a>
+                    <p>600 Brickell Ave. Miami, FL 33131</p>
+                    <p><a href="tel:(305) 778-4585">(305) 778-4585</a></p>
+                    <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
+                </div>
+
+                <div class="footer-nav-links fade-in-section">
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Menu</h2>
+                        <ul class="footer__quick-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#our-story">About</a></li>
+                            <li><a href="#" id="openModal">Gallery</a></li>
+                            <li><a href="#news">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-quick-links fade-in-section">
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Quick Links</h2>
+                        <ul class="footer__quick-list">
+                            <li><a href="Menu.html">Menu</a></li>
+                            <li><a href="#">Opportunities</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Location & Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="operational fade-in-section">
+                    <div class="footer__operational-wrapper">
+                        <h2 class="footer__heading">Operational</h2>
+                        <ul class="footer__open-list">
+                            <li>Mon-Fri 8:00AM - 4:00PM</li>
+                            <li>Sat-Sun 8:00AM - 4:00PM</li>
+                        </ul>
+                        <h2 class="footer__heading">You need a consult</h2>
+                        <ul class="footer__consult-list">
+                            <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="main-footer" class="main-footer section-base">
+            <div class="section-container">
+                <div class="footer-socials fade-in-section">
+                    <ul>
+                        <!-- fa-facebook border looks wierd so using the official -->
+                        <li><a href="#" class="fa fa-facebook-official"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="copy-rights fade-in-section">
+                    Copyright <span>&#xA9; BISTRO | BAKERY.</span> All Rights Reserved.
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- load vite models -->
+    <script type="module" src="/src/appMenu.js"></script>
+</body>
+
+</html>
