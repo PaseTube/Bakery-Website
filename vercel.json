@@ -8,7 +8,7 @@
     { "source": "/api/(.*)", "destination": "/api/$1" }
   ],
   "routes": [
-    { "src": "/Menu(?:\\.html)?", "dest": "/Menu.html" },
+    { "src": "/menu(?:\\.html)?", "dest": "/menu.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
