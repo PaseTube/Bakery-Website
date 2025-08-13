@@ -84,7 +84,7 @@ function setupCardClickHandlers() {
 
 // Open popup with loading state then content
 function openPopup(id) {
-    const popup = document.getElementById('bakery-popup');
+    const popup = document.querySelector("#bakery-popup');
     const popupInner = document.querySelector('.bakery-popup-inner');
     
     // Show loading state
@@ -123,8 +123,8 @@ function openPopup(id) {
 
 // Setup popup close handlers
 function setupPopupCloseHandlers() {
-    const popup = document.getElementById('bakery-popup');
-    const closeBtn = document.getElementById('bakery-popup-close');
+    const popup = document.querySelector("#bakery-popup');
+    const closeBtn = document.querySelector("#bakery-popup-close');
     
     // Close button click
     closeBtn.addEventListener('click', closePopup);
@@ -146,7 +146,7 @@ function setupPopupCloseHandlers() {
 
 // Close popup function
 function closePopup() {
-    const popup = document.getElementById('bakery-popup');
+    const popup = document.querySelector("#bakery-popup');
     popup.classList.remove('active');
 }
 

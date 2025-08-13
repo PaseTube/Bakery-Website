@@ -21,7 +21,7 @@ async function getMenuData() {
 }
 
 function populateTagDropdown() {
-    const tagSelect = document.getElementById('tagFilter');
+    const tagSelect = document.querySelector("#tagFilter');
     if (!tagSelect) return;
 
     // Get unique tags from all items

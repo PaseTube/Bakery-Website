@@ -1,5 +1,5 @@
 .menu {
-    padding: 60px 20px;
+    padding: 3.75rem 1.25rem;
     background: linear-gradient(135deg, #344746 0%, #243231 100%);
     position: relative;
     overflow: hidden;
@@ -17,7 +17,7 @@
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -28,44 +28,44 @@
     font-weight: 700;
     text-align: center;
     color: white;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: -1px;
+    margin-bottom: 1.25rem;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.0625rem;
 }
 
 .menu-description {
     font-size: clamp(1rem, 2vw, 1.2rem);
     text-align: center;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 50px;
-    max-width: 800px;
+    margin-bottom: 3.125rem;
+    max-width: 50rem;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
 }
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    padding: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
+    gap: 1.875rem;
+    padding: 1.25rem 0;
 }
 
 .menu__product__card {
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
+    border-radius: 1.25rem;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.625rem);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
 .menu__product__card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.625rem) scale(1.02);
+    box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.2);
 }
 
 .menu__product__card::before {
@@ -74,7 +74,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 0.25rem;
     background: linear-gradient(90deg, #667eea, #764ba2);
     transform: scaleX(0);
     transition: transform 0.3s ease;
@@ -87,7 +87,7 @@
 .menu__product__card figure {
     position: relative;
     margin: 0;
-    height: 250px;
+    height: 15.625rem;
     overflow: hidden;
 }
 
@@ -104,14 +104,14 @@
 
 .menu__product__card figcaption {
     position: absolute;
-    bottom: 15px;
-    left: 20px;
+    bottom: 0.9375rem;
+    left: 1.25rem;
     background: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
     font-size: 0.9rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
@@ -121,30 +121,30 @@
 }
 
 .text-container {
-    padding: 30px;
+    padding: 1.875rem;
 }
 
 .text-container h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
     position: relative;
 }
 
 .text-container h2::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -0.3125rem;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 0.125rem;
     background: linear-gradient(90deg, #667eea, #764ba2);
     transition: width 0.3s ease;
 }
 
 .menu__product__card:hover .text-container h2::after {
-    width: 50px;
+    width: 3.125rem;
 }
 
 .text-container p {
@@ -155,15 +155,15 @@
 
 .price-tag {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0.9375rem;
+    right: 0.9375rem;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 1.25rem;
     font-weight: 600;
     font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 0.25rem 0.9375rem rgba(102, 126, 234, 0.3);
     transform: scale(0);
     transition: transform 0.3s ease 0.1s;
 }
@@ -174,27 +174,27 @@
 
 /* Additional menu items for demonstration */
 .extended-menu {
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
 }
 
 .section-subtitle {
     font-size: 2rem;
     color: white;
     text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.875rem;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .tag-filter {
     display: block;
     width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    max-width: 18.75rem;
+    margin: 1.25rem auto;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #ccc;
     background-color: #fff;
     font-size: 1rem;
     color: #333;
@@ -204,27 +204,27 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .menu {
-        padding: 40px 15px;
+        padding: 2.5rem 0.9375rem;
     }
 
     .menu-items {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 1.25rem;
     }
 
     .menu__product__card {
         margin: 0 auto;
-        max-width: 400px;
+        max-width: 25rem;
     }
 
     .text-container {
-        padding: 20px;
+        padding: 1.25rem;
     }
 }
 
 @media (max-width: 480px) {
     .menu__product__card figure {
-        height: 200px;
+        height: 12.5rem;
     }
 }
 
@@ -232,7 +232,7 @@
 @keyframes slideInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(1.875rem);
     }
 
     to {

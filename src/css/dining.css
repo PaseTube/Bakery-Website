@@ -1,36 +1,33 @@
 section#dine-with-us-1 {
     background-color: white;
-
-    padding: 100px 50px 50px 50px;
+    padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     background-image: url('/Images/svg/croissant.svg');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 10%;
-    background-size: 250px;
+    background-size: 15.625rem;
     background-blend-mode: normal;
 }
 
 section#dine-with-us-1 .section-container {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
     text-align: left;
-    min-height: 750px;
+    min-height: 46.875rem;
     height: auto;
     width: 100%;
-    /* Remove individual padding since section-container handles it */
-
     box-sizing: border-box;
 }
 
 .dine-cards {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 3.125rem;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
@@ -38,70 +35,57 @@ section#dine-with-us-1 .section-container {
 }
 
 .dine-text {
-    width: 700px;
-    max-width: calc(100vw - 100px);
-    /* Use global text-container-base for shared styles */
+    width: 43.75rem;
+    max-width: calc(100vw - 6.25rem);
 }
-
-/*.dine-text.text-container-base {
-     For future-proofing, allow both classes 
-}*/
-
 
 .dine-text h2 {
-    word-spacing: 0.5px;
+    word-spacing: 0.03125rem;
     color: black;
-    /* Use global heading-main for shared styles */
 }
-
-/*.dine-text h2.heading-main {
-     For future-proofing, allow both classes 
-}*/
-
 
 .dine-cards .cards {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width: 200px;
-    height: 400px;
+    width: 12.5rem;
+    height: 25rem;
     background-color: #fff;
-    padding: 20px;
-    border: 2px solid #f0f0f0;
+    padding: 1.25rem;
+    border: 0.125rem solid #f0f0f0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dine-cards .cards:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.375rem);
+    box-shadow: 0 0.875rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .cards img {
     width: 100%;
-    height: 150px;
+    height: 9.375rem;
     object-fit: contain;
     object-position: left;
-    /* filter: invert(60%) sepia(96%) saturate(650%) hue-rotate(5deg) brightness(92%) contrast(100%); */
 }
 
 .cards h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 900;
     color: black;
-    margin: 10px 0 0;
+    margin: 0.625rem 0 0;
 }
 
 .cards a {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 0.375rem;
     text-decoration: none;
     color: #5a3e1b;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
-    margin-top: 10px;
-    padding: 25px 40px 25px 0px;
+    margin-top: 0.625rem;
+    padding: 1.5625rem 2.5rem 1.5625rem 0;
 }
 
 .cards a svg {
@@ -109,20 +93,20 @@ section#dine-with-us-1 .section-container {
 }
 
 .cards a:hover svg {
-    transform: translateX(4px);
+    transform: translateX(0.25rem);
 }
 
 /* Card list */
 .bakery-card-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: 0.9375rem;
 }
 
 .bakery-card {
     background: white;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 0.5rem;
+    padding: 0.625rem;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -134,25 +118,7 @@ section#dine-with-us-1 .section-container {
 
 .bakery-card img {
     max-width: 100%;
-    border-radius: 6px;
-}
-
-/* Popup overlay */
-.bakery-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.bakery-popup.active {
-    display: flex;
+    border-radius: 0.375rem;
 }
 
 /* Popup overlay */
@@ -176,21 +142,21 @@ section#dine-with-us-1 .section-container {
 /* Popup content box */
 .bakery-popup-content {
     background: white;
-    border-radius: 10px;
-    max-width: 500px;
+    border-radius: 0.625rem;
+    max-width: 31.25rem;
     width: 90%;
-    padding: 20px;
+    padding: 1.25rem;
     position: relative;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.5rem 1.875rem rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 /* Close button */
 .bakery-popup-close {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 25px;
+    top: 0.625rem;
+    right: 0.9375rem;
+    font-size: 1.5625rem;
     border: none;
     background: none;
     cursor: pointer;
@@ -199,12 +165,12 @@ section#dine-with-us-1 .section-container {
 /* Popup inner content */
 .bakery-popup-inner img {
     max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.9375rem;
 }
 
 .bakery-popup-inner h2 {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 .bakery-popup-inner p {
@@ -222,8 +188,8 @@ section#dine-with-us-1 .section-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
-    width: 200px;
+    height: 37.5rem;
+    width: 12.5rem;
 }
 
 .video-wrapper video {
@@ -250,8 +216,8 @@ section#dine-with-us-1 .section-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
 }
 
 .play-button:hover {
@@ -270,7 +236,6 @@ section#dine-with-us-1 .section-container {
         align-items: center;
     }
 }
-
 
 @media (max-width: 1818px) {
     section#dine-with-us-1 .section-container {
@@ -294,17 +259,17 @@ section#dine-with-us-1 .section-container {
 
     .dine-video {
         width: 100% !important;
-        height: 400px;
+        height: 25rem;
     }
 }
 
 @media (max-width: 768px) {
     section#dine-with-us-1 {
-        padding: 100px 50px 50px 50px;
+        padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     }
 
     .text-container h2 {
-        font-size: 35px;
+        font-size: 2.1875rem;
         text-align: left;
         width: 100%;
         max-width: none;
@@ -312,63 +277,58 @@ section#dine-with-us-1 .section-container {
 
     .dine-video {
         width: 100% !important;
-        height: 400px;
+        height: 25rem;
         max-width: 100%;
     }
 
     .play-button {
         font-size: 2.5rem;
-        width: 70px;
-        height: 70px;
+        width: 4.375rem;
+        height: 4.375rem;
     }
 }
 
 @media (max-width: 321px) {
     .dine-cards .cards {
         width: 100%;
-        height: 400px;
+        height: 25rem;
     }
 
     .dine-video {
         width: 100% !important;
-        height: 300px;
+        height: 18.75rem;
         max-width: 100%;
     }
 
     .play-button {
         font-size: 2rem;
-        width: 60px;
-        height: 60px;
+        width: 3.75rem;
+        height: 3.75rem;
     }
 }
 
 /* END of the First Part */
 
-
 /* Second part of the Dining section */
 
 section#dine-with-us-2 {
     background-color: white;
-    min-height: 750px;
+    min-height: 46.875rem;
     height: auto;
-
     box-sizing: border-box;
-
-    padding: 100px 50px 50px 50px;
+    padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     background-image: url('/Images/svg/pancakes.svg');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: 10%;
-    background-size: 250px;
+    background-size: 15.625rem;
     background-blend-mode: normal;
-
 }
 
 section#dine-with-us-2 .section-container {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
     text-align: center;
-
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -392,37 +352,37 @@ section#dine-with-us-2 .section-container {
 }
 
 .dine-text-2 h2 {
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: bold;
-    word-spacing: 0.5px;
+    word-spacing: 0.03125rem;
     font-family: playfair-display, serif;
     color: black;
 }
 
 .dine-text-2 p {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: black;
-    max-width: 800px;
+    max-width: 50rem;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .dine-cards-2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
 .dine-cards-2 .cards-2 {
-    width: 320px;
-    height: 400px;
+    width: 20rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
     text-align: left;
     justify-content: space-between;
     background-color: transparent;
@@ -430,16 +390,16 @@ section#dine-with-us-2 .section-container {
 }
 
 .cards-2 h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 900;
     color: black;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .cards-2 img {
     width: 100%;
     height: 100%;
-    min-height: 500px;
+    min-height: 31.25rem;
     object-fit: cover;
     object-position: center;
 }
@@ -463,18 +423,16 @@ section#dine-with-us-2 .section-container {
     }
 }
 
-
 @media (max-width: 1760px) {
     .dine-cards-2 {
         justify-content: space-between;
     }
 
     .dine-cards-2 .cards-2 {
-        width: 300px;
-        height: 400px;
-        padding: 90px 0;
+        width: 18.75rem;
+        height: 25rem;
+        padding: 5.625rem 0;
     }
-
 }
 
 @media (max-width: 900px) {
@@ -484,7 +442,6 @@ section#dine-with-us-2 .section-container {
 }
 
 @media (max-width: 768px) {
-
     .dine-cards-2 .cards-2 {
         flex-direction: column;
         max-width: 100%;
@@ -497,7 +454,7 @@ section#dine-with-us-2 .section-container {
     }
 
     .dine-text-2 h2 {
-        font-size: 35px;
+        font-size: 2.1875rem;
         text-align: left;
         width: 100%;
         max-width: none;
