@@ -57,8 +57,8 @@ closeChefBtn.addEventListener("click", () => {
 
 // burger menu
 document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.querySelector("#burger');
-  const nav = document.querySelector("#main-nav');
+  const burger = document.querySelector('#burger');
+  const nav = document.querySelector('#main-nav');
 
   burger.addEventListener('click', () => {
     nav.classList.toggle('open');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // scroll effect
 window.addEventListener('scroll', () => {
-  const navbar = document.querySelector("#navbar');
+  const navbar = document.querySelector('#navbar');
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
