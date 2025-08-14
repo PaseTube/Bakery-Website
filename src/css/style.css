@@ -234,8 +234,6 @@ select {
 /* ============ Global Text and text color quries ============ */
 
 @media (max-width: 64rem) {
-
-    /* Force all section#idname to have 2.8125rem left/right padding at this breakpoint */
     section[id] {
         padding-left: 2.8125rem !important;
         padding-right: 2.8125rem !important;
@@ -259,6 +257,9 @@ select {
 
     .custom-cursor {
         display: none !important;
+    }
+    #loader-text {
+    font-size: 1rem;
     }
 }
 

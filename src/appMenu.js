@@ -7,6 +7,7 @@ import './css/dining.css';
 import './css/news.css';
 import './css/footer.css';
 import './css/product-menu.css';
+import './css/contact.css';
 // JAVASCRIPTS!
 import './js/fetch.js';
 import './js/nav-menu.js';
@@ -14,3 +15,4 @@ import './js/menu.js';
 import './js/dining-card.js';
 import './js/main.js';
 import './js/menuItem.js';
+import './js/contact-form.js';

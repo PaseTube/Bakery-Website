@@ -58,8 +58,9 @@
 
 
     <main role="main">
+
         <!-- Chef modal -->
-        <div id="chef-modal" class="chef-modal">
+        <dialog id="chef-modal" class="chef-modal">
             <div class="modal-inner-wrapper">
                 <div class="image-cont"></div>
 
@@ -108,11 +109,12 @@
 
                 </div>
             </div>
-        </div>
+        </dialog>
+
 
 
         <!-- gallery modal  -->
-        <div id="modal" class="modal">
+        <dialog id="modal" class="modal">
             <div class="modal-inner">
                 <div class="button-container">
                     <button class="main-button" id="closeModal">Close</button>
@@ -121,35 +123,50 @@
                     <!-- load images! -->
                 </div>
             </div>
-        </div>
+        </dialog>
 
-        <section class="menu">
+        <section class="contact-section section-base">
             <div class="section-container">
-                <h1 class="menu-title">Menu</h1>
-                <p class="menu-description">Discover our selection of freshly baked goods, from artisan breads
-                    to delectable pastries. Each item is crafted with care, using the finest ingredients to ensure
-                    quality and flavor. Whether you're looking for a quick breakfast, a sweet treat, or a savory snack,
-                    our menu has something for everyone.</p>
+                <h1 class="section-title">Contact Us</h1>
+                <p class="section-description">We'd love to hear from you! Whether you have a question, feedback, or
+                    just want to say hello, feel free to reach out.</p>
 
-                <label for="tagFilter" class="menu-description">Filter by Tag:</label>
-                <select id="tagFilter" class="tag-filter">
-                    <option value="">All</option>
-                    <!-- Options will be loaded dynamically from JS -->
-                </select>
-                <div class="menu-items">
-                    <!-- loading from js -->
-                </div>
+                <form id="contact-form" class="contact-form" action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
 
-                <div class="extended-menu">
-                    <h2 class="section-subtitle">Specialty Items</h2>
-                    <div class="menu-items specials">
-                        <!-- loading from js -->
-                    </div>
-                </div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="contact-submit-button main-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+        <section class="contact-info section-base">
+            <div class="section-container">
+                <h2 class="section-subtitle">Get in Touch</h2>
+                <p class="contact-details">You can also reach us at:</p>
+                <ul class="contact-list">
+                    <li><strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:bakery@gmail.com"></a></li>
+                    <li><strong>Address:</strong> 600 Brickell Ave, Miami, FL 33131</li>
+                    <li><strong>Hours:</strong> Mon-Fri 8:00 AM - 4:00 PM, Sat-Sun 8:00 AM - 4:00 PM</li>
+                </ul>
+                <p class="note">Note
+                    <strong>We do not take reservations, no exceptions.</strong>
+                </p>
             </div>
         </section>
 
-
+        <section class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.1109985028556!2d4.477102777200717!3d52.046496371941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5c93fb71e9109%3A0x7a72e941d7988df2!2sSamenwerkingsorganisatie%20Beroepsonderwijs%20Bedrijfsleven%20(SBB)!5e1!3m2!1sen!2snl!4v1755172216313!5m2!1sen!2snl"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
 
     </main>
 
