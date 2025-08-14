@@ -114,12 +114,14 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + 'px';
 });
 
-document.addEventListener('mousedown', () => {
-    cursor.classList.add('pressed');
-});
+document.addEventListener('mousedown', () => cursor.classList.add('pressed'));
+document.addEventListener('mouseup', () => cursor.classList.remove('pressed'));
 
-document.addEventListener('mouseup', () => {
-    cursor.classList.remove('pressed');
+// Dialog example
+const contactForm = document.querySelector('#contact-popup');
+document.querySelector('#contact-modal').addEventListener('click', (e) => {
+    e.preventDefault();
+    contactForm.showModal();
 });
 
 

@@ -51,7 +51,7 @@
                 <div class="nav-buttons">
                     <a class="main-button" href="menu.html">Menu</a>
                     <!-- does nothing for now -->
-                    <a class="contact" href="#">Contact Us</a>
+                    <a class="contact" href="#" id="contact-open">Contact Us</a>
                 </div>
             </nav>
         </div>
@@ -61,7 +61,7 @@
 
     <main role="main">
         <!-- Chef modal -->
-        <div id="chef-modal" class="chef-modal">
+        <dialog id="chef-modal" class="chef-modal">
             <div class="modal-inner-wrapper">
                 <div class="image-cont"></div>
 
@@ -110,12 +110,12 @@
 
                 </div>
             </div>
-        </div>
+        </dialog>
 
 
 
         <!-- gallery modal  -->
-        <div id="modal" class="modal">
+        <dialog id="modal" class="modal">
             <div class="modal-inner">
                 <div class="button-container">
                     <button class="main-button" id="closeModal">Close</button>
@@ -124,7 +124,16 @@
                     <!-- load images! -->
                 </div>
             </div>
-        </div>
+        </dialog>
+
+        <!-- contact modal  -->
+         <dialog id="contact-modal" class="contact-modal">
+            <form method="" action="#" class="contact-form">
+                <p>Contact Form Here</p>
+                <button id="closeContactModal">Close</button>
+            </form>
+        </dialog>
+
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
             <div class="section-container">
@@ -319,7 +328,7 @@
 
                 <div class="dine-video video-wrapper">
                     <video id="heroVideo" muted playsinline>
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                        <source src="/Videos/video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
 
@@ -391,7 +400,7 @@
                     <div class="footer__quick-wrapper">
                         <h2 class="footer__heading">Menu</h2>
                         <ul class="footer__quick-list">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#hero">Home</a></li>
                             <li><a href="#our-story">About</a></li>
                             <li><a href="#" id="openModal">Gallery</a></li>
                             <li><a href="#news">News</a></li>

@@ -321,6 +321,33 @@ nav {
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3);
 }
 
+.contact-modal {
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 0rem 1.25rem 1.25rem 1.25rem;
+    overflow-y: auto;
+
+    width: 90vw;
+    max-width: 87.5rem;
+    max-height: 80vh;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0.625rem 0.625rem #29002e80;
+}
+
+.contact-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+}
+
 /* Media Queries */
 @media (max-width: 900px) {
     nav {

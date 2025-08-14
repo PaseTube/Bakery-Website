@@ -5,6 +5,9 @@ const galleryImg = document.querySelector('#gallery-random');
 const openChefBtn = document.querySelector('#openChefModal');
 const chefModal = document.querySelector('#chef-modal');
 const closeChefBtn = document.querySelector('#closeChefModal');
+const contactOpen = document.querySelector('#contact-open');
+const contactPopup = document.querySelector('#contact-modal');
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const topScrollBtn = document.querySelector("#backToTopBtn");
@@ -104,3 +107,16 @@ for (let i = 0; i < numberOfImages; i++) {
 
   galleryImg.appendChild(img);
 }
+
+// Open Contact Form modal
+contactOpen.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeAllModals();
+  contactPopup.classList.add('open');
+});
+
+// Close Contact Form modal
+const closeContactBtn = document.querySelector('#closeContactModal'); 
+closeContactBtn.addEventListener('click', () => {
+  contactPopup.classList.remove('open');
+});

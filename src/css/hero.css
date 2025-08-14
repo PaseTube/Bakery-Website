@@ -243,7 +243,7 @@ section#hero {
     text-align: center;
     padding: 2rem;
     animation: fadeIn 0.5s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.164);
+    background-color: rgba(0, 0, 0, 0.308);
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
 }
@@ -262,7 +262,7 @@ section#hero {
 
 .slide .price {
     font-size: 1.5rem;
-    color: #d4af37;
+    color: #ffffff;
     font-weight: bold;
     margin: 0.625rem 1.25rem;
 }
@@ -412,6 +412,8 @@ section#hero {
     height: auto;
     z-index: 10;
 }
+
+
 
 /* hero background query */
 
