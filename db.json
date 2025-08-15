@@ -1,25 +1,285 @@
 {
   "favorites": [
-    { "id": 1, "image": "https://plus.unsplash.com/premium_photo-1700767181915-8a1bc379cae7?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Sourdough Bread", "price": 5.50 },
-    { "id": 2, "image": "https://plus.unsplash.com/premium_photo-1695239201521-49524a277499?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Classic Butter Croissant", "price": 3.25 },
-    { "id": 3, "image": "https://images.unsplash.com/photo-1714386148315-2f0e3eebcd5a?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Red Velvet Cupcake", "price": 3.75 },
-    { "id": 4, "image": "https://plus.unsplash.com/premium_photo-1675706599587-4209694a6917?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Cinnamon Roll with Cream Cheese Glaze", "price": 4.00 },
-    { "id": 5, "image": "https://plus.unsplash.com/premium_photo-1663100418600-4465ed878a6b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "name": "Fresh Fruit Tart", "price": 5.00 }
-  ], 
-
+    {
+      "id": 1,
+      "image": "https://plus.unsplash.com/premium_photo-1700767181915-8a1bc379cae7?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Sourdough Bread",
+      "price": 5.50
+    },
+    {
+      "id": 2,
+      "image": "https://plus.unsplash.com/premium_photo-1695239201521-49524a277499?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Classic Butter Croissant",
+      "price": 3.25
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1714386148315-2f0e3eebcd5a?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Red Velvet Cupcake",
+      "price": 3.75
+    },
+    {
+      "id": 4,
+      "image": "https://plus.unsplash.com/premium_photo-1675706599587-4209694a6917?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Cinnamon Roll with Cream Cheese Glaze",
+      "price": 4.00
+    },
+    {
+      "id": 5,
+      "image": "https://plus.unsplash.com/premium_photo-1663100418600-4465ed878a6b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Fresh Fruit Tart",
+      "price": 5.00
+    }
+  ],
   "dining": [
-    {"id": 1, "image": "Images/diningcard-1.webp", "name": "Croissants and Pastries"},
-    {"id": 2, "image": "Images/diningcard-2.webp", "name": "Rustic Artisan Bread"},
-    {"id": 3, "image": "Images/diningcard-3.webp", "name": "Assorted Breads and Rolls"},
-    {"id": 4, "image": "Images/diningcard-4.webp", "name": "Sourdough Bread"}
+    {
+      "id": 1,
+      "image": "Images/diningcard-1.webp",
+      "name": "Croissants and Pastries"
+    },
+    {
+      "id": 2,
+      "image": "Images/diningcard-2.webp",
+      "name": "Rustic Artisan Bread"
+    },
+    {
+      "id": 3,
+      "image": "Images/diningcard-3.webp",
+      "name": "Assorted Breads and Rolls"
+    },
+    {
+      "id": 4,
+      "image": "Images/diningcard-4.webp",
+      "name": "Sourdough Bread"
+    }
   ],
-
   "bakeryGoods": [
-    {"id": 1, "image": "Images/bakerygoods-1.webp", "name": "Freshly Baked Bread"},
-    {"id": 2, "image": "Images/bakerygoods-2.webp", "name": "Artisan Pastries"},
-    {"id": 3, "image": "Images/bakerygoods-3.webp", "name": "Gourmet Cakes"},
-    {"id": 4, "image": "Images/bakerygoods-4.webp", "name": "Handcrafted Cookies"}
+    {
+      "id": 1,
+      "image": "Images/bakerygoods-1.webp",
+      "name": "Freshly Baked Bread"
+    },
+    {
+      "id": 2,
+      "image": "Images/bakerygoods-2.webp",
+      "name": "Artisan Pastries"
+    },
+    {
+      "id": 3,
+      "image": "Images/bakerygoods-3.webp",
+      "name": "Gourmet Cakes"
+    },
+    {
+      "id": 4,
+      "image": "Images/bakerygoods-4.webp",
+      "name": "Handcrafted Cookies"
+    }
   ],
-
-   "profile": { "name": "typicode" }
+  "menuItems": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1566698629409-787a68fc5724?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Sourdough Bread",
+      "price": 5.50,
+      "description": "A crusty artisan sourdough loaf with a tangy flavor and soft, airy interior.",
+      "tags": [
+        "bread",
+        "artisan",
+        "savory",
+        "vegan",
+        "special!"
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1623334044303-241021148842?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Classic Butter Croissant",
+      "price": 3.25,
+      "description": "Flaky, buttery croissant made with traditional French techniques.",
+      "tags": [
+        "pastry",
+        "buttery",
+        "breakfast"
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://images.unsplash.com/photo-1714386148315-2f0e3eebcd5a?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Red Velvet Cupcake",
+      "price": 3.75,
+      "description": "Moist red velvet cupcake topped with smooth cream cheese frosting.",
+      "tags": [
+        "cupcake",
+        "sweet",
+        "dessert"
+      ]
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1645995575875-ea6511c9d127?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Cinnamon Roll with Cream Cheese Glaze",
+      "price": 4.00,
+      "description": "Soft cinnamon roll swirled with spiced sugar and topped with cream cheese glaze.",
+      "tags": [
+        "pastry",
+        "sweet",
+        "breakfast"
+      ]
+    },
+    {
+      "id": 5,
+      "image": "https://images.unsplash.com/photo-1600477063726-b6b2473e43f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Fresh Fruit Tart",
+      "price": 5.00,
+      "description": "Crisp tart shell filled with creamy custard and topped with seasonal fresh fruits.",
+      "tags": [
+        "tart",
+        "fresh",
+        "dessert",
+        "special!"
+      ]
+    },
+    {
+      "id": 6,
+      "image": "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Chocolate Éclair",
+      "price": 4.50,
+      "description": "Choux pastry filled with vanilla cream and glazed with rich chocolate.",
+      "tags": [
+        "pastry",
+        "chocolate",
+        "dessert"
+      ]
+    },
+    {
+      "id": 7,
+      "image": "https://images.unsplash.com/photo-1722251172860-39856cdd3bcd?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Blueberry Muffin",
+      "price": 3.00,
+      "description": "Moist muffin bursting with fresh blueberries and a crumbly topping.",
+      "tags": [
+        "muffin",
+        "fruit",
+        "breakfast",
+        "special!"
+      ]
+    },
+    {
+      "id": 8,
+      "image": "https://images.unsplash.com/photo-1558326567-98ae2405596b?q=80&w=759&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Macarons Assortment",
+      "price": 6.50,
+      "description": "A colorful selection of delicate almond meringue cookies with various fillings.",
+      "tags": [
+        "macaron",
+        "French",
+        "dessert"
+      ]
+    },
+    {
+      "id": 9,
+      "image": "https://plus.unsplash.com/premium_photo-1668772704254-c4c4798b0e5d?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Chocolate Chip Cookie",
+      "price": 2.50,
+      "description": "Chewy cookie loaded with chunks of rich chocolate.",
+      "tags": [
+        "cookie",
+        "chocolate",
+        "snack"
+      ]
+    },
+    {
+      "id": 10,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Coffee_lemon_drizzle_cake_Gibberd_Garden_Harlow_Essex_England_01.jpg",
+      "name": "Lemon Drizzle Cake",
+      "price": 4.25,
+      "description": "Moist lemon sponge topped with a tangy lemon glaze.",
+      "tags": [
+        "cake",
+        "citrus",
+        "dessert",
+        "special!"
+      ]
+    },
+    {
+      "id": 11,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Banana_bread.jpg",
+      "name": "Banana Bread",
+      "price": 3.80,
+      "description": "Classic banana bread with a moist crumb and a hint of cinnamon.",
+      "tags": [
+        "bread",
+        "banana",
+        "snack"
+      ]
+    },
+    {
+      "id": 12,
+      "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=800&auto=format&fit=crop",
+      "name": "Cheesecake Slice",
+      "price": 5.75,
+      "description": "Creamy cheesecake on a buttery graham cracker crust.",
+      "tags": [
+        "cake",
+        "creamy",
+        "dessert"
+      ]
+    },
+    {
+      "id": 13,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Chocolate_Brownie.jpg",
+      "name": "Brownie Square",
+      "price": 3.50,
+      "description": "Rich chocolate brownie with a fudgy center.",
+      "tags": [
+        "brownie",
+        "chocolate",
+        "snack",
+        "special!"
+      ]
+    },
+    {
+      "id": 14,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/04/Biscotti_1.jpg",
+      "name": "Pistachio Biscotti",
+      "price": 2.80,
+      "description": "Crunchy Italian biscuit with roasted pistachios.",
+      "tags": [
+        "biscotti",
+        "Italian",
+        "snack"
+      ]
+    },
+    {
+      "id": 15,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Raspberry_Danish_-_20130418-049-of-365_%288662427686%29.jpg",
+      "name": "Raspberry Danish",
+      "price": 3.90,
+      "description": "Flaky pastry filled with raspberry jam and drizzled with icing.",
+      "tags": [
+        "pastry",
+        "fruit",
+        "breakfast"
+      ]
+    }
+  ],
+  "exploreItems": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1600477063726-b6b2473e43f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "What do we do?",
+      "description": "Pulling on influence from around the globe, with the chef's talents, pedigrees and passions, 6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small cakes) and tarts.",
+      "tag": "hero"
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1600477063726-b6b2473e43f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Who are we?",
+      "description": "Welcome to our bakery, where passion meets tradition. Our story began with a simple love for baking, and has grown into a cherished community hub. We take pride in using the finest ingredients to create artisanal breads, pastries, and desserts that bring joy to every bite.",
+      "tag": "story"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

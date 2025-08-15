@@ -71,6 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 (function () {
+    // Only run loader on homepage
+    const path = window.location.pathname;
+    if (path !== "/" && !path.endsWith("index.html")) return;
+
     const loaderOverlay = document.querySelector('#loader-overlay');
     const loaderText = document.querySelector('#loader-text');
     const word = "Bistro | Bakery";
@@ -106,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 3000);
 })();
 
+
 // Custom Cursor Implementation
 const cursor = document.querySelector('#cursor');
 
@@ -114,12 +119,8 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.clientY + 'px';
 });
 
-document.addEventListener('mousedown', () => {
-    cursor.classList.add('pressed');
-});
+document.addEventListener('mousedown', () => cursor.classList.add('pressed'));
+document.addEventListener('mouseup', () => cursor.classList.remove('pressed'));
 
-document.addEventListener('mouseup', () => {
-    cursor.classList.remove('pressed');
-});
 
 

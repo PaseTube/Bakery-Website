@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/Images/svg/logo.svg" type="image/svg" />
+    <title>Bakery Website | Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Bistro Bakery in Miami offers artisan pastries, breads, and cozy dining in the heart of downtown. Fresh, handmade, and unforgettable." />
+    <meta name="keywords"
+        content="Bistro Bakery, artisan bakery, Miami bakery, fresh pastries, sourdough bread, croissants, pain au chocolat, breakfast Miami, local bakery, handmade desserts, quiche, cinnamon rolls, bakery menu" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <!-- cursor -->
+    <div class="custom-cursor" id="cursor">
+        <img src="/Images/baguette.png" alt="cursor" width="50px">
+    </div>
+    <!-- scroll back to top button -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Top</button>
+    <header class="header" id="navbar">
+        <div class="section-container">
+            <div class="nav-logo fade-in-section">
+                <a href="#">
+                    <img loading="lazy" class="logo-image" src="/Images/svg/logo.svg" alt="Bistro Bakery logo" />
+                </a>
+            </div>
+
+            <!-- Burger Menu -->
+            <div class="nav-burger fade-in-section" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav -->
+            <nav id="main-nav" class="fade-in-section">
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
+                    <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
+                </ul>
+
+
+
+                <div class="nav-buttons">
+                    <a class="main-button" href="menu.html">Menu</a>
+                    <!-- does nothing for now -->
+                    <a class="contact" href="contact.html">Contact Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main role="main">
+
+        <!-- Chef modal -->
+        <dialog id="chef-modal" class="chef-modal">
+            <div class="modal-inner-wrapper">
+                <div class="image-cont"></div>
+
+                <div class="modal-inner">
+                    <button class="main-button" id="closeChefModal">Close</button>
+
+                    <div class="chef-modal-container">
+                        <div class="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts, all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chef-container">
+                            <div class="chef-image">
+                                <img loading="lazy" src="/Images/story-person.webp"
+                                    alt="Chef in the kitchen preparing food" />
+                            </div>
+                            <div class="chef-text">
+                                <h2>Meet Our Chef</h2>
+                                <p>
+                                    Our head chef, with over 15 years of experience in the culinary arts, brings a
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
+                                </p>
+                                <p>
+                                    Join us for a taste of our signature creations, from flaky croissants to decadent
+                                    tarts, all made fresh daily.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- einde chef-modal-container -->
+
+                </div>
+            </div>
+        </dialog>
+
+
+
+        <!-- gallery modal  -->
+        <dialog id="modal" class="modal">
+            <div class="modal-inner">
+                <div class="button-container">
+                    <button class="main-button" id="closeModal">Close</button>
+                </div>
+                <div class="gallery-random" id="gallery-random">
+                    <!-- load images! -->
+                </div>
+            </div>
+        </dialog>
+
+        <section class="contact-section section-base">
+            <div class="section-container">
+                <h1 class="section-title">Contact Us</h1>
+                <p class="section-description">We'd love to hear from you! Whether you have a question, feedback, or
+                    just want to say hello, feel free to reach out.</p>
+
+                <form id="contact-form" class="contact-form" action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="contact-submit-button main-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+        <section class="contact-info section-base">
+            <div class="section-container">
+                <h2 class="section-subtitle">Get in Touch</h2>
+                <p class="contact-details">You can also reach us at:</p>
+                <ul class="contact-list">
+                    <li><strong>Phone:</strong> <a href="tel:+1234567890">(123) 456-7890</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:bakery@gmail.com"></a></li>
+                    <li><strong>Address:</strong> 600 Brickell Ave, Miami, FL 33131</li>
+                    <li><strong>Hours:</strong> Mon-Fri 8:00 AM - 4:00 PM, Sat-Sun 8:00 AM - 4:00 PM</li>
+                </ul>
+                <p class="note">Note
+                    <strong>We do not take reservations, no exceptions.</strong>
+                </p>
+            </div>
+        </section>
+
+        <section class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.1109985028556!2d4.477102777200717!3d52.046496371941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5c93fb71e9109%3A0x7a72e941d7988df2!2sSamenwerkingsorganisatie%20Beroepsonderwijs%20Bedrijfsleven%20(SBB)!5e1!3m2!1sen!2snl!4v1755172216313!5m2!1sen!2snl"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <section id="links-footer" class="links-footer section-base">
+            <div class="section-container">
+                <div class="footer-logo-container fade-in-section">
+                    <a href="#"><img loading="lazy" src="/Images/svg/logo.svg" width="100px"
+                            alt="Bistro Bakery logo in footer" /></a>
+                    <p>600 Brickell Ave. Miami, FL 33131</p>
+                    <p><a href="tel:(305) 778-4585">(305) 778-4585</a></p>
+                    <p>(WE DO NOT TAKE RESERVATIONS, NO EXCEPTIONS)</p>
+                </div>
+
+                <div class="footer-nav-links fade-in-section">
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Menu</h2>
+                        <ul class="footer__quick-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#our-story">About</a></li>
+                            <li><a href="#" id="openModal">Gallery</a></li>
+                            <li><a href="#news">News</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-quick-links fade-in-section">
+                    <div class="footer__quick-wrapper">
+                        <h2 class="footer__heading">Quick Links</h2>
+                        <ul class="footer__quick-list">
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="#">Opportunities</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="contact.html">Location & Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="operational fade-in-section">
+                    <div class="footer__operational-wrapper">
+                        <h2 class="footer__heading">Operational</h2>
+                        <ul class="footer__open-list">
+                            <li>Mon-Fri 8:00AM - 4:00PM</li>
+                            <li>Sat-Sun 8:00AM - 4:00PM</li>
+                        </ul>
+                        <h2 class="footer__heading">You need a consult</h2>
+                        <ul class="footer__consult-list">
+                            <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="main-footer" class="main-footer section-base">
+            <div class="section-container">
+                <div class="footer-socials fade-in-section">
+                    <ul>
+                        <!-- fa-facebook border looks wierd so using the official -->
+                        <li><a href="#" class="fa fa-facebook-official"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="copy-rights fade-in-section">
+                    Copyright <span>&#xA9; BISTRO | BAKERY.</span> All Rights Reserved.
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- load vite models -->
+    <script type="module" src="/src/appMenu.js"></script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@ const openChefBtn = document.querySelector('#openChefModal');
 const chefModal = document.querySelector('#chef-modal');
 const closeChefBtn = document.querySelector('#closeChefModal');
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const topScrollBtn = document.querySelector("#backToTopBtn");
 
@@ -57,8 +58,8 @@ closeChefBtn.addEventListener("click", () => {
 
 // burger menu
 document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('main-nav');
+  const burger = document.querySelector('#burger');
+  const nav = document.querySelector('#main-nav');
 
   burger.addEventListener('click', () => {
     nav.classList.toggle('open');
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // scroll effect
 window.addEventListener('scroll', () => {
-  const navbar = document.getElementById('navbar');
+  const navbar = document.querySelector('#navbar');
   if (window.scrollY > 50) {
     navbar.classList.add('scrolled');
   } else {
@@ -104,3 +105,4 @@ for (let i = 0; i < numberOfImages; i++) {
 
   galleryImg.appendChild(img);
 }
+

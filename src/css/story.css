@@ -1,8 +1,8 @@
 section#our-story {
     background-color: #243231;
-    min-height: 550px;
+    min-height: 34.375rem;
     height: auto;
-    padding: 0px 50px 0px 50px;
+    padding: 0 3.125rem 0 3.125rem;
 }
 
 
@@ -13,7 +13,7 @@ section#our-story::before {
     background-image: url('../img/svg/coffee-cup.svg');
     background-repeat: no-repeat;
     background-position: 90% 90%;
-    background-size: 250px;
+    background-size: 15.625rem;
     filter: brightness(0.5);
     opacity: 1;
     z-index: 0;
@@ -23,10 +23,10 @@ section#our-story::before {
 .container-story{
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 3.125rem;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 0px;
+    padding: 6.25rem 0;
     margin: auto;
     position: relative;
     box-sizing: border-box;
@@ -39,41 +39,41 @@ section#our-story::before {
     justify-content: center;
     align-items: top;
     width: 100%;
-    gap: 50px;
-    max-width: 600px;
+    gap: 3.125rem;
+    max-width: 37.5rem;
 }
 
 .story-image img {
-  width: 100%;
-  min-width: 200px;
-  object-fit: cover;
-  object-position: center;
+    width: 100%;
+    min-width: 12.5rem;
+    object-fit: cover;
+    object-position: center;
 }
 
 .story-image img.big-story-image {
-  height: 500px;
+    height: 31.25rem;
 }
 
 .story-image img.image-after-text {
-  height: 350px;
-  object-position: left;
+    height: 21.875rem;
+    object-position: left;
 }
 
 .image-caption {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
     color: #fff;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 /* Media Queries */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
     .container-story {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        /* padding: 20px; */
+        /* padding: 1.25rem; */
     }
     .story-image {
         flex-direction: column;
@@ -81,10 +81,10 @@ section#our-story::before {
     }
 
     .story-image img.big-story-image {
-        height: 300px;
+        height: 18.75rem;
     }
 
     .story-image img.image-after-text {
-        height: 250px;
+        height: 15.625rem;
     }
 }

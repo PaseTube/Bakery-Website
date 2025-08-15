@@ -5,11 +5,9 @@ section#hero {
     background-position: center center;
     background-size: cover;
     object-fit: cover;
-    min-height: 750px;
+    min-height: 46.875rem;
     height: auto;
-    /* Remove individual padding since section-container handles it */
-
-    padding: 100px 50px 50px 50px;
+    padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     box-sizing: border-box;
 }
 
@@ -19,10 +17,10 @@ section#hero {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 20px;
+    gap: 1.25rem;
     width: 100%;
     position: relative;
-    max-width: 1500px;
+    max-width: 93.75rem;
     margin: auto;
 }
 
@@ -31,14 +29,14 @@ section#hero {
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 6.25rem;
+    margin-bottom: 3.125rem;
 }
 
 .hero-header h1 {
-    font-size: 100px;
+    font-size: 6.25rem;
     font-weight: bold;
-    word-spacing: 0.5px;
+    word-spacing: 0.03125rem;
     font-family: playfair-display, serif;
     color: #fff;
     margin: 0;
@@ -67,12 +65,11 @@ section#hero {
     }
 }
 
-
 /* hero cta */
 .hero-cta {
     position: absolute;
     left: 50%;
-    bottom: 40px;
+    bottom: 2.5rem;
     transform: translateX(-40%);
     text-align: center;
     width: 100%;
@@ -81,12 +78,11 @@ section#hero {
 
 #product-list {
     list-style-type: none;
-
 }
 
 #product-list li {
     list-style: none;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     text-align: left;
 }
 
@@ -94,9 +90,9 @@ section#hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .arrow path {
@@ -117,7 +113,7 @@ section#hero {
     }
 
     50% {
-        transform: translateY(6px);
+        transform: translateY(0.375rem);
         opacity: 0.6;
     }
 }
@@ -125,9 +121,9 @@ section#hero {
 /* CTA MENU */
 .card {
     background: white;
-    padding: 32px 24px;
-    width: 250px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 2rem 1.5rem;
+    width: 15.625rem;
+    box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,14 +131,14 @@ section#hero {
 }
 
 .card:hover {
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.875rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .card .cta-img {
-    width: 150px;
-    height: 150px;
+    width: 9.375rem;
+    height: 9.375rem;
     object-fit: cover;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     display: block;
 }
 
@@ -167,7 +163,7 @@ section#hero {
 }
 
 .pop-container {
-    padding: 20px;
+    padding: 1.25rem;
     width: 100vw;
     height: 100%;
     box-sizing: border-box;
@@ -177,15 +173,14 @@ section#hero {
     background-color: rgba(0, 0, 0, 0.527);
 }
 
-
 .popup-content {
-    padding: 20px;
+    padding: 1.25rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     width: 90vw;
-    height: 600px;
+    height: 37.5rem;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -197,7 +192,7 @@ section#hero {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
     pointer-events: none;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
 .popup-content>*:not(.popup-mask) {
@@ -207,10 +202,10 @@ section#hero {
 .openPopup {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem;
     background: transparent;
-    border: 0px;
-    font-size: 20px;
+    border: 0;
+    font-size: 1.25rem;
     cursor: pointer;
 }
 
@@ -220,11 +215,11 @@ section#hero {
 
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 0.9375rem;
+    right: 1.25rem;
     background: none;
     border: none;
-    font-size: 30px;
+    font-size: 1.875rem;
     cursor: pointer;
     color: #ffffff;
     z-index: 1001;
@@ -238,9 +233,9 @@ section#hero {
 .slideshow-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 50rem;
     margin: auto;
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
 
 .slide {
@@ -248,9 +243,9 @@ section#hero {
     text-align: center;
     padding: 2rem;
     animation: fadeIn 0.5s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.164);
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.308);
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .slide.active {
@@ -258,26 +253,26 @@ section#hero {
 }
 
 .slide h3 {
-    font-size: 28px;
-    margin: 15px 0 10px 0;
-    margin-bottom: 20px;
+    font-size: 1.75rem;
+    margin: 0.9375rem 0 0.625rem 0;
+    margin-bottom: 1.25rem;
     color: white;
     font-family: 'Playfair Display', serif;
 }
 
 .slide .price {
-    font-size: 24px;
-    color: #d4af37;
+    font-size: 1.5rem;
+    color: #ffffff;
     font-weight: bold;
-    margin: 10px 20px;
+    margin: 0.625rem 1.25rem;
 }
 
 .slide .description {
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     line-height: 1.6;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
+    max-width: 31.25rem;
+    margin: 0 auto 1.25rem auto;
 }
 
 .slide-show-btn {
@@ -292,10 +287,10 @@ section#hero {
     background: rgba(212, 175, 55, 0.8);
     border: none;
     color: white;
-    font-size: 24px;
-    padding: 15px 20px;
+    font-size: 1.5rem;
+    padding: 0.9375rem 1.25rem;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -306,22 +301,22 @@ section#hero {
 }
 
 .prev {
-    left: -70px;
+    left: -4.375rem;
 }
 
 .next {
-    right: -70px;
+    right: -4.375rem;
 }
 
 .dots-container {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
+    height: 0.9375rem;
+    width: 0.9375rem;
+    margin: 0 0.3125rem;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -336,19 +331,19 @@ section#hero {
 
 .slide-counter {
     position: absolute;
-    top: 15px;
-    left: 20px;
+    top: 0.9375rem;
+    left: 1.25rem;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 1.25rem;
+    font-size: 0.875rem;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateX(30px);
+        transform: translateX(1.875rem);
     }
 
     to {
@@ -361,15 +356,15 @@ section#hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 12.5rem;
 }
 
 .spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #d4af37;
+    border: 0.25rem solid #f3f3f3;
+    border-top: 0.25rem solid #d4af37;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     animation: spin 1s linear infinite;
 }
 
@@ -384,9 +379,9 @@ section#hero {
 }
 
 .arrow-right {
-    width: 80px;
-    height: 80px;
-    border: 2px solid black;
+    width: 5rem;
+    height: 5rem;
+    border: 0.125rem solid black;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -397,12 +392,12 @@ section#hero {
 .cta-menu {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 20px;
+    gap: 1rem;
+    padding: 1.25rem;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transform: translateY(50px);
+    transform: translateY(3.125rem);
     transition: all 0.4s ease;
 }
 
@@ -412,10 +407,47 @@ section#hero {
 }
 
 .hero-menu-cta {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     width: auto;
     height: auto;
     z-index: 10;
+}
+
+.explore-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center horizontally & vertically */
+    z-index: 9999999;
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    overflow-y: auto;
+
+    width: 90vw;
+    max-width: 87.5rem;
+    max-height: 80vh;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0.625rem 0.625rem #29002e80;
+}
+
+.explore-popup.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.explore-popup-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
 }
 
 /* hero background query */
@@ -430,20 +462,19 @@ section#hero {
 
 @media (max-width: 900px) {
     .hero-header h1 {
-        font-size: 60px;
+        font-size: 3.75rem;
     }
-
 }
 
 @media (max-width: 768px) {
     section#hero {
-        height: 750px;
+        height: 46.875rem;
     }
 
     .hero-menu-cta {
         position: static;
         transform: none;
-        margin-top: 20px;
+        margin-top: 1.25rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -452,14 +483,14 @@ section#hero {
 
 @media (max-width: 1024px) {
     section#hero {
-        min-height: 750px;
+        min-height: 46.875rem;
         height: auto;
     }
 
     .hero-menu-cta {
         position: static;
         transform: none;
-        margin-top: 40px;
+        margin-top: 2.5rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -479,10 +510,10 @@ section#hero {
         background: rgba(212, 175, 55, 0.8);
         border: none;
         color: white;
-        font-size: 24px;
-        padding: 15px 20px;
+        font-size: 1.5rem;
+        padding: 0.9375rem 1.25rem;
         cursor: pointer;
-        border-radius: 50px;
+        border-radius: 3.125rem;
         transition: all 0.3s ease;
         z-index: 1000;
     }
@@ -490,10 +521,10 @@ section#hero {
 
 @media (max-width: 600px) {
     .hero-header h1 {
-        font-size: 36px;
+        font-size: 2.25rem;
     }
 
     .hero-cta {
-        bottom: 10px;
+        bottom: 0.625rem;
     }
 }

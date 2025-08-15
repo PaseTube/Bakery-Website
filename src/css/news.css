@@ -1,6 +1,6 @@
 section#news {
-    padding: 150px 100px 0px 100px;
-    margin-bottom: 50px;
+    padding: 9.375rem 6.25rem 0 6.25rem;
+    margin-bottom: 3.125rem;
 }
 
 section#news .section-container {
@@ -9,14 +9,14 @@ section#news .section-container {
     align-content: space-between;
     align-items: end;
     text-align: left;
-    gap: 20px;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    gap: 1.25rem;
+    margin-top: 4.375rem;
+    margin-bottom: 3.125rem;
 }
 
 
 .news-header h2 {
-    font-size: 65px;
+    font-size: 4.0625rem;
     font-family: 'Times New Roman', Times, serif;
     color: black;
     margin: 0;
@@ -24,7 +24,7 @@ section#news .section-container {
 }
 
 .news-subheader p {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: black;
     margin: 0;
@@ -39,14 +39,14 @@ section#news .section-container {
 .news-mail form {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    border: 2px solid rgba(116, 116, 116, 0.568);
-    padding: 10px 0px 10px 0px;
+    border: 0.125rem solid rgba(116, 116, 116, 0.568);
+    padding: 0.625rem 0 0.625rem 0;
     align-items: center;
 }
 
 .news-mail form input {
-    margin-left: 10px;
-    border: 0px;
+    margin-left: 0.625rem;
+    border: 0;
 }
 
 .news-mail form input:focus {
@@ -55,7 +55,7 @@ section#news .section-container {
 }
 
 .news-mail form .main-button {
-    margin-right: 5px;
+    margin-right: 0.3125rem;
 }
 
 .newsletter-label{
@@ -63,9 +63,9 @@ section#news .section-container {
 }
 
 
-@media (max-width: 1279px) {
+@media (max-width: 79.9375rem) {
     section#news {
-        padding: 100px 50px 50px 50px;
+        padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     }
 
     section#news .section-container {
@@ -75,7 +75,7 @@ section#news .section-container {
         align-content: space-around;
         align-items: center;
         text-align: left;
-        gap: 5px;
+        gap: 0.3125rem;
 
     }
 
@@ -86,15 +86,15 @@ section#news .section-container {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     section#news .section-container {
         align-content: space-around;
         align-items: center;
-        gap: 0px;
+        gap: 0;
     }
 
     .news-header h2 {
-        font-size: 35px;
+        font-size: 2.1875rem;
     }
 
     .news-mail {
@@ -107,19 +107,19 @@ section#news .section-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        border: 2px solid rgba(116, 116, 116, 0.568);
-        padding: 0px 0px 0px 0px;
+        border: 0.125rem solid rgba(116, 116, 116, 0.568);
+        padding: 0;
         align-items: stretch;
     }
 
     .news-mail form input {
-        margin-left: 0px;
-        border: 0px;
-        padding: 20px;
+        margin-left: 0;
+        border: 0;
+        padding: 1.25rem;
     }
 
     .news-mail form .main-button {
-        margin-right: 0px;
+        margin-right: 0;
         text-align: center;
     }
 
