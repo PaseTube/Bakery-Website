@@ -101,3 +101,28 @@ export async function getMenuItemsData() {
     return [];
   }
 }
+
+export async function getExploreItemsData() {
+  const baseUrl = process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3000' 
+    : '';
+
+  const url = process.env.NODE_ENV === 'development' 
+    ? `${baseUrl}/exploreItems`
+    : `${baseUrl}/api/exploreItems`;
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    return json;
+
+  } catch (error) {
+    console.error('Error fetching favorites data:', error.message);
+    return [];
+  }
+}

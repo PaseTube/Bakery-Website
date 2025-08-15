@@ -211,7 +211,7 @@ section#dine-with-us-1 .section-container {
     padding: 0.5rem 1rem;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1;
     transition: opacity 0.3s ease, transform 0.2s ease;
     display: flex;
     align-items: center;

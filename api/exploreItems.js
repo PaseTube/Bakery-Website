@@ -1,4 +1,4 @@
-// api/menuItems.js
+// api/exploreItems.js
 import fs from 'fs';
 import path from 'path';
 
@@ -26,11 +26,10 @@ export default function handler(req, res) {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const data = JSON.parse(fileContent);
 
-    // Return the "menuItems" array from db.json
-    res.status(200).json(data.menuItems || []);
+    // Return the "dining" array from db.json
+    res.status(200).json(data.exploreItems || []);
   } catch (error) {
     console.error('Error reading db.json:', error);
     res.status(500).json({ error: 'Failed to load data' });
   }
-  
 }

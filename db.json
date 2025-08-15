@@ -263,6 +263,22 @@
       ]
     }
   ],
+  "exploreItems": [
+    {
+      "id": 1,
+      "image": "https://images.unsplash.com/photo-1600477063726-b6b2473e43f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "What do we do?",
+      "description": "Pulling on influence from around the globe, with the chef's talents, pedigrees and passions, 6 Bistro + Bakery features freshly made morning pastries, including Danish, brioche, and a variety of flaky croissants; signature desserts such as macaroons, petit gateaux (small cakes) and tarts.",
+      "tag": "hero"
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1600477063726-b6b2473e43f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Who are we?",
+      "description": "Welcome to our bakery, where passion meets tradition. Our story began with a simple love for baking, and has grown into a cherished community hub. We take pride in using the finest ingredients to create artisanal breads, pastries, and desserts that bring joy to every bite.",
+      "tag": "story"
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

@@ -413,7 +413,42 @@ section#hero {
     z-index: 10;
 }
 
+.explore-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center horizontally & vertically */
+    z-index: 9999999;
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    overflow-y: auto;
 
+    width: 90vw;
+    max-width: 87.5rem;
+    max-height: 80vh;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0.625rem 0.625rem #29002e80;
+}
+
+.explore-popup.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.explore-popup-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+}
 
 /* hero background query */
 
