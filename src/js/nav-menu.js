@@ -92,17 +92,17 @@ document.querySelectorAll('.fade-in-section').forEach(section => {
 
 
 // gallery loader
-const numberOfImages = 10;
-for (let i = 0; i < numberOfImages; i++) {
-  const img = document.createElement("img");
+// const numberOfImages = 10;
+// for (let i = 0; i < numberOfImages; i++) {
+//   const img = document.createElement("img");
 
-  // Use random images from Unsplash (change to any API or source)
-  const randomId = Math.floor(Math.random() * 1000);
-  img.src = `https://picsum.photos/300/200?random=${randomId}`;
-  img.alt = "Random bakery image";
-  img.loading = `lazy`;
+//   // Use random images from Unsplash (change to any API or source)
+//   const randomId = Math.floor(Math.random() * 1000);
+//   img.src = `https://picsum.photos/300/200?bakery=${randomId}`;
+//   img.alt = "Random ";
+//   img.loading = `lazy`;
 
 
-  galleryImg.appendChild(img);
-}
+//   galleryImg.appendChild(img);
+// }
 
