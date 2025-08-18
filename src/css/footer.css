@@ -82,7 +82,7 @@ section#links-footer .section-container {
     color: black;
 }
 
-#links-footer .section-container > div:not(:first-child) {
+section#links-footer .section-container > div:not(:first-child) {
     border-left: 0.125rem solid #0000003b;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
@@ -195,7 +195,7 @@ section#links-footer .section-container {
         overflow-x: hidden;
     }
 
-    #links-footer .section-container > div {
+    section#links-footer .section-container > div {
         width: 100%;
         max-width: 100%;
         border: none !important;
@@ -207,13 +207,13 @@ section#links-footer .section-container {
         box-sizing: border-box;
     }
 
-    #links-footer .section-container > div:last-child {
+    section#links-footer .section-container > div:last-child {
         border-bottom: none !important;
         padding-bottom: 0;
         margin-bottom: 0;
     }
 
-    #links-footer .section-container > div:not(:first-child) {
+    section#links-footer .section-container > div:not(:first-child) {
         border-left: 0.125rem solid #0000003b;
         padding-left: 0;
         padding-right: 0;

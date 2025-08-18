@@ -461,14 +461,14 @@ nav {
         margin-top: 1rem;
     }
 
-    #main-nav {
+    .main-nav {
         opacity: 0;
         pointer-events: none;
         transform: translateY(-1.25rem);
         transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    #main-nav.open {
+    .main-nav.open {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);

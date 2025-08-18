@@ -76,11 +76,7 @@ section#hero {
     color: #fff;
 }
 
-#product-list {
-    list-style-type: none;
-}
-
-#product-list li {
+li {
     list-style: none;
     margin-bottom: 0.625rem;
     text-align: left;
