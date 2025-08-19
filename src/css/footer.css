@@ -182,7 +182,7 @@ section#links-footer .section-container>div:not(:first-child) {
 }
 
 /* Media queries */
-@media (max-width: 1279px) {
+@media (width <= 1279px) {
     section#links-footer {
         padding: 3.125rem;
     }
@@ -322,7 +322,7 @@ section#main-footer .section-container {
 }
 
 /* media queries */
-@media (max-width: 1279px) {
+@media (width <= 1279px) {
     section#main-footer {
         padding: 1.25rem 3.125rem 3.125rem 3.125rem;
     }

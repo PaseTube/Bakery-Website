@@ -322,7 +322,7 @@ nav {
     box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3);
 }
 /* Media Queries */
-@media (max-width: 900px) {
+@media (width <= 900px) {
     nav {
         padding: 0 1rem;
     }
@@ -332,7 +332,7 @@ nav {
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .gallery-random img {
         max-height: 7.5rem;
         flex-basis: 45%;

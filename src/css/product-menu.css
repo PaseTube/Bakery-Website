@@ -213,7 +213,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .menu {
         padding: 2.5rem 0.9375rem;
     }
@@ -239,7 +239,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
     .menu__product__card figure {
         height: 12.5rem;
     }

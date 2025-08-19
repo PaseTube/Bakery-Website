@@ -133,7 +133,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .section-title {
     font-size: 2rem;
   }

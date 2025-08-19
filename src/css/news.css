@@ -63,7 +63,7 @@ section#news .section-container {
 }
 
 
-@media (max-width: 79.9375rem) {
+@media (width <= 79.9375rem) {
     section#news {
         padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     }
@@ -86,7 +86,7 @@ section#news .section-container {
     }
 }
 
-@media (max-width: 48rem) {
+@media (width <= 48rem) {
     section#news .section-container {
         align-content: space-around;
         align-items: center;

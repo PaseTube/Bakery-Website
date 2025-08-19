@@ -448,7 +448,7 @@ li {
 
 /* hero background query */
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     .sub-hero {
         display: flex;
         flex-direction: column;
@@ -456,13 +456,13 @@ li {
     }
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
     .hero-header h1 {
         font-size: 3.75rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     section#hero {
         height: 46.875rem;
     }
@@ -477,7 +477,7 @@ li {
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     section#hero {
         min-height: 46.875rem;
         height: auto;
@@ -493,7 +493,7 @@ li {
     }
 }
 
-@media (max-width: 1060px) {
+@media (width <= 1060px) {
     .slide-show-btn {
         display: flex;
         justify-content: space-between;
@@ -515,7 +515,7 @@ li {
     }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     .hero-header h1 {
         font-size: 2.25rem;
     }

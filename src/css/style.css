@@ -131,14 +131,14 @@ select {
     box-sizing: border-box;
 }
 
-@media (max-width: 56.25rem) {
+@media (width <= 56.25rem) {
     .section-container-old {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
 }
 
-@media (max-width: 37.5rem) {
+@media (width <= 37.5rem) {
     .section-container-old {
         padding-left: 0.25rem;
         padding-right: 0.25rem;
@@ -233,7 +233,7 @@ select {
 
 /* ============ Global Text and text color quries ============ */
 
-@media (max-width: 64rem) {
+@media (width <= 64rem) {
     section[id] {
         padding-left: 2.8125rem !important;
         padding-right: 2.8125rem !important;
@@ -263,7 +263,7 @@ select {
     }
 }
 
-@media (max-width: 56.25rem) {
+@media (width <= 56.25rem) {
 
     .text-container {
         width: 100%;
@@ -278,7 +278,7 @@ select {
     }
 }
 
-@media (max-width: 64rem) {
+@media (width <= 64rem) {
     .text-container {
         width: 100%;
         max-width: none;
@@ -291,7 +291,7 @@ select {
     }
 }
 
-@media (max-width: 37.5rem) {
+@media (width <= 37.5rem) {
 
     .section-container {
         width: 100%;

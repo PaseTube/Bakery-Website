@@ -68,7 +68,7 @@ section#our-story::before {
 }
 
 /* Media Queries */
-@media (max-width: 64rem) {
+@media (width <= 64rem) {
     .container-story {
         flex-direction: column;
         align-items: center;
