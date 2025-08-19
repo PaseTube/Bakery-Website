@@ -330,6 +330,14 @@ nav {
     .nav-links {
         gap: 1.25rem;
     }
+    .chef-container .chef-image img {
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+
+.chef-container:not(:first-child) img {
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+
+}
 }
 
 @media (width <= 768px) {
