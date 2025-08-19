@@ -249,7 +249,7 @@ nav {
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-.chef-modal-container .chef-container:not(:first-child) .chef-image img {
+.chef-container:not(:first-child) img {
     position: static;
     margin-bottom: 0;
     margin-top: 0;
@@ -271,6 +271,7 @@ nav {
     letter-spacing: 0.03125rem;
     font-weight: 400;
     gap: 1rem;
+    display: flex;
 }
 
 .nav-buttons .contact {
@@ -454,8 +455,8 @@ nav {
     }
 
     .nav-buttons {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        align-content: flex-start;
         width: 100%;
         gap: 0.75rem;
         margin-top: 1rem;

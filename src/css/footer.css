@@ -1,5 +1,5 @@
-/* BEM Footer Nav Styling */
-.footer__nav-wrapper {
+/* Footer Nav Styling */
+.footer-nav-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
     justify-content: flex-start;
 }
 
-.footer__heading {
+.footer-heading {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.25rem;
@@ -15,7 +15,7 @@
     font-family: 'Playfair Display', serif;
 }
 
-.footer__nav-list {
+.footer-nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -24,7 +24,7 @@
     gap: 0.625rem;
 }
 
-.footer__nav-list li a {
+.footer-nav-list li a {
     text-decoration: none;
     color: #24232396;
     font-size: 1.125rem;
@@ -33,7 +33,7 @@
     transition: color 0.2s;
 }
 
-.footer__nav-list li a:hover {
+.footer-nav-list li a:hover {
     color: #000;
 }
 
@@ -51,7 +51,7 @@ section#links-footer .section-container {
     background-color: #F6F6F6;
 }
 
-.footer__heading {
+.footer-heading {
     font-size: 1.5625rem;
     font-weight: 700;
     font-family: 'Playfair Display';
@@ -59,30 +59,30 @@ section#links-footer .section-container {
     margin-bottom: 1.25rem;
 }
 
-.footer__nav-list,
-.footer__quick-list,
-.footer__open-list,
-.footer__consult-list {
+.footer-nav-list,
+.footer-quick-list,
+.footer-open-list,
+.footer-consult-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.footer__nav-list li,
-.footer__quick-list li,
-.footer__open-list li,
-.footer__consult-list li {
+.footer-nav-list li,
+.footer-quick-list li,
+.footer-open-list li,
+.footer-consult-list li {
     margin-bottom: 0.9375rem;
 }
 
 .footer-quick-links .inner a:hover,
 .footer-nav-links .inner a:hover,
 .footer-logo-container a:hover,
-.operational .inner a.link-hover:hover{
+.operational .inner a.link-hover:hover {
     color: black;
 }
 
-section#links-footer .section-container > div:not(:first-child) {
+section#links-footer .section-container>div:not(:first-child) {
     border-left: 0.125rem solid #0000003b;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
@@ -172,7 +172,7 @@ section#links-footer .section-container > div:not(:first-child) {
     font-size: 1.125rem;
 }
 
-.operational ul li a .date-open{
+.operational ul li a .date-open {
     cursor: default;
 }
 
@@ -195,7 +195,7 @@ section#links-footer .section-container > div:not(:first-child) {
         overflow-x: hidden;
     }
 
-    section#links-footer .section-container > div {
+    section#links-footer .section-container>div {
         width: 100%;
         max-width: 100%;
         border: none !important;
@@ -207,13 +207,13 @@ section#links-footer .section-container > div:not(:first-child) {
         box-sizing: border-box;
     }
 
-    section#links-footer .section-container > div:last-child {
+    section#links-footer .section-container>div:last-child {
         border-bottom: none !important;
         padding-bottom: 0;
         margin-bottom: 0;
     }
 
-    section#links-footer .section-container > div:not(:first-child) {
+    section#links-footer .section-container>div:not(:first-child) {
         border-left: 0.125rem solid #0000003b;
         padding-left: 0;
         padding-right: 0;
@@ -267,22 +267,22 @@ section#main-footer {
     background-color: #F6F6F6;
 }
 
-section#main-footer .section-container{
+section#main-footer .section-container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr;
     align-items: end;
 }
 
-.footer-socials{
+.footer-socials {
     justify-items: start !important;
 }
 
 .copy-rights {
     grid-column: 2;
     text-align: center;
-    white-space: nowrap; 
-    overflow: visible; 
+    white-space: nowrap;
+    overflow: visible;
     color: #8E8E8E;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 500;
@@ -304,30 +304,30 @@ section#main-footer .section-container{
     padding: 0;
 }
 
-.footer-socials ul li a{
+.footer-socials ul li a {
     text-decoration: none;
     color: #24232396;
     border: 0.0625rem solid #8E8E8E;
     border-radius: 50%;
-    padding: 0.625rem; 
+    padding: 0.625rem;
 }
 
-.footer-socials ul li a:hover{
+.footer-socials ul li a:hover {
     text-decoration: none;
     color: #ffffff;
     border: 0.0625rem solid #585858;
     background-color: #585858;
     border-radius: 50%;
-    padding: 0.625rem; 
+    padding: 0.625rem;
 }
 
 /* media queries */
-@media (max-width: 1279px){
+@media (max-width: 1279px) {
     section#main-footer {
         padding: 1.25rem 3.125rem 3.125rem 3.125rem;
     }
 
-    section#main-footer .section-container{
+    section#main-footer .section-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 1.25rem;
