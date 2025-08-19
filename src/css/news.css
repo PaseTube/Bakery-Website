@@ -1,9 +1,9 @@
-section#news {
+section.news {
     padding: 9.375rem 6.25rem 0 6.25rem;
     margin-bottom: 3.125rem;
 }
 
-section#news .section-container {
+section.news .section-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     align-content: space-between;
@@ -64,11 +64,11 @@ section#news .section-container {
 
 
 @media (width <= 79.9375rem) {
-    section#news {
+    section.news {
         padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     }
 
-    section#news .section-container {
+    section.news .section-container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -87,7 +87,7 @@ section#news .section-container {
 }
 
 @media (width <= 48rem) {
-    section#news .section-container {
+    section.news .section-container {
         align-content: space-around;
         align-items: center;
         gap: 0;

@@ -1,4 +1,4 @@
-section#dine-with-us-1 {
+section.dine-with-us-1 {
     background-color: white;
     padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     background-image: url('/Images/svg/croissant.svg');
@@ -9,7 +9,7 @@ section#dine-with-us-1 {
     background-blend-mode: normal;
 }
 
-section#dine-with-us-1 .section-container {
+section.dine-with-us-1 .section-container {
     display: flex;
     flex-direction: row;
     gap: 1.25rem;
@@ -238,7 +238,7 @@ section#dine-with-us-1 .section-container {
 }
 
 @media (width <= 1818px) {
-    section#dine-with-us-1 .section-container {
+    section.dine-with-us-1 .section-container {
         flex-direction: row;
         align-items: flex-end;
         height: auto;
@@ -264,7 +264,7 @@ section#dine-with-us-1 .section-container {
 }
 
 @media (width <= 768px) {
-    section#dine-with-us-1 {
+    section.dine-with-us-1 {
         padding: 6.25rem 3.125rem 3.125rem 3.125rem;
     }
 
@@ -311,7 +311,7 @@ section#dine-with-us-1 .section-container {
 
 /* Second part of the Dining section */
 
-section#dine-with-us-2 {
+section.dine-with-us-2 {
     background-color: white;
     min-height: 46.875rem;
     height: auto;
@@ -325,7 +325,7 @@ section#dine-with-us-2 {
     background-blend-mode: normal;
 }
 
-section#dine-with-us-2 .section-container {
+section.dine-with-us-2 .section-container {
     display: flex;
     gap: 1.25rem;
     text-align: center;

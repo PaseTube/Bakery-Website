@@ -1,4 +1,4 @@
-section#our-story {
+section.our-story {
     background-color: #243231;
     min-height: 34.375rem;
     height: auto;
@@ -6,7 +6,7 @@ section#our-story {
 }
 
 
-section#our-story::before {
+section.our-story::before {
     content: '';
     position: absolute;
     inset: 0;

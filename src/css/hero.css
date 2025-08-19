@@ -1,5 +1,5 @@
 /* hero background */
-section#hero {
+section.hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("/Images/hero.webp");
     background-repeat: no-repeat;
     background-position: center center;
@@ -463,7 +463,7 @@ li {
 }
 
 @media (width <= 768px) {
-    section#hero {
+    section.hero {
         height: 46.875rem;
     }
 
@@ -478,7 +478,7 @@ li {
 }
 
 @media (width <= 1024px) {
-    section#hero {
+    section.hero {
         min-height: 46.875rem;
         height: auto;
     }

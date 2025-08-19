@@ -38,12 +38,12 @@
 }
 
 /* Footer grid layout */
-section#links-footer {
+section.links-footer {
     padding: 6.25rem 6.25rem 3.125rem 6.25rem;
     background-color: #F6F6F6;
 }
 
-section#links-footer .section-container {
+section.links-footer .section-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -82,7 +82,7 @@ section#links-footer .section-container {
     color: black;
 }
 
-section#links-footer .section-container>div:not(:first-child) {
+section.links-footer .section-container>div:not(:first-child) {
     border-left: 0.125rem solid #0000003b;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
@@ -183,11 +183,11 @@ section#links-footer .section-container>div:not(:first-child) {
 
 /* Media queries */
 @media (width <= 1279px) {
-    section#links-footer {
+    section.links-footer {
         padding: 3.125rem;
     }
 
-    section#links-footer .section-container {
+    section.links-footer .section-container {
         display: flex;
         flex-direction: column;
         gap: 3.125rem;
@@ -195,7 +195,7 @@ section#links-footer .section-container>div:not(:first-child) {
         overflow-x: hidden;
     }
 
-    section#links-footer .section-container>div {
+    section.links-footer .section-container>div {
         width: 100%;
         max-width: 100%;
         border: none !important;
@@ -207,13 +207,13 @@ section#links-footer .section-container>div:not(:first-child) {
         box-sizing: border-box;
     }
 
-    section#links-footer .section-container>div:last-child {
+    section.links-footer .section-container>div:last-child {
         border-bottom: none !important;
         padding-bottom: 0;
         margin-bottom: 0;
     }
 
-    section#links-footer .section-container>div:not(:first-child) {
+    section.links-footer .section-container>div:not(:first-child) {
         border-left: 0.125rem solid #0000003b;
         padding-left: 0;
         padding-right: 0;
@@ -262,12 +262,12 @@ section#links-footer .section-container>div:not(:first-child) {
 }
 
 /* MAIN FOOTER */
-section#main-footer {
+section.main-footer {
     padding: 0.625rem 6.25rem 3.125rem 6.25rem;
     background-color: #F6F6F6;
 }
 
-section#main-footer .section-container {
+section.main-footer .section-container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr;
@@ -323,11 +323,11 @@ section#main-footer .section-container {
 
 /* media queries */
 @media (width <= 1279px) {
-    section#main-footer {
+    section.main-footer {
         padding: 1.25rem 3.125rem 3.125rem 3.125rem;
     }
 
-    section#main-footer .section-container {
+    section.main-footer .section-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 1.25rem;
