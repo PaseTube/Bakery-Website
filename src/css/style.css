@@ -1,6 +1,7 @@
 /* Google Fonts import centraal */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
 /* ---------- Globals ---------- */
 body {
     cursor: none;
@@ -16,7 +17,7 @@ body {
     overflow-x: hidden;
 }
 
-.menu_page{
+.menu_page {
     background-color: #243231;
 }
 
@@ -91,6 +92,7 @@ select {
     }
 }
 
+
 /* ============ Fade Animations ============ */
 .fade-in-section {
     opacity: 0;
@@ -131,14 +133,14 @@ select {
     box-sizing: border-box;
 }
 
-@media (width <= 56.25rem) {
+@media (width <=56.25rem) {
     .section-container-old {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
 }
 
-@media (width <= 37.5rem) {
+@media (width <=37.5rem) {
     .section-container-old {
         padding-left: 0.25rem;
         padding-right: 0.25rem;
@@ -233,7 +235,7 @@ select {
 
 /* ============ Global Text and text color quries ============ */
 
-@media (width <= 64rem) {
+@media (width <=64rem) {
     section[id] {
         padding-left: 2.8125rem !important;
         padding-right: 2.8125rem !important;
@@ -258,12 +260,13 @@ select {
     .custom-cursor {
         display: none !important;
     }
+
     .loader-text {
-    font-size: 1rem;
+        font-size: 1rem;
     }
 }
 
-@media (width <= 56.25rem) {
+@media (width <=56.25rem) {
 
     .text-container {
         width: 100%;
@@ -278,7 +281,7 @@ select {
     }
 }
 
-@media (width <= 64rem) {
+@media (width <=64rem) {
     .text-container {
         width: 100%;
         max-width: none;
@@ -291,7 +294,7 @@ select {
     }
 }
 
-@media (width <= 37.5rem) {
+@media (width <=37.5rem) {
 
     .section-container {
         width: 100%;

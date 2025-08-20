@@ -1,9 +1,9 @@
 export async function getData() {
-  const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
     : '';
 
-  const url = process.env.NODE_ENV === 'development' 
+  const url = process.env.NODE_ENV === 'development'
     ? `${baseUrl}/favorites`
     : `${baseUrl}/api/favorites`;
 
@@ -25,11 +25,11 @@ export async function getData() {
 
 
 export async function getDiningData() {
-  const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
     : '';
 
-  const url = process.env.NODE_ENV === 'development' 
+  const url = process.env.NODE_ENV === 'development'
     ? `${baseUrl}/dining`
     : `${baseUrl}/api/dining`;
 
@@ -52,11 +52,11 @@ export async function getDiningData() {
 
 
 export async function getBakeryData() {
-  const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
     : '';
 
-  const url = process.env.NODE_ENV === 'development' 
+  const url = process.env.NODE_ENV === 'development'
     ? `${baseUrl}/bakeryGoods`
     : `${baseUrl}/api/bakeryGoods`;
 
@@ -78,11 +78,11 @@ export async function getBakeryData() {
 
 
 export async function getMenuItemsData() {
-  const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
     : '';
 
-  const url = process.env.NODE_ENV === 'development' 
+  const url = process.env.NODE_ENV === 'development'
     ? `${baseUrl}/menuItems`
     : `${baseUrl}/api/menuItems`;
 
@@ -103,11 +103,11 @@ export async function getMenuItemsData() {
 }
 
 export async function getExploreItemsData() {
-  const baseUrl = process.env.NODE_ENV === 'development' 
-    ? 'http://localhost:3000' 
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
     : '';
 
-  const url = process.env.NODE_ENV === 'development' 
+  const url = process.env.NODE_ENV === 'development'
     ? `${baseUrl}/exploreItems`
     : `${baseUrl}/api/exploreItems`;
 

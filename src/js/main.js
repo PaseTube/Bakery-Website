@@ -71,29 +71,32 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 (function () {
-    // Only run loader on homepage
-    const path = window.location.pathname;
-    if (path !== "/" && !path.endsWith("index.html")) return;
-
+    // Select elements
     const loaderOverlay = document.querySelector('#loader-overlay');
     const loaderText = document.querySelector('#loader-text');
     const word = "Bistro | Bakery";
 
-    // Add bouncing letters with random delay
+    // Ensure loader elements exist
+    if (!loaderOverlay || !loaderText) {
+        console.error("Loader elements not found.");
+        return;
+    }
+
+    // Add bouncing letters with random animation delay
     for (let i = 0; i < word.length; i++) {
         const span = document.createElement("span");
         span.textContent = word[i];
-        span.style.animationDelay = `${Math.random() * 0.5}s`;
+        span.style.animationDelay = `${Math.random() * 1}s`; // Increased delay range
         loaderText.appendChild(span);
     }
 
-    // Step 1: Background to green
+    // Step 1: Change the background color after a slight delay
     setTimeout(() => {
         loaderOverlay.style.backgroundColor = '#243231';
         loaderText.style.color = "white";
-    }, 500);
+    }, 1000);
 
-    // Step 2: End loading
+    // Step 2: End the text animation
     setTimeout(() => {
         loaderText.querySelectorAll("span").forEach(span => {
             span.style.animation = "none";
@@ -101,14 +104,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         loaderText.style.transform = "scale(4)";
         loaderText.style.opacity = "0";
+    }, 4000);
 
-        // Step 3: Fade out loader
-        setTimeout(() => {
-            loaderOverlay.style.opacity = "0";
-            setTimeout(() => loaderOverlay.remove(), 1500);
-        }, 1500);
-    }, 3000);
+    // Step 3: Fade out loader and remove after visibility
+    setTimeout(() => {
+        loaderOverlay.style.opacity = "0"; // Opacity transition for smooth fade
+        setTimeout(() => loaderOverlay.remove(), 1500); // Wait for fade-out before removal
+    }, 5500);
 })();
+
 
 
 // Custom Cursor Implementation

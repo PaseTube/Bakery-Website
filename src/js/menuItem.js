@@ -54,7 +54,7 @@ function renderMenuItems(filterTag = '') {
         if (filterTag && !item.tags.includes(filterTag)) return;
 
         const card = document.createElement('article');
-        card.classList.add('menu__product__card');
+    card.classList.add('menu-product-card');
         card.innerHTML = `
             <figure>
                 <img src="${item.image}" alt="${item.name}" loading="lazy" />
@@ -78,7 +78,7 @@ function renderSpecialItems() {
     menuData.forEach(item => {
         if (item.tags.includes("special!")) {
             const specialCard = document.createElement('article');
-            specialCard.classList.add('menu__product__card');
+            specialCard.classList.add('menu-product-card');
             specialCard.innerHTML = `
                 <figure>
                     <img src="${item.image}" alt="${item.name}" loading="lazy" />

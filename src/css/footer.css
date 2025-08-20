@@ -147,9 +147,9 @@ section.links-footer .section-container>div:not(:first-child) {
 }
 
 /* List Header Styling */
-.footer-nav-links li h1,
-.footer-quick-links li h1,
-.operational li h1 {
+.footer-nav-links li,
+.footer-quick-links li,
+.operational li {
     margin-top: 0;
     list-style: none;
     margin-bottom: 1.875rem;
