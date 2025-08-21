@@ -50,11 +50,11 @@ section.our-story::before {
     object-position: center;
 }
 
-.story-image img.big-story-image {
+.big-story-image {
     height: 31.25rem;
 }
 
-.story-image img.image-after-text {
+.image-after-text {
     height: 21.875rem;
     object-position: left;
 }
@@ -80,11 +80,11 @@ section.our-story::before {
         align-items: center;
     }
 
-    .story-image img.big-story-image {
+    .big-story-image {
         height: 18.75rem;
     }
 
-    .story-image img.image-after-text {
+    .image-after-text {
         height: 15.625rem;
     }
 }

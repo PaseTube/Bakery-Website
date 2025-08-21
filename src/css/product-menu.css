@@ -154,7 +154,7 @@
     transition: width 0.3s ease;
 }
 
-.menu-product-card:hover .text-container h2::after {
+.menu-product-card:hover h2::after {
     width: 3.125rem;
 }
 

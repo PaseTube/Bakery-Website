@@ -1,11 +1,17 @@
-export async function getData() {
-  const baseUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : '';
+function getApiUrl(endpoint) {
+  const baseUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : '';
 
-  const url = process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/favorites`
-    : `${baseUrl}/api/favorites`;
+  // Combineer baseUrl met het juiste endpoint
+  return process.env.NODE_ENV === 'development'
+    ? `${baseUrl}/${endpoint}`
+    : `${baseUrl}/api/${endpoint}`;
+}
+
+export async function getData() {
+  const url = getApiUrl('favorites');
 
   try {
     const response = await fetch(url);
@@ -22,16 +28,9 @@ export async function getData() {
     return [];
   }
 }
-
 
 export async function getDiningData() {
-  const baseUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : '';
-
-  const url = process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/dining`
-    : `${baseUrl}/api/dining`;
+  const url = getApiUrl('dining');
 
   try {
     const response = await fetch(url);
@@ -44,21 +43,13 @@ export async function getDiningData() {
     return json;
 
   } catch (error) {
-    console.error('Error fetching favorites data:', error.message);
+    console.error('Error fetching dining data:', error.message);
     return [];
   }
 }
-
-
 
 export async function getBakeryData() {
-  const baseUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : '';
-
-  const url = process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/bakeryGoods`
-    : `${baseUrl}/api/bakeryGoods`;
+  const url = getApiUrl('bakeryGoods');
 
   try {
     const response = await fetch(url);
@@ -71,20 +62,13 @@ export async function getBakeryData() {
     return json;
 
   } catch (error) {
-    console.error('Error fetching favorites data:', error.message);
+    console.error('Error fetching bakery data:', error.message);
     return [];
   }
 }
 
-
 export async function getMenuItemsData() {
-  const baseUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : '';
-
-  const url = process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/menuItems`
-    : `${baseUrl}/api/menuItems`;
+  const url = getApiUrl('menuItems');
 
   try {
     const response = await fetch(url);
@@ -97,19 +81,13 @@ export async function getMenuItemsData() {
     return json;
 
   } catch (error) {
-    console.error('Error fetching favorites data:', error.message);
+    console.error('Error fetching menu items data:', error.message);
     return [];
   }
 }
 
 export async function getExploreItemsData() {
-  const baseUrl = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : '';
-
-  const url = process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/exploreItems`
-    : `${baseUrl}/api/exploreItems`;
+  const url = getApiUrl('exploreItems');
 
   try {
     const response = await fetch(url);
@@ -122,7 +100,7 @@ export async function getExploreItemsData() {
     return json;
 
   } catch (error) {
-    console.error('Error fetching favorites data:', error.message);
+    console.error('Error fetching explore items data:', error.message);
     return [];
   }
 }
