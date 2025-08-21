@@ -1,21 +1,18 @@
-// JS
+
 import { getExploreItemsData } from './fetch.js';
 
-const heroExploreContainer = document.querySelector('#explore-container-hero');
-const closeHeroContainer = document.querySelector('#close-hero-explore');
-const popupDataContainer = document.querySelector('#explore-popup-data');
+let heroExploreContainer;
+let closeHeroContainer;
+let popupDataContainer;
 
-// Close all popups
-function closeAllModals() {
+export function closeAllModals() {
     document.querySelectorAll('.explore-popup.open').forEach(modal => {
         modal.classList.remove('open');
     });
 }
 
-// Render a single explore item in the popup
-function renderExploreItem(item) {
+export function renderExploreItem(item) {
     if (!popupDataContainer) return;
-
     popupDataContainer.innerHTML = `
         <img src="${item.image}" alt="${item.name}" style="width:100%; max-height:300px; object-fit:cover;"/>
         <h2>${item.name}</h2>
@@ -23,33 +20,32 @@ function renderExploreItem(item) {
     `;
 }
 
-// Open popup for a specific ID
-async function openExplorePopup(id) {
+export async function openExplorePopup(id) {
     closeAllModals();
     const data = await getExploreItemsData();
-    
-    // Make sure IDs match type (string/number)
     const item = data.find(el => String(el.id) === String(id));
-
     if (item) {
         renderExploreItem(item);
     } else {
         popupDataContainer.innerHTML = `<p>Item not found.</p>`;
     }
-    
     heroExploreContainer.classList.add('open');
 }
 
-// Event listeners for any element with data-id (works for <a>, <button>, etc.)
-document.querySelectorAll('[data-id]').forEach(el => {
-    el.addEventListener('click', (e) => {
-        e.preventDefault();
-        const id = el.getAttribute('data-id');
-        openExplorePopup(id);
-    });
-});
+export function setupExploreSection() {
+    heroExploreContainer = document.querySelector('#explore-container-hero');
+    closeHeroContainer = document.querySelector('#close-hero-explore');
+    popupDataContainer = document.querySelector('#explore-popup-data');
 
-// Close button
-closeHeroContainer?.addEventListener('click', () => {
-    heroExploreContainer.classList.remove('open');
-});
+    document.querySelectorAll('[data-id]').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = el.getAttribute('data-id');
+            openExplorePopup(id);
+        });
+    });
+
+    closeHeroContainer?.addEventListener('click', () => {
+        heroExploreContainer.classList.remove('open');
+    });
+}

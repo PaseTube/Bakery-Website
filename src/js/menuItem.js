@@ -1,8 +1,8 @@
 import { getMenuItemsData } from './fetch.js';
 
-let menuData = []; // store all menu items globally
+let menuData = [];
 
-async function getMenuData() {
+export async function getMenuData() {
     menuData = await getMenuItemsData();
     if (!menuData || menuData.length === 0) {
         const container = document.querySelector('.menu-items');
@@ -14,13 +14,12 @@ async function getMenuData() {
         container.appendChild(errorMsg);
         return;
     }
-
     populateTagDropdown();
     renderMenuItems();
     renderSpecialItems();
 }
 
-function populateTagDropdown() {
+export function populateTagDropdown() {
     const tagSelect = document.querySelector("#tagFilter")
     if (!tagSelect) return;
 
@@ -46,7 +45,7 @@ function populateTagDropdown() {
     });
 }
 
-function renderMenuItems(filterTag = '') {
+export function renderMenuItems(filterTag = '') {
     const container = document.querySelector('.menu-items');
     container.innerHTML = '';
 
@@ -70,7 +69,7 @@ function renderMenuItems(filterTag = '') {
     });
 }
 
-function renderSpecialItems() {
+export function renderSpecialItems() {
     const special = document.querySelector('.specials');
     if (!special) return;
     special.innerHTML = '';
@@ -95,4 +94,7 @@ function renderSpecialItems() {
     });
 }
 
-getMenuData();
+
+export function setupMenuItems() {
+    getMenuData();
+}

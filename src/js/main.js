@@ -1,3 +1,16 @@
+
+// Modular JS setup calls
+import { setupNavMenu } from './nav-menu.js';
+import { setupDiningCardFeatures } from './dining-card.js';
+import { setupExploreSection } from './explore.js';
+import { setupMenuSlideshow } from './menu.js';
+import { setupMenuItems } from './menuItem.js';
+
+setupNavMenu();
+setupDiningCardFeatures();
+setupExploreSection();
+setupMenuSlideshow();
+setupMenuItems();
 // Video Play Button Controller
 document.addEventListener('DOMContentLoaded', function () {
     const video = document.querySelector('#heroVideo');

@@ -1,14 +1,4 @@
-function getApiUrl(endpoint) {
-  const baseUrl =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : '';
 
-  // Combineer baseUrl met het juiste endpoint
-  return process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/${endpoint}`
-    : `${baseUrl}/api/${endpoint}`;
-}
 
 export async function getData() {
   const url = getApiUrl('favorites');
@@ -103,4 +93,16 @@ export async function getExploreItemsData() {
     console.error('Error fetching explore items data:', error.message);
     return [];
   }
+}
+
+export function getApiUrl(endpoint) {
+  const baseUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : '';
+
+  // Combineer baseUrl met het juiste endpoint
+  return process.env.NODE_ENV === 'development'
+    ? `${baseUrl}/${endpoint}`
+    : `${baseUrl}/api/${endpoint}`;
 }

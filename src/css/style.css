@@ -21,6 +21,10 @@ body {
     background-color: #243231;
 }
 
+li{
+    list-style-type: none;
+}
+
 /* custom cursor */
 a,
 button,
