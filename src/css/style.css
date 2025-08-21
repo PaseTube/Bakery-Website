@@ -27,7 +27,7 @@ button,
 input,
 textarea,
 select {
-    cursor: none !important;
+    cursor: none;
 }
 
 
@@ -194,7 +194,7 @@ select {
 /* ============ Global Text and text color ============ */
 
 .text-black {
-    color: black !important;
+    color: black;
 }
 
 .text-container {
@@ -237,13 +237,13 @@ select {
 
 @media (width <=64rem) {
     section[id] {
-        padding-left: 2.8125rem !important;
-        padding-right: 2.8125rem !important;
+    padding-left: 2.8125rem;
+    padding-right: 2.8125rem;
     }
 
     header {
-        padding-left: 2.8125rem !important;
-        padding-right: 2.8125rem !important;
+    padding-left: 2.8125rem;
+    padding-right: 2.8125rem;
     }
 
     .text-container {
@@ -258,7 +258,7 @@ select {
     }
 
     .custom-cursor {
-        display: none !important;
+    display: none;
     }
 
     .loader-text {

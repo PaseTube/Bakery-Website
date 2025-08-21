@@ -178,7 +178,7 @@ section.links-footer .section-container>div:not(:first-child) {
 
 /* Last container operational specific padding (can override above if needed) */
 .operational {
-    padding: 0 !important;
+    padding: 0 !important; /* Needed to override inherited or conflicting padding from parent/grid styles for correct alignment in all layouts */
 }
 
 /* Media queries */
@@ -199,8 +199,8 @@ section.links-footer .section-container>div:not(:first-child) {
         width: 100%;
         max-width: 100%;
         border: none !important;
-        border-left: none !important;
-        border-bottom: 0.125rem solid #0000003b !important;
+        border-left: none !important;  /* Needed: override desktop border-left */
+        border-bottom: 0.125rem solid #0000003b !important; /* Needed: switch to bottom border */
         padding: 0;
         padding-bottom: 1.875rem;
         margin-bottom: 1.875rem;
@@ -208,7 +208,7 @@ section.links-footer .section-container>div:not(:first-child) {
     }
 
     section.links-footer .section-container>div:last-child {
-        border-bottom: none !important;
+        border-bottom: none !important; /* Last column should not have a bottom border */
         padding-bottom: 0;
         margin-bottom: 0;
     }
