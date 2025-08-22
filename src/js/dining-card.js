@@ -55,13 +55,42 @@ export async function fetchBakeryData() {
     }
 }
 
+// Renders the bakery cards
+function renderBakeryCards() {
+    const container = document.querySelector('.dine-cards'); // Ensure your HTML has `.dine-cards` container
+    if (!container) return;
+
+    // Clear previous entries
+    container.innerHTML = '';
+
+    bakeryData.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('cards');
+        card.setAttribute('data-id', item.id);
+
+        card.innerHTML = `
+            <img loading="lazy" src="${item.image}" alt="${item.name}" />
+            <h3>${item.name}</h3>
+        `;
+
+        container.appendChild(card);
+    });
+
+    console.log('Bakery cards rendered successfully.');
+}
+
 // Initialize the popup system
 export async function initializeBistroPopup() {
     try {
         bakeryData = await fetchBakeryData();
-        setupCardClickHandlers();
-        setupPopupCloseHandlers();
-        console.log('Bistro popup system initialized successfully');
+        if (bakeryData.length === 0) {
+            console.error('No bakery data found. Verify API or populate data.');
+        } else {
+            renderBakeryCards();
+            setupCardClickHandlers();
+            setupPopupCloseHandlers();
+            console.log('Bistro popup system initialized successfully');
+        }
     } catch (error) {
         console.error('Failed to initialize popup system:', error);
     }
@@ -91,15 +120,14 @@ export function openPopup(id) {
     popup.classList.add('active');
     
     // Find the item data
-    const item = bakeryData.find(item => item.id === id || item.id === String(id));
+    const item = bakeryData.find(item => String(item.id) === String(id));
     
     // Simulate loading delay and show content
     setTimeout(() => {
         if (item) {
-            let imageSrc = item.image;
+            let imageSrc = item.image || 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop';
             
-            // Handle relative image paths
-            if (imageSrc && !imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
+            if (!imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
                 imageSrc = '/' + imageSrc;
             }
             
@@ -148,7 +176,6 @@ export function closePopup() {
     const popup = document.querySelector('#bakery-popup');
     popup.classList.remove('active');
 }
-
 
 // Optionally, provide a setup function for consumers to call
 export function setupDiningCardFeatures() {
