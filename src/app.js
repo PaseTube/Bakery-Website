@@ -11,7 +11,7 @@ import './css/contact.css';
 import './js/fetch.js'; // Only for fetch utilities, no side effects
 import { setupNavMenu } from './js/nav-menu.js';
 import { setupDiningCardFeatures } from './js/dining-card.js';
-import { setupExploreSection } from './js/explore.js';
+import { setupExploreSection as initializeExploreSection } from './js/explore.js';
 import { setupMenuSlideshow } from './js/menu.js';
 import { setupMenuItems } from './js/menuItem.js';
 import { setupContactForm } from './js/contact-form.js';
@@ -19,7 +19,7 @@ import './js/main.js';
 
 setupNavMenu();
 setupDiningCardFeatures();
-setupExploreSection();
+setupExploreSection() && initializeExploreSection();
 setupMenuSlideshow();
 setupMenuItems();
 setupContactForm && setupContactForm();
