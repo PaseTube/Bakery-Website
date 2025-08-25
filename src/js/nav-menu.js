@@ -1,106 +1,85 @@
-const openBtn = document.querySelector('#openModal');
-const closeBtn = document.querySelector('#closeModal');
-const modal = document.querySelector('#modal');
-const galleryImg = document.querySelector('#gallery-random');
-const openChefBtn = document.querySelector('#openChefModal');
-const chefModal = document.querySelector('#chef-modal');
-const closeChefBtn = document.querySelector('#closeChefModal');
+export function setupNavMenu() {
+  const openBtn = document.querySelector('#openModal');
+  const closeBtn = document.querySelector('#closeModal');
+  const modal = document.querySelector('#modal');
+  const galleryImg = document.querySelector('#gallery-random');
+  const openChefBtn = document.querySelector('#openChefModal');
+  const chefModal = document.querySelector('#chef-modal');
+  const closeChefBtn = document.querySelector('#closeChefModal');
 
-document.addEventListener("DOMContentLoaded", function () {
-  const topScrollBtn = document.querySelector("#backToTopBtn");
+  document.addEventListener("DOMContentLoaded", function () {
+    const topScrollBtn = document.querySelector("#backToTopBtn");
 
-  window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topScrollBtn.style.display = "block";
-    } else {
-      topScrollBtn.style.display = "none";
-    }
-  });
-
-  window.topFunction = function () {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topScrollBtn.style.display = "block";
+      } else {
+        topScrollBtn.style.display = "none";
+      }
     });
-  };
-});
 
-
-// close all modals
-function closeAllModals() {
-  modal.classList.remove("open");
-  chefModal.classList.remove("open");
-  // if more add here!
-}
-// Open and close gallery
-openBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  closeAllModals();
-  modal.classList.add("open");
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("open");
-});
-
-// Open Chef modal
-openChefBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  closeAllModals();
-  chefModal.classList.add("open");
-});
-
-closeChefBtn.addEventListener("click", () => {
-  chefModal.classList.remove("open");
-}
-);
-
-// burger menu
-document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('main-nav');
-
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    burger.classList.toggle('open');
+    window.topFunction = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
   });
-});
 
-// scroll effect
-window.addEventListener('scroll', () => {
-  const navbar = document.getElementById('navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  function closeAllModals() {
+    modal.classList.remove("open");
+    chefModal.classList.remove("open");
+    // if more add here!
   }
-});
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeAllModals();
+    modal.classList.add("open");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("open");
+  });
+
+  openChefBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeAllModals();
+    chefModal.classList.add("open");
+  });
+
+  closeChefBtn.addEventListener("click", () => {
+    chefModal.classList.remove("open");
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('#burger');
+    const nav = document.querySelector('#main-nav');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('#navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
   });
-});
 
-// fadein effect
-document.querySelectorAll('.fade-in-section').forEach(section => {
-  observer.observe(section);
-});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
 
-
-// gallery loader
-const numberOfImages = 10;
-for (let i = 0; i < numberOfImages; i++) {
-  const img = document.createElement("img");
-
-  // Use random images from Unsplash (change to any API or source)
-  const randomId = Math.floor(Math.random() * 1000);
-  img.src = `https://picsum.photos/300/200?random=${randomId}`;
-  img.alt = "Random bakery image";
-  img.loading = `lazy`;
-
-
-  galleryImg.appendChild(img);
+  document.querySelectorAll('.fade-in-section').forEach(section => {
+    observer.observe(section);
+  });
 }

@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <div id="loader-overlay" style="background-color: white;">
-        <!-- <div id="loader-text"><img src="/Images/bakery-shop.gif" alt=""></div> -->
-        <div id="loader-text"></div>
+    <div id="loader-overlay" class="loader-overlay" style="background-color: white;">
+        <div id="loader-text" class="loader-text"></div>
     </div>
     <!-- cursor -->
     <div class="custom-cursor" id="cursor">
@@ -41,17 +40,18 @@
             </div>
 
             <!-- Nav -->
-            <nav id="main-nav" class="fade-in-section">
+            <nav id="main-nav" class="main-nav fade-in-section">
                 <ul class="nav-links">
                     <li><a class="nav-link" href="index.html">Home</a></li>
                     <li><a class="nav-link" href="#" id="openChefModal">Chef</a></li>
                     <li><a class="nav-link" href="#" id="openModal">Gallery</a></li>
                 </ul>
 
-                <div class="nav-buttons">
-                    <a class="main-button" href="Menu.html">Menu</a>
-                    <a class="contact" href="#">Contact Us</a>
-                </div>
+                <ul class="nav-buttons">
+                    <li><a class="main-button" href="menu.html">Menu</a></li>
+                    <!-- does nothing for now -->
+                    <li><a class="contact" href="contact.html">Contact Us</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -60,22 +60,15 @@
 
     <main role="main">
         <!-- Chef modal -->
-        <div id="chef-modal" class="chef-modal">
+        <dialog id="chef-modal" class="chef-modal">
             <div class="modal-inner-wrapper">
                 <div class="image-cont"></div>
 
                 <div class="modal-inner">
-                    <div class="button-container">
-                        <button class="main-button" id="closeChefModal">Close</button>
-                        <article class="menu__card">
-                            <figure>
-                                <img src="/Images/bread.png" alt="Vers gebakken brood" />
-                                <figcaption>Onze specialiteit: ambachtelijk brood</figcaption>
-                            </figure>
-                            <div class="text-container">
-                            </div>
-                        </article>
-                        <div class="chef-container" id="chef-container">
+                    <button class="main-button" id="closeChefModal">Close</button>
+
+                    <div class="chef-modal-container">
+                        <div class="chef-container">
                             <div class="chef-image">
                                 <img loading="lazy" src="/Images/story-person.webp"
                                     alt="Chef in the kitchen preparing food" />
@@ -84,20 +77,17 @@
                                 <h2>Meet Our Chef</h2>
                                 <p>
                                     Our head chef, with over 15 years of experience in the culinary arts, brings a
-                                    passion
-                                    for
-                                    baking and a commitment to quality. Every pastry is crafted with care, using
-                                    traditional
-                                    techniques and the finest ingredients.
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
                                 </p>
                                 <p>
                                     Join us for a taste of our signature creations, from flaky croissants to decadent
-                                    tarts,
-                                    all made fresh daily.
+                                    tarts, all made fresh daily.
                                 </p>
                             </div>
                         </div>
-                        <div class="chef-container" id="chef-container">
+
+                        <div class="chef-container">
                             <div class="chef-image">
                                 <img loading="lazy" src="/Images/story-person.webp"
                                     alt="Chef in the kitchen preparing food" />
@@ -106,36 +96,39 @@
                                 <h2>Meet Our Chef</h2>
                                 <p>
                                     Our head chef, with over 15 years of experience in the culinary arts, brings a
-                                    passion
-                                    for
-                                    baking and a commitment to quality. Every pastry is crafted with care, using
-                                    traditional
-                                    techniques and the finest ingredients.
+                                    passion for baking and a commitment to quality. Every pastry is crafted with care,
+                                    using traditional techniques and the finest ingredients.
                                 </p>
                                 <p>
                                     Join us for a taste of our signature creations, from flaky croissants to decadent
-                                    tarts,
-                                    all made fresh daily.
+                                    tarts, all made fresh daily.
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- einde chef-modal-container -->
+
                 </div>
             </div>
-        </div>
+        </dialog>
+
 
 
         <!-- gallery modal  -->
-        <div id="modal" class="modal">
+        <dialog id="modal" class="modal">
             <div class="modal-inner">
                 <div class="button-container">
                     <button class="main-button" id="closeModal">Close</button>
                 </div>
                 <div class="gallery-random" id="gallery-random">
-                    <!-- load images! -->
+                    <img src="/Images/story-person.webp" alt="bakery image" loading="lazy">
+                    <img src="/Images/story-big.webp" alt="bakery image" loading="lazy">
+                    <img src="/Images/hero.webp" alt="bakery image" loading="lazy">
+                    <img src="/Images/diningcard-2.webp" alt="bakery image" loading="lazy">
+                    <img src="/Images/diningcard-4.webp" alt="bakery image" loading="lazy">
                 </div>
             </div>
-        </div>
+        </dialog>
+
         <!-- Hero section -->
         <section id="hero" class="hero section-base">
             <div class="section-container">
@@ -157,7 +150,9 @@
                                     (small
                                     cakes) and tarts.
                                 </p>
-                                <a class="main-button" href="#">Explore more</a>
+                                <a class="main-button explore-button" href="#" id="explore-hero-1">Explore more</a>
+
+
                             </div>
                         </div>
                         <div class="hero-menu-cta">
@@ -246,7 +241,7 @@
                             create
                             artisanal breads, pastries, and desserts that bring joy to every bite.
                         </p>
-                        <a class="main-button" href="#">Explore more</a>
+                        <a class="main-button explore-button" href="#" id="explore-hero-2">Explore more</a>
                     </div>
                 </div>
             </div>
@@ -330,7 +325,7 @@
 
                 <div class="dine-video video-wrapper">
                     <video id="heroVideo" muted playsinline>
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                        <source src="/Videos/video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
 
@@ -399,9 +394,9 @@
                 </div>
 
                 <div class="footer-nav-links fade-in-section">
-                    <div class="footer__quick-wrapper">
-                        <h2 class="footer__heading">Menu</h2>
-                        <ul class="footer__quick-list">
+                    <div class="footer-quick-wrapper">
+                        <h2 class="footer-heading">Menu</h2>
+                        <ul class="footer-quick-list">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="#our-story">About</a></li>
                             <li><a href="#" id="openModal">Gallery</a></li>
@@ -411,32 +406,33 @@
                 </div>
 
                 <div class="footer-quick-links fade-in-section">
-                    <div class="footer__quick-wrapper">
-                        <h2 class="footer__heading">Quick Links</h2>
-                        <ul class="footer__quick-list">
-                            <li><a href="Menu.html">Menu</a></li>
+                    <div class="footer-quick-wrapper">
+                        <h2 class="footer-heading">Quick Links</h2>
+                        <ul class="footer-quick-list">
+                            <li><a href="menu.html">Menu</a></li>
                             <li><a href="#">Opportunities</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Location & Contact</a></li>
+                            <li><a href="contact.html">Location & Contact</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="operational fade-in-section">
-                    <div class="footer__operational-wrapper">
-                        <h2 class="footer__heading">Operational</h2>
-                        <ul class="footer__open-list">
+                    <div class="footer-operational-wrapper">
+                        <h2 class="footer-heading">Operational</h2>
+                        <ul class="footer-open-list">
                             <li>Mon-Fri 8:00AM - 4:00PM</li>
                             <li>Sat-Sun 8:00AM - 4:00PM</li>
                         </ul>
-                        <h2 class="footer__heading">You need a consult</h2>
-                        <ul class="footer__consult-list">
+                        <h2 class="footer-heading">You need a consult</h2>
+                        <ul class="footer-consult-list">
                             <li><a href="tel:+ (123) 1800-567-8990" class="link-hover">+ (123) 1800-567-8990</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+
         <section id="main-footer" class="main-footer section-base">
             <div class="section-container">
                 <div class="footer-socials fade-in-section">
@@ -454,6 +450,16 @@
             </div>
         </section>
     </footer>
+    <div id="explore-container-hero" class="explore-popup">
+        <button id="close-hero-explore" class="main-button">Close</button>
+        <div class="explore-popup-content">
+            <div id="explore-popup-data">
+                <p>Loading…</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
     <!-- load vite models -->
     <script type="module" src="/src/app.js"></script>
 </body>

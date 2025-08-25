@@ -1,7 +1,7 @@
 import { getData } from './fetch.js';
 
 // Menu Slideshow Class
-class MenuSlideshow {
+export class MenuSlideshow {
     constructor() {
         this.currentSlide = 0;
         this.slides = [];
@@ -192,6 +192,11 @@ class MenuSlideshow {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    new MenuSlideshow();
-});
+
+export function setupMenuSlideshow() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => new MenuSlideshow());
+    } else {
+        new MenuSlideshow();
+    }
+}

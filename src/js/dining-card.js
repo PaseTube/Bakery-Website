@@ -1,7 +1,6 @@
-import { getDiningData } from './fetch.js';
-import { getBakeryData } from './fetch.js';
+import { getDiningData, getBakeryData } from './fetch.js';
 
-async function renderDiningData() {
+export async function renderDiningData() {
     const data = await getDiningData();
     const container = document.querySelector('.cards-api');
 
@@ -38,7 +37,7 @@ async function renderDiningData() {
 let bakeryData = [];
 
 // Fetch bakery data using your function
-async function fetchBakeryData() {
+export async function fetchBakeryData() {
     try {
         console.log('Fetching bakery data...');
         const data = await getBakeryData();
@@ -56,20 +55,33 @@ async function fetchBakeryData() {
     }
 }
 
+// Renders the bakery cards
+function renderBakeryCards() {
+    const container = document.querySelector('.dine-cards'); // Ensure your HTML has `.dine-cards` container
+    if (!container) return;
+
+    console.log('Bakery cards rendered successfully.');
+}
+
 // Initialize the popup system
-async function initializeBistroPopup() {
+export async function initializeBistroPopup() {
     try {
         bakeryData = await fetchBakeryData();
-        setupCardClickHandlers();
-        setupPopupCloseHandlers();
-        console.log('Bistro popup system initialized successfully');
+        if (bakeryData.length === 0) {
+            console.error('No bakery data found. Verify API or populate data.');
+        } else {
+            renderBakeryCards();
+            setupCardClickHandlers();
+            setupPopupCloseHandlers();
+            console.log('Bistro popup system initialized successfully');
+        }
     } catch (error) {
         console.error('Failed to initialize popup system:', error);
     }
 }
 
 // Setup click handlers for cards
-function setupCardClickHandlers() {
+export function setupCardClickHandlers() {
     const cards = document.querySelectorAll('.dine-cards .cards');
     
     cards.forEach(card => {
@@ -83,8 +95,8 @@ function setupCardClickHandlers() {
 }
 
 // Open popup with loading state then content
-function openPopup(id) {
-    const popup = document.getElementById('bakery-popup');
+export function openPopup(id) {
+    const popup = document.querySelector('#bakery-popup');
     const popupInner = document.querySelector('.bakery-popup-inner');
     
     // Show loading state
@@ -92,15 +104,14 @@ function openPopup(id) {
     popup.classList.add('active');
     
     // Find the item data
-    const item = bakeryData.find(item => item.id === id || item.id === String(id));
+    const item = bakeryData.find(item => String(item.id) === String(id));
     
     // Simulate loading delay and show content
     setTimeout(() => {
         if (item) {
-            let imageSrc = item.image;
+            let imageSrc = item.image || 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop';
             
-            // Handle relative image paths
-            if (imageSrc && !imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
+            if (!imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
                 imageSrc = '/' + imageSrc;
             }
             
@@ -122,9 +133,9 @@ function openPopup(id) {
 }
 
 // Setup popup close handlers
-function setupPopupCloseHandlers() {
-    const popup = document.getElementById('bakery-popup');
-    const closeBtn = document.getElementById('bakery-popup-close');
+export function setupPopupCloseHandlers() {
+    const popup = document.querySelector('#bakery-popup');
+    const closeBtn = document.querySelector('#bakery-popup-close');
     
     // Close button click
     closeBtn.addEventListener('click', closePopup);
@@ -145,16 +156,17 @@ function setupPopupCloseHandlers() {
 }
 
 // Close popup function
-function closePopup() {
-    const popup = document.getElementById('bakery-popup');
+export function closePopup() {
+    const popup = document.querySelector('#bakery-popup');
     popup.classList.remove('active');
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeBistroPopup);
-} else {
-    initializeBistroPopup();
+// Optionally, provide a setup function for consumers to call
+export function setupDiningCardFeatures() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeBistroPopup);
+    } else {
+        initializeBistroPopup();
+    }
+    renderDiningData();
 }
-// Initial render
-renderDiningData();
