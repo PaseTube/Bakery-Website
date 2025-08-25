@@ -60,22 +60,6 @@ function renderBakeryCards() {
     const container = document.querySelector('.dine-cards'); // Ensure your HTML has `.dine-cards` container
     if (!container) return;
 
-    // Clear previous entries
-    container.innerHTML = '';
-
-    bakeryData.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('cards');
-        card.setAttribute('data-id', item.id);
-
-        card.innerHTML = `
-            <img loading="lazy" src="${item.image}" alt="${item.name}" />
-            <h3>${item.name}</h3>
-        `;
-
-        container.appendChild(card);
-    });
-
     console.log('Bakery cards rendered successfully.');
 }
 
