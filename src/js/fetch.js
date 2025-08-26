@@ -58,7 +58,7 @@ export async function getBakeryData() {
 }
 
 export async function getMenuItemsData() {
-  const url = getApiUrl('menuItems');
+  const url = getApiUrl('products');
 
   try {
     const response = await fetch(url);
@@ -98,7 +98,7 @@ export async function getExploreItemsData() {
 export function getApiUrl(endpoint) {
   const baseUrl =
     process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
+      ? 'http://localhost:3000' && 'http://localhost:5206/api'
       : '';
 
   // Combineer baseUrl met het juiste endpoint
