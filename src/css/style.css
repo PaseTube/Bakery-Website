@@ -236,6 +236,18 @@ select {
     margin: 0;
 }
 
+/* ============ Contact form handeling ============ */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
 
 /* ============ Global Text and text color quries ============ */
 

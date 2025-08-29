@@ -31,3 +31,6 @@ C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Websi
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\obj\Debug\net9.0\backend.pdb
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\obj\Debug\net9.0\backend.genruntimeconfig.cache
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\obj\Debug\net9.0\ref\backend.dll
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

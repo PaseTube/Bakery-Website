@@ -1,31 +1,37 @@
+// contactForm.js
+export async function setupContactForm() {
+  const form = document.querySelector("#contact-form");
 
-export function setupContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', (e) => {
+  if (!form) return; // prevent errors if form is not on the page
+
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
 
-    let errors = [];
+    const formData = {
+      Name: document.querySelector("#name").value.trim(),
+      Email: document.querySelector("#email").value.trim(),
+      Message: document.querySelector("#message").value.trim()
+    };
 
-    if (!name.value.trim()) errors.push("Name is required");
-    if (!email.value.trim()) errors.push("Email is required");
-    if (!message.value.trim()) errors.push("Message is required");
+    try {
+      const response = await fetch("http://localhost:5206/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
 
-    // Highlight empty fields
-    [name, email, message].forEach(field => {
-      if (!field.value.trim()) {
-        field.style.borderColor = 'red';
+      if (!response.ok) {
+        const errors = await response.json();
+        console.error("Validation errors:", errors);
+        alert("⚠️ Validation failed! Check the console for details.");
       } else {
-        field.style.borderColor = '';
+        const data = await response.json();
+        alert(`✅ ${data.message}`);
+        form.reset();
       }
-    });
-
-    // Show alert if there are errors (does NOT prevent submission)
-    if (errors.length) {
-      alert(errors.join("\n"));
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      alert("❌ Something went wrong. Please try again later.");
     }
   });
 }

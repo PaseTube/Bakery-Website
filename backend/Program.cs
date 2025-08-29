@@ -1,28 +1,62 @@
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services needed for controllers
+// Add services for controllers
 builder.Services.AddControllers();
 
-// Enable CORS to allow frontend to make API calls
+// Enable CORS (adjust for frontend later if needed)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin()  // Allow requests from anywhere during dev
+        policy.AllowAnyOrigin()  // for dev; in prod use WithOrigins()
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
+// Add Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Products API",
+        Version = "v1",
+        Description = "API to manage products",
+        Contact = new OpenApiContact
+        {
+            Name = "Your Name",
+            Email = "your.email@example.com",
+            Url = new Uri("https://yourwebsite.com")
+        }
+    });
+});
+
 var app = builder.Build();
 
-// Use static files (but they are served by Vite in this case)
+// Enable Swagger only in Development
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API v1");
+        c.RoutePrefix = "swagger"; // UI available at /swagger
+    });
+}
+
+app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
-// Enable CORS (must be before MapControllers)
+// ✅ Enable CORS BEFORE authorization & controllers
 app.UseCors("AllowAll");
+
+app.UseAuthorization();
 
 app.MapControllers();
 
