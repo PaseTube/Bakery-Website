@@ -96,17 +96,23 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Tags */
-.product-list li .tags {
-  color: #777;
-  font-size: 0.9rem;
-}
-
 /* Buttons inside product cards */
 .product-list li .btn {
   align-self: flex-start;
   margin-top: 0.25rem;
 }
+
+select.tags {
+    width: 100%;
+    height: 120px; /* Make it taller to show multiple options */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 600px) {

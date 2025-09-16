@@ -6,6 +6,13 @@ if (sessionStorage.getItem("auth") !== "granted") {
 
 import { getMenuItemsData, getApiUrl } from './fetch.js';
 
+// Predefined tags for products (can be replaced with an API call if necessary)
+const predefinedTags = [
+  "bread", "artisan", "savory", "vegan", "special!", 
+  "pastry", "buttery", "breakfast", "sweet", "dessert",
+  "chocolate", "fruit", "snack", "cake", "citrus"
+];
+
 // Helper functions
 function highlightError(inputEl) {
   inputEl.style.borderColor = "red";
@@ -14,6 +21,18 @@ function highlightError(inputEl) {
 
 function clearErrors(inputs) {
   inputs.forEach(i => i.style.borderColor = "#ccc");
+}
+
+// Populate the Tags dropdown with predefined tags
+function populateTagsDropdown() {
+  const tagsSelect = document.getElementById("tags");
+  
+  predefinedTags.forEach(tag => {
+    const option = document.createElement("option");
+    option.value = tag;
+    option.textContent = tag;
+    tagsSelect.appendChild(option);
+  });
 }
 
 // Fetch and render products
@@ -89,19 +108,22 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
   const priceInput = document.querySelector(".price");
   const imageInput = document.querySelector(".image");
   const descInput = document.querySelector(".description");
-  const tagsInput = document.querySelector(".tags");
+  const tagsSelect = document.querySelector(".tags"); // Updated to use the <select> element for tags
 
   clearErrors([nameInput, priceInput]);
 
   if (!nameInput.value.trim()) return highlightError(nameInput);
   if (!priceInput.value || parseFloat(priceInput.value) <= 0) return highlightError(priceInput);
 
+  // Collect selected tags from the dropdown
+  const selectedTags = [...tagsSelect.selectedOptions].map(option => option.value);
+
   const newProduct = {
     name: nameInput.value.trim(),
     price: parseFloat(priceInput.value),
     image: imageInput.value.trim(),
     description: descInput.value.trim(),
-    tags: tagsInput.value ? tagsInput.value.split(",").map(t => t.trim()) : []
+    tags: selectedTags
   };
 
   try {
@@ -116,15 +138,16 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
     priceInput.value = "";
     imageInput.value = "";
     descInput.value = "";
-    tagsInput.value = "";
+    tagsSelect.value = ""; // Reset dropdown selection
 
     alert("Product added successfully!");
-    fetchProducts();
+    fetchProducts(); // Refresh the product list
   } catch (err) {
     console.error(err);
     alert("Failed to add product.");
   }
 });
 
-// Initial load
-fetchProducts();
+// Initialize the page
+populateTagsDropdown(); // Populate the tags dropdown
+fetchProducts(); // Load and render the products

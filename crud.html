@@ -16,9 +16,18 @@
     <input type="number" step="0.01" class="input price" placeholder="Price" required>
     <input type="text" class="input image" placeholder="Image URL">
     <textarea class="input description" placeholder="Description"></textarea>
-    <input type="text" class="input tags" placeholder="Comma-separated tags">
+
+    <!-- Replace tags input with a multiple select -->
+    <label for="tags">Tags:</label>
+    <small>tip: CTRL + Left mouse click if need more tags</small>
+    <select id="tags" name="tags" class="input tags" multiple>
+      
+        <!-- Options will be populated with JavaScript -->
+    </select>
+
     <button type="submit" class="btn">Add Product</button>
-  </form>
+</form>
+
 
   <h2 class="section-title">Products</h2>
   <ul class="product-list"></ul>
