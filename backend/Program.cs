@@ -5,18 +5,18 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services for controllers
 builder.Services.AddControllers();
 
-// Enable CORS (adjust for frontend later if needed)
+// Configure for deployment-friendly CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowFrontendOrigin", policy =>
     {
-        policy.AllowAnyOrigin()  // for dev; in prod use WithOrigins()
+        policy.WithOrigins("https://bakery-website-git-csharp-pawanpreet-singhs-projects.vercel.app") // Vercel's frontend URL
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
-// Add Swagger
+// Add Swagger (API Documentation)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen(options =>
         Description = "API to manage products",
         Contact = new OpenApiContact
         {
-            Name = "Your Name",
+            Name = "Pawanpreet Singh",
             Email = "your.email@example.com",
             Url = new Uri("https://yourwebsite.com")
         }
@@ -36,16 +36,13 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// Enable Swagger only in Development
-if (app.Environment.IsDevelopment())
+// Enable Swagger always (useful in production for API inspection)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API v1");
-        c.RoutePrefix = "swagger"; // UI available at /swagger
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API v1");
+    c.RoutePrefix = "swagger"; // UI will be available at /swagger
+});
 
 app.UseHttpsRedirection();
 
@@ -53,8 +50,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// ✅ Enable CORS BEFORE authorization & controllers
-app.UseCors("AllowAll");
+// ✅ Enable CORS for your frontend
+app.UseCors("AllowFrontendOrigin");
 
 app.UseAuthorization();
 
