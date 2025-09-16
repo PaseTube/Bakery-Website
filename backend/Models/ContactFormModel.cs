@@ -2,7 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 public class ContactFormModel
 {
-    [Required(ErrorMessage = "Name is required.")]
+    [Required]
+    [RegularExpression(@"^[A-Za-zÀ-ÿ ]+$", ErrorMessage = "Name cannot contain numbers or special characters.")]
     [StringLength(100, ErrorMessage = "Name cannot exceed 100 characters.")]
     public string Name { get; set; }
 

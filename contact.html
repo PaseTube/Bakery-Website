@@ -137,7 +137,8 @@
 
                 <form id="contact-form" class="contact-form">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required pattern="[A-Za-zÀ-ÿ ]+"
+                        title="The name cannot contain numbers.">
                     <div class="error-message" id="error-name"></div>
 
                     <label for="email">Email:</label>
