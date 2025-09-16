@@ -156,7 +156,7 @@ npm run api     # API accessible at http://localhost:3000
 
 ---
 
-## 🚀 Running the Backend
+## 🚀 Running the Backend 
 
 ### 1. Navigate to the Backend Folder
 
@@ -224,7 +224,6 @@ When you navigate to `/crud`, you’ll first see a login page.
 **Credentials:**
 
 ```
-Username: admin
 Password: hello
 ```
 
