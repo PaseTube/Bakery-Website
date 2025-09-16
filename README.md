@@ -149,3 +149,27 @@ npm install
 npm run dev     # Frontend at http://localhost:5173
 npm run api     # API at http://localhost:3000
 ```
+
+
+
+# Running the Backend
+
+To start the backend, follow these steps:
+
+1. **Navigate to the Backend Folder:**
+
+   Open your terminal and move to the backend project directory:
+   ```bash
+   cd backend
+   ```
+2. **Run the Backend:**
+  Run the following command to start the backend:
+  ```bash 
+  dotnet run
+  ```
+3. **access the backend**
+  once the backend is running it will be accessible at: 
+  ```bash 
+  http://localhost:5206/api/products or http://localhost:5206/swagger
+  ```
+  ```/api``` to see the api ```/swagger``` to see the swagger ui.

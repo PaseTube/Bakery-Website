@@ -34,3 +34,9 @@ C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Websi
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\web.config
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\appsettings.Development.json
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\appsettings.json
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\backend.deps.json
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\backend.runtimeconfig.json
+C:\Users\P.Singh\OneDrive - SBB\Documenten\Git Repos\Bakery-Website\Bakery-Website\backend\bin\Debug\net9.0\out\backend.staticwebassets.endpoints.json
