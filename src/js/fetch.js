@@ -99,7 +99,7 @@ export function getApiUrl(endpoint) {
   const baseUrl =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:3000' && 'http://localhost:5206/api'
-      : '';
+      : 'https://bakery-website-git-csharp-pawanpreet-singhs-projects.vercel.app/api';
 
   // Combineer baseUrl met het juiste endpoint
   return process.env.NODE_ENV === 'development'
