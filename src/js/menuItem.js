@@ -20,28 +20,28 @@ export async function getMenuData() {
 }
 
 export function populateTagDropdown() {
-    const tagSelect = document.querySelector("#tagFilter")
-    if (!tagSelect) return;
+    const tagArrayelect = document.querySelector("#tagFilter")
+    if (!tagArrayelect) return;
 
-    // Get unique tags from all items
-    const uniqueTags = new Set();
+    // Get unique tagArray from all items
+    const uniquetagArray = new Set();
     menuData.forEach(item => {
-        if (Array.isArray(item.tags)) {
-            item.tags.forEach(tag => uniqueTags.add(tag));
+        if (Array.isArray(item.tagArray)) {
+            item.tagArray.forEach(tag => uniquetagArray.add(tag));
         }
     });
 
-    // Add tags as options
-    uniqueTags.forEach(tag => {
+    // Add tagArray as options
+    uniquetagArray.forEach(tag => {
         const opt = document.createElement('option');
         opt.value = tag;
         opt.textContent = tag;
-        tagSelect.appendChild(opt);
+        tagArrayelect.appendChild(opt);
     });
 
     // Listen for changes
-    tagSelect.addEventListener('change', () => {
-        renderMenuItems(tagSelect.value); // only updates main menu
+    tagArrayelect.addEventListener('change', () => {
+        renderMenuItems(tagArrayelect.value); // only updates main menu
     });
 }
 
@@ -50,14 +50,14 @@ export function renderMenuItems(filterTag = '') {
     container.innerHTML = '';
 
     menuData.forEach(item => {
-        if (filterTag && !item.tags.includes(filterTag)) return;
+        if (filterTag && !item.tagArray.includes(filterTag)) return;
 
         const card = document.createElement('article');
     card.classList.add('menu-product-card');
         card.innerHTML = `
             <figure>
                 <img src="${item.image}" alt="${item.name}" loading="lazy" />
-                <figcaption>${item.tags[1] || ''}</figcaption>
+                <figcaption>${item.tagArray[1] || ''}</figcaption>
                 <div class="price-tag">&euro;${item.price.toFixed(2)}</div>
             </figure>
             <div class="text-container">
@@ -75,13 +75,13 @@ export function renderSpecialItems() {
     special.innerHTML = '';
 
     menuData.forEach(item => {
-        if (item.tags.includes("special!")) {
+        if (item.tagArray.includes("special!")) {
             const specialCard = document.createElement('article');
             specialCard.classList.add('menu-product-card');
             specialCard.innerHTML = `
                 <figure>
                     <img src="${item.image}" alt="${item.name}" loading="lazy" />
-                    <figcaption>${item.tags[1] || ''}</figcaption>
+                    <figcaption>${item.tagArray[1] || ''}</figcaption>
                     <div class="price-tag">&euro;${item.price.toFixed(2)}</div>
                 </figure>
                 <div class="text-container">

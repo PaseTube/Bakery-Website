@@ -1,9 +1,14 @@
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services for controllers
 builder.Services.AddControllers();
+
+// Configure EF Core with SQL Server
+builder.Services.AddDbContext<BakeryDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BakeryDB")));
 
 // Enable CORS (adjust for frontend later if needed)
 builder.Services.AddCors(options =>
