@@ -4,96 +4,129 @@ let menuData = [];
 
 export async function getMenuData() {
     menuData = await getMenuItemsData();
+    const container = document.querySelector('.menu-items');
+
     if (!menuData || menuData.length === 0) {
-        const container = document.querySelector('.menu-items');
-        const errorMsg = document.createElement('p');
-        errorMsg.textContent = 'No dining data available. Please try again later.';
-        errorMsg.style.color = 'red';
-        errorMsg.style.fontSize = '40px';
-        errorMsg.style.textAlign = 'center';
-        container.appendChild(errorMsg);
+        if (container) {
+            const errorMsg = document.createElement('p');
+            errorMsg.textContent = 'No dining data available. Please try again later.';
+            errorMsg.style.color = 'red';
+            errorMsg.style.fontSize = '40px';
+            errorMsg.style.textAlign = 'center';
+            container.appendChild(errorMsg);
+        }
         return;
     }
+
     populateTagDropdown();
     renderMenuItems();
     renderSpecialItems();
 }
 
 export function populateTagDropdown() {
-    const tagArrayelect = document.querySelector("#tagFilter")
-    if (!tagArrayelect) return;
+    const tagSelect = document.querySelector("#tagFilter");
+    if (!tagSelect) return;
 
-    // Get unique tagArray from all items
-    const uniquetagArray = new Set();
+    // Get unique tags from all items
+    const uniqueTags = new Set();
     menuData.forEach(item => {
         if (Array.isArray(item.tagArray)) {
-            item.tagArray.forEach(tag => uniquetagArray.add(tag));
+            item.tagArray.forEach(tag => uniqueTags.add(tag));
         }
     });
 
-    // Add tagArray as options
-    uniquetagArray.forEach(tag => {
+    // Clear existing options except the first (placeholder)
+    while (tagSelect.options.length > 1) {
+        tagSelect.remove(1);
+    }
+
+    // Add unique tags as options
+    uniqueTags.forEach(tag => {
         const opt = document.createElement('option');
         opt.value = tag;
         opt.textContent = tag;
-        tagArrayelect.appendChild(opt);
+        tagSelect.appendChild(opt);
     });
 
     // Listen for changes
-    tagArrayelect.addEventListener('change', () => {
-        renderMenuItems(tagArrayelect.value); // only updates main menu
+    tagSelect.addEventListener('change', () => {
+        renderMenuItems(tagSelect.value); // only updates main menu
     });
 }
 
 export function renderMenuItems(filterTag = '') {
     const container = document.querySelector('.menu-items');
-    container.innerHTML = '';
+    if (!container) return;
+
+    // Remove existing children
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 
     menuData.forEach(item => {
         if (filterTag && !item.tagArray.includes(filterTag)) return;
 
-        const card = document.createElement('article');
-    card.classList.add('menu-product-card');
-        card.innerHTML = `
-            <figure>
-                <img src="${item.image}" alt="${item.name}" loading="lazy" />
-                <figcaption>${item.tagArray[1] || ''}</figcaption>
-                <div class="price-tag">&euro;${item.price.toFixed(2)}</div>
-            </figure>
-            <div class="text-container">
-                <h2>${item.name}</h2>
-                <p>${item.description}</p>
-            </div>
-        `;
+        const card = createMenuCard(item);
         container.appendChild(card);
     });
 }
 
 export function renderSpecialItems() {
-    const special = document.querySelector('.specials');
-    if (!special) return;
-    special.innerHTML = '';
+    const specialContainer = document.querySelector('.specials');
+    if (!specialContainer) return;
+
+    while (specialContainer.firstChild) {
+        specialContainer.removeChild(specialContainer.firstChild);
+    }
 
     menuData.forEach(item => {
         if (item.tagArray.includes("special!")) {
-            const specialCard = document.createElement('article');
-            specialCard.classList.add('menu-product-card');
-            specialCard.innerHTML = `
-                <figure>
-                    <img src="${item.image}" alt="${item.name}" loading="lazy" />
-                    <figcaption>${item.tagArray[1] || ''}</figcaption>
-                    <div class="price-tag">&euro;${item.price.toFixed(2)}</div>
-                </figure>
-                <div class="text-container">
-                    <h2>${item.name}</h2>
-                    <p>${item.description}</p>
-                </div>
-            `;
-            special.appendChild(specialCard);
+            const specialCard = createMenuCard(item);
+            specialContainer.appendChild(specialCard);
         }
     });
 }
 
+// Helper function to create a menu card
+function createMenuCard(item) {
+    const card = document.createElement('article');
+    card.classList.add('menu-product-card');
+
+    const figure = document.createElement('figure');
+
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.name;
+    img.loading = 'lazy';
+
+    const figcaption = document.createElement('figcaption');
+    figcaption.textContent = item.tagArray[1] || '';
+
+    const priceTag = document.createElement('div');
+    priceTag.classList.add('price-tag');
+    priceTag.textContent = `€${item.price.toFixed(2)}`;
+
+    figure.appendChild(img);
+    figure.appendChild(figcaption);
+    figure.appendChild(priceTag);
+
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('text-container');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = item.name;
+
+    const p = document.createElement('p');
+    p.textContent = item.description;
+
+    textContainer.appendChild(h2);
+    textContainer.appendChild(p);
+
+    card.appendChild(figure);
+    card.appendChild(textContainer);
+
+    return card;
+}
 
 export function setupMenuItems() {
     getMenuData();
