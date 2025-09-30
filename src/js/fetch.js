@@ -45,7 +45,7 @@ export async function getData() {
 }
 
 export async function getDiningData() {
-  return fetchFromMultipleBases('dining');
+  return fetchFromMultipleBases('diningitems');
 }
 
 export async function getBakeryData() {
