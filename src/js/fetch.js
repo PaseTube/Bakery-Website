@@ -1,5 +1,9 @@
+// fetch.js
+
 // Helper function to fetch from multiple base URLs
-export async function fetchFromMultipleBases(endpoint, bases) {
+export async function fetchFromMultipleBases(endpoint) {
+  const bases = await getBaseUrls();
+
   for (const base of bases) {
     try {
       const response = await fetch(`${base}/${endpoint}`);
@@ -10,43 +14,49 @@ export async function fetchFromMultipleBases(endpoint, bases) {
       console.warn(`Could not fetch from ${base}:`, err.message);
     }
   }
+
   // If none worked, return empty array
   return [];
 }
 
 // Determine the bases depending on environment
 export async function getBaseUrls() {
-  if (process.env.NODE_ENV === 'development') {
-    return ['http://localhost:3000', 'http://localhost:5206/api'];
+  // In Vite gebruik je import.meta.env in plaats van process.env
+  if (import.meta.env.MODE === 'development') {
+    return [
+      'http://localhost:3000',
+      'http://localhost:5206/api'
+    ];
   } else {
-    return ['https://production-server'];
+    return [
+      'https://production-server'
+    ];
   }
 }
 
-// Keep original function names
+// Convenience function: build a URL for one base
+export async function getBaseUrl(endpoint) {
+  const bases = await getBaseUrls();
+  return `${bases[0]}/${endpoint}`;
+}
+
+// Extra helpers (optioneel)
 export async function getData() {
-  const bases = getBaseUrls();
-  return fetchFromMultipleBases('favorites', bases);
+  return fetchFromMultipleBases('favorites');
 }
 
 export async function getDiningData() {
-  const bases = getBaseUrls();
-  return fetchFromMultipleBases('dining', bases);
+  return fetchFromMultipleBases('dining');
 }
 
 export async function getBakeryData() {
-  const bases = getBaseUrls();
-  return fetchFromMultipleBases('bakeryGoods', bases);
+  return fetchFromMultipleBases('bakeryGoods');
 }
 
 export async function getMenuItemsData() {
-  const bases = getBaseUrls();
-  return fetchFromMultipleBases('products', bases);
+  return fetchFromMultipleBases('products');
 }
 
 export async function getExploreItemsData() {
-  const bases = getBaseUrls();
-  return fetchFromMultipleBases('exploreItems', bases);
+  return fetchFromMultipleBases('exploreItems');
 }
-
-// Optional: you can remove your old getApiUrl function now
