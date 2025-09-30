@@ -6,7 +6,7 @@ body {
   background: linear-gradient(135deg, #4a90e2, #9013fe);
 }
 
-form {
+.login-form {
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
