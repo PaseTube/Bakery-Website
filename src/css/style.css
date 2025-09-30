@@ -218,7 +218,7 @@ select {
 
 .text-description {
     margin-bottom: 3.125rem;
-    color: #fff;
+    color: black;
 }
 
 .text {
@@ -232,8 +232,13 @@ select {
     font-weight: bold;
     word-spacing: 0.5px;
     font-family: playfair-display, serif;
-    color: #fff;
+    color: black;
     margin: 0;
+}
+
+/* important use cause needs to effect if the text is black on some pages */
+.text-white{
+    color: white !important;
 }
 
 /* ============ Contact form handeling ============ */
