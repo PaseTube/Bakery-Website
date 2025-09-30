@@ -1,5 +1,5 @@
 // Replace with SHA256 hash of your secret key
-const correctHash = import.meta.env.KEY; // passkey = hello
+const correctHash = import.meta.env.VITE_KEY; // passkey = hello
 
 async function hashInput(input) {
   const encoder = new TextEncoder();

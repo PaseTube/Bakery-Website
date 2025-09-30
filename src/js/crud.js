@@ -4,9 +4,15 @@ if (sessionStorage.getItem("auth") !== "granted") {
   window.location.href = "login.html";
 }
 
-import { getMenuItemsData, getApiUrl } from './fetch.js';
+import { fetchFromMultipleBases, getBaseUrls } from './fetch.js';
 
-// Predefined tags for products (can be replaced with an API call if necessary)
+// Eigen helper om één base URL te gebruiken (voor POST, PUT, DELETE)
+async function getBaseUrl(endpoint) {
+  const bases = await getBaseUrls(); // await belangrijk
+  return `${bases[0]}/${endpoint}`;
+}
+
+// Predefined tags for products
 const predefinedTags = [
   "bread", "artisan", "savory", "vegan", "special!", 
   "pastry", "buttery", "breakfast", "sweet", "dessert",
@@ -23,7 +29,7 @@ function clearErrors(inputs) {
   inputs.forEach(i => i.style.borderColor = "#ccc");
 }
 
-// Populate the Tags dropdown with predefined tags
+// Populate the Tags dropdown
 function populateTagsDropdown() {
   const tagsSelect = document.getElementById("tags");
   
@@ -37,7 +43,9 @@ function populateTagsDropdown() {
 
 // Fetch and render products
 async function fetchProducts() {
-  const products = await getMenuItemsData();
+  const bases = await getBaseUrls();
+  const products = await fetchFromMultipleBases('products', bases);
+
   const list = document.querySelector('.product-list');
   list.innerHTML = "";
 
@@ -63,19 +71,19 @@ async function fetchProducts() {
     list.appendChild(li);
   });
 
-  // Attach delete handlers with confirmation
+  // Delete handlers
   document.querySelectorAll(".delete-btn").forEach(btn => {
     btn.addEventListener("click", async (e) => {
       const id = e.target.dataset.id;
-      const confirmed = confirm("Are you sure you want to delete this product?");
-      if (!confirmed) return;
+      if (!confirm("Are you sure you want to delete this product?")) return;
 
-      await fetch(`${getApiUrl('products')}/${id}`, { method: "DELETE" });
+      const url = await getBaseUrl('products');
+      await fetch(`${url}/${id}`, { method: "DELETE" });
       fetchProducts();
     });
   });
 
-  // Attach edit handlers
+  // Edit handlers
   document.querySelectorAll(".edit-btn").forEach(btn => {
     btn.addEventListener("click", async (e) => {
       const { id, name, price, image, description, tags } = e.target.dataset;
@@ -90,7 +98,8 @@ async function fetchProducts() {
       if (!updatedProduct.name) return alert("Name is required!");
       if (isNaN(updatedProduct.price) || updatedProduct.price <= 0) return alert("Price must be positive!");
 
-      await fetch(`${getApiUrl('products')}/${id}`, {
+      const url = await getBaseUrl('products');
+      await fetch(`${url}/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedProduct)
@@ -108,14 +117,13 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
   const priceInput = document.querySelector(".price");
   const imageInput = document.querySelector(".image");
   const descInput = document.querySelector(".description");
-  const tagsSelect = document.querySelector(".tags"); // Updated to use the <select> element for tags
+  const tagsSelect = document.querySelector(".tags");
 
   clearErrors([nameInput, priceInput]);
 
   if (!nameInput.value.trim()) return highlightError(nameInput);
   if (!priceInput.value || parseFloat(priceInput.value) <= 0) return highlightError(priceInput);
 
-  // Collect selected tags from the dropdown
   const selectedTags = [...tagsSelect.selectedOptions].map(option => option.value);
 
   const newProduct = {
@@ -127,7 +135,8 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
   };
 
   try {
-    await fetch(getApiUrl('products'), {
+    const url = await getBaseUrl('products');
+    await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProduct)
@@ -138,16 +147,16 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
     priceInput.value = "";
     imageInput.value = "";
     descInput.value = "";
-    tagsSelect.value = ""; // Reset dropdown selection
+    tagsSelect.value = "";
 
     alert("Product added successfully!");
-    fetchProducts(); // Refresh the product list
+    fetchProducts();
   } catch (err) {
     console.error(err);
     alert("Failed to add product.");
   }
 });
 
-// Initialize the page
-populateTagsDropdown(); // Populate the tags dropdown
-fetchProducts(); // Load and render the products
+// Initialize page
+populateTagsDropdown();
+fetchProducts();

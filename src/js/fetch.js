@@ -1,5 +1,5 @@
 // Helper function to fetch from multiple base URLs
-async function fetchFromMultipleBases(endpoint, bases) {
+export async function fetchFromMultipleBases(endpoint, bases) {
   for (const base of bases) {
     try {
       const response = await fetch(`${base}/${endpoint}`);
@@ -15,7 +15,7 @@ async function fetchFromMultipleBases(endpoint, bases) {
 }
 
 // Determine the bases depending on environment
-function getBaseUrls() {
+export async function getBaseUrls() {
   if (process.env.NODE_ENV === 'development') {
     return ['http://localhost:3000', 'http://localhost:5206/api'];
   } else {
