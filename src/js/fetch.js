@@ -24,7 +24,6 @@ export async function getBaseUrls() {
   // In Vite gebruik je import.meta.env in plaats van process.env
   if (import.meta.env.MODE === 'development') {
     return [
-      'http://localhost:3000',
       'http://localhost:5206/api'
     ];
   } else {
