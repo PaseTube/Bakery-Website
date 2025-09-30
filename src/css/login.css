@@ -35,7 +35,7 @@ h2 {
   outline: none;
 }
 
-button {
+.login-submit {
   width: 100%;
   padding: 0.75rem;
   border: none;
@@ -47,6 +47,6 @@ button {
   transition: background 0.3s;
 }
 
-button:hover {
+.login-submit:hover {
   background: #357ab8;
 }
