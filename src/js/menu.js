@@ -1,4 +1,4 @@
-import { getData } from './fetch.js';
+import { getMenuItemsData } from './fetch.js';
 
 // Menu Slideshow Class
 export class MenuSlideshow {
@@ -70,7 +70,7 @@ export class MenuSlideshow {
 
     async loadSlideshow() {
         try {
-            this.data = await getData();
+            this.data = await getMenuItemsData();
 
             if (this.data.length === 0) {
                 this.popupContent.style.background = `url('https://picsum.photos/200') center center / cover no-repeat`;

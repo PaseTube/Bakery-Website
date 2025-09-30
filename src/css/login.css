@@ -1,4 +1,4 @@
-body {
+.login-section {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -15,7 +15,7 @@ body {
   width: 320px;
 }
 
-h2 {
+.login-header {
   margin-bottom: 1.5rem;
   color: #333;
 }
