@@ -8,9 +8,9 @@ export async function setupContactForm() {
     e.preventDefault();
 
     const formData = {
-      Name: document.querySelector("#name").value.trim(),
-      Email: document.querySelector("#email").value.trim(),
-      Message: document.querySelector("#message").value.trim()
+      name: document.querySelector("#name").value.trim(),
+      email: document.querySelector("#email").value.trim(),
+      message: document.querySelector("#message").value.trim()
     };
 
     try {
