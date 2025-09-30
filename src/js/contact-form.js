@@ -1,11 +1,29 @@
 // contactForm.js
 export async function setupContactForm() {
   const form = document.querySelector("#contact-form");
+  if (!form) return;
 
-  if (!form) return; // prevent errors if form is not on the page
+  const errorName = document.querySelector("#error-name");
+  const errorEmail = document.querySelector("#error-email");
+  const errorMessage = document.querySelector("#error-message");
+
+  // Container voor algemene meldingen
+  let generalMessage = document.querySelector("#form-message");
+  if (!generalMessage) {
+    generalMessage = document.createElement("div");
+    generalMessage.id = "form-message";
+    form.prepend(generalMessage);
+  }
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
+
+    // Reset fouten
+    errorName.textContent = "";
+    errorEmail.textContent = "";
+    errorMessage.textContent = "";
+    generalMessage.textContent = "";
+    generalMessage.className = "";
 
     const formData = {
       name: document.querySelector("#name").value.trim(),
@@ -22,16 +40,24 @@ export async function setupContactForm() {
 
       if (!response.ok) {
         const errors = await response.json();
-        console.error("Validation errors:", errors);
-        alert("⚠️ Validation failed! Check the console for details.");
+
+        // Laat inline foutmeldingen zien
+        if (errors.name) errorName.textContent = errors.name;
+        if (errors.email) errorEmail.textContent = errors.email;
+        if (errors.message) errorMessage.textContent = errors.message;
+
+        generalMessage.textContent = "⚠️ Please fix the errors below.";
+        generalMessage.className = "error-message general";
       } else {
         const data = await response.json();
-        alert(`✅ ${data.message}`);
+        generalMessage.textContent = `✅ ${data.message}`;
+        generalMessage.className = "success-message general";
         form.reset();
       }
     } catch (err) {
       console.error("Unexpected error:", err);
-      alert("❌ Something went wrong. Please try again later.");
+      generalMessage.textContent = "❌ Something went wrong. Please try again later.";
+      generalMessage.className = "error-message general";
     }
   });
 }

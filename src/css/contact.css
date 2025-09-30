@@ -114,6 +114,24 @@
   text-decoration: underline;
 }
 
+.error-message {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.success-message {
+  color: #188038;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.general {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+
 .note {
   text-align: center;
   margin-top: 20px;
