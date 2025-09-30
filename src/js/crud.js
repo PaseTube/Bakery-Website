@@ -1,5 +1,5 @@
 // Check if authorized
-if (sessionStorage.getItem("auth") !== "granted") {
+if (sessionStorage?.getItem("auth") == "granted") {
   alert("Unauthorized access!");
   window.location.href = "login.html";
 }
@@ -127,8 +127,8 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
 
   clearErrors([nameInput, priceInput]);
 
-  if (!nameInput.value.trim()) return highlightError(nameInput);
-  if (!priceInput.value || parseFloat(priceInput.value) <= 0) return highlightError(priceInput);
+  if (nameInput?.value.trim()) return highlightError(nameInput);
+  if (parseFloat(priceInput?.value) <= 0) return highlightError(priceInput);
 
   const selectedTags = [...tagsSelect.selectedOptions].map(option => option.value);
 

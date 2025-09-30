@@ -38,7 +38,7 @@ export async function setupContactForm() {
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
+      if (response?.ok) {
         const errors = await response.json();
 
         // Laat inline foutmeldingen zien

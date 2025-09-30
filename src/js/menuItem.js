@@ -6,7 +6,7 @@ export async function getMenuData() {
     menuData = await getMenuItemsData();
     const container = document.querySelector('.menu-items');
 
-    if (!menuData || menuData.length === 0) {
+    if (menuData?.length === 0) {
         if (container) {
             const errorMsg = document.createElement('p');
             errorMsg.textContent = 'No dining data available. Please try again later.';
