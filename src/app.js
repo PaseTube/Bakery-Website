@@ -1,12 +1,6 @@
 // CSS!
 import './css/style.css';
-import './css/navbar.css';
-import './css/hero.css';
-import './css/story.css';
-import './css/dining.css';
-import './css/news.css';
-import './css/footer.css';
-import './css/contact.css';
+
 // JAVASCRIPTS!
 import './js/fetch.js'; // Only for fetch utilities, no side effects
 import { setupNavMenu } from './js/nav-menu.js';

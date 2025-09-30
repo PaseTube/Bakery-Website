@@ -1,3 +1,12 @@
+/* Style imports */
+@import 'navbar.css';
+@import 'hero.css';
+@import 'story.css';
+@import 'dining.css';
+@import 'news.css';
+@import 'footer.css';
+@import 'contact.css';
+
 /* Google Fonts import centraal */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
@@ -335,3 +344,4 @@ select {
         max-width: 100%;
     }
 }
+
