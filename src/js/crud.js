@@ -6,33 +6,31 @@ if (sessionStorage.getItem("auth") !== "granted") {
 
 import { fetchFromMultipleBases, getBaseUrls } from './fetch.js';
 
-// Eigen helper om één base URL te gebruiken (voor POST, PUT, DELETE)
+// Helper for base URL
 async function getBaseUrl(endpoint) {
-  const bases = await getBaseUrls(); // await belangrijk
+  const bases = await getBaseUrls();
   return `${bases[0]}/${endpoint}`;
 }
 
-// Predefined tags for products
+// Predefined tags
 const predefinedTags = [
   "bread", "artisan", "savory", "vegan", "special!", 
   "pastry", "buttery", "breakfast", "sweet", "dessert",
   "chocolate", "fruit", "snack", "cake", "citrus"
 ];
 
-// Helper functions
+// Helpers
 function highlightError(inputEl) {
   inputEl.style.borderColor = "red";
   inputEl.focus();
 }
-
 function clearErrors(inputs) {
   inputs.forEach(i => i.style.borderColor = "#ccc");
 }
 
-// Populate the Tags dropdown
+// Populate tags dropdown
 function populateTagsDropdown() {
   const tagsSelect = document.getElementById("tags");
-  
   predefinedTags.forEach(tag => {
     const option = document.createElement("option");
     option.value = tag;
@@ -47,69 +45,77 @@ async function fetchProducts() {
   const products = await fetchFromMultipleBases('products', bases);
 
   const list = document.querySelector('.product-list');
-  list.innerHTML = "";
+  list.innerHTML = ""; // clear old list
 
   products.forEach(p => {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <h3>${p.name}</h3>
-      <p>Price: &euro;${p.price.toFixed(2)}</p>
-      ${p.image ? `<img src="${p.image}" alt="${p.name}">` : ""}
-      ${p.description ? `<p>${p.description}</p>` : ""}
-      ${p.tags ? `<p class="tags">${Array.isArray(p.tags) ? p.tags.join(", ") : p.tags}</p>` : ""}
-      <button class="btn delete-btn" data-id="${p.id}">Delete</button>
-      <button class="btn edit-btn" 
-        data-id="${p.id}" 
-        data-name="${p.name}" 
-        data-price="${p.price}" 
-        data-image="${p.image}" 
-        data-description="${p.description}" 
-        data-tags="${p.tags}">
-        Edit
-      </button>
-    `;
-    list.appendChild(li);
-  });
 
-  // Delete handlers
-  document.querySelectorAll(".delete-btn").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      const id = e.target.dataset.id;
+    const h3 = document.createElement("h3");
+    h3.textContent = p.name;
+
+    const price = document.createElement("p");
+    price.textContent = `Price: €${p.price.toFixed(2)}`;
+
+    const desc = document.createElement("p");
+    if (p.description) desc.textContent = p.description;
+
+    const img = document.createElement("img");
+    if (p.image) {
+      img.src = p.image;
+      img.alt = p.name;
+    }
+
+    const tagsP = document.createElement("p");
+    tagsP.className = "tags";
+    if (p.tags) {
+      tagsP.textContent = Array.isArray(p.tags) ? p.tags.join(", ") : p.tags;
+    }
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "btn delete-btn";
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", async () => {
       if (!confirm("Are you sure you want to delete this product?")) return;
-
       const url = await getBaseUrl('products');
-      await fetch(`${url}/${id}`, { method: "DELETE" });
+      await fetch(`${url}/${p.id}`, { method: "DELETE" });
       fetchProducts();
     });
-  });
 
-  // Edit handlers
-  document.querySelectorAll(".edit-btn").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      const { id, name, price, image, description, tags } = e.target.dataset;
+    const editBtn = document.createElement("button");
+    editBtn.className = "btn edit-btn";
+    editBtn.textContent = "Edit";
+    editBtn.addEventListener("click", async () => {
       const updatedProduct = {
-        name: prompt("Name:", name),
-        price: parseFloat(prompt("Price:", price)),
-        image: prompt("Image URL:", image),
-        description: prompt("Description:", description),
-        tags: prompt("Tags (comma separated):", tags).split(",").map(t => t.trim())
+        name: prompt("Name:", p.name),
+        price: parseFloat(prompt("Price:", p.price)),
+        image: prompt("Image URL:", p.image),
+        description: prompt("Description:", p.description),
+        tags: prompt("Tags (comma separated):", p.tags).split(",").map(t => t.trim())
       };
 
       if (!updatedProduct.name) return alert("Name is required!");
       if (isNaN(updatedProduct.price) || updatedProduct.price <= 0) return alert("Price must be positive!");
 
       const url = await getBaseUrl('products');
-      await fetch(`${url}/${id}`, {
+      await fetch(`${url}/${p.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedProduct)
       });
       fetchProducts();
     });
+
+    // Append all
+    li.append(h3, price);
+    if (p.image) li.append(img);
+    if (p.description) li.append(desc);
+    if (p.tags) li.append(tagsP);
+    li.append(deleteBtn, editBtn);
+    list.appendChild(li);
   });
 }
 
-// Handle Add Product Form
+// Add product form
 document.querySelector(".add-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -149,14 +155,14 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
     descInput.value = "";
     tagsSelect.value = "";
 
-    alert("Product added successfully!");
+    // Instead of alert, you could show an inline message here
+    console.log("Product added successfully!");
     fetchProducts();
   } catch (err) {
-    console.error(err);
-    alert("Failed to add product.");
+    console.error("Failed to add product.", err);
   }
 });
 
-// Initialize page
+// Initialize
 populateTagsDropdown();
 fetchProducts();
