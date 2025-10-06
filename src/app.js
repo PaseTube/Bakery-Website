@@ -9,6 +9,8 @@ import { setupExploreSection as initializeExploreSection } from './js/explore.js
 import { setupMenuSlideshow } from './js/menu.js';
 import { setupMenuItems } from './js/menuItem.js';
 import { setupContactForm } from './js/contact-form.js';
+import { initNewsletterForm } from "./js/newsletter.js";
+
 import './js/main.js';
 
 setupNavMenu();
@@ -17,3 +19,7 @@ setupExploreSection() && initializeExploreSection();
 setupMenuSlideshow();
 setupMenuItems();
 setupContactForm && setupContactForm();
+
+document.addEventListener("DOMContentLoaded", () => {
+    initNewsletterForm();
+});
