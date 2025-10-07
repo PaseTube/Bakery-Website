@@ -4,10 +4,10 @@ export async function initNewsletterForm() {
 
     if (!form) return;
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // voorkomt page refresh
+    form?.addEventListener?.("submit", async (e) => {
+        e?.preventDefault?.(); // voorkomt page refresh
 
-        const email = document.querySelector("#newsletter-email").value.trim();
+        const email = document.querySelector("#newsletter-email")?.value?.trim();
         if (!email) {
             showPopup("❌ Vul een geldig e-mailadres in.");
             return;
@@ -20,13 +20,13 @@ export async function initNewsletterForm() {
             //     body: JSON.stringify({ email })
             // });
 
-            // const data = await response.json();
+            // const data = await response?.json?.();
 
-            if (data.success) {
-                showPopup("✅ " + data.message);
-                form.reset();
+            if (data?.success) {
+                showPopup("✅ " + data?.message);
+                form?.reset?.();
             } else {
-                showPopup("❌ " + data.message);
+                showPopup("❌ " + data?.message);
             }
         } catch (err) {
             console.error(err);
@@ -35,11 +35,12 @@ export async function initNewsletterForm() {
     });
 
     function showPopup(message) {
+        if (!popup) return;
         popup.textContent = message;
-        popup.classList.add("show");
+        popup.classList?.add?.("show");
 
         setTimeout(() => {
-            popup.classList.remove("show");
+            popup.classList?.remove?.("show");
         }, 3000);
     }
 }
