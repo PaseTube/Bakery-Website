@@ -21,21 +21,22 @@ const predefinedTags = [
 
 // Helpers
 function highlightError(inputEl) {
-  inputEl.style.borderColor = "red";
-  inputEl.focus();
+  if (!inputEl) return;
+  inputEl?.style && (inputEl.style.borderColor = "red");
+  inputEl?.focus && inputEl.focus();
 }
 function clearErrors(inputs) {
-  inputs.forEach(i => i.style.borderColor = "#ccc");
+  inputs?.forEach?.(i => i?.style && (i.style.borderColor = "#ccc"));
 }
 
 // Populate tags dropdown
 function populateTagsDropdown() {
   const tagsSelect = document.getElementById("tags");
-  predefinedTags.forEach(tag => {
+  predefinedTags?.forEach?.(tag => {
     const option = document.createElement("option");
     option.value = tag;
     option.textContent = tag;
-    tagsSelect.appendChild(option);
+    tagsSelect?.appendChild(option);
   });
 }
 
@@ -77,6 +78,7 @@ async function fetchProducts() {
     deleteBtn.addEventListener("click", async () => {
       if (!confirm("Are you sure you want to delete this product?")) return;
       const url = await getBaseUrl('products');
+      if (!url) return;
       await fetch(`${url}/${p.id}`, { method: "DELETE" });
       fetchProducts();
     });
@@ -85,18 +87,33 @@ async function fetchProducts() {
     editBtn.className = "btn edit-btn";
     editBtn.textContent = "Edit";
     editBtn.addEventListener("click", async () => {
+      const updatedName = prompt("Name:", p.name)?.trim();
+      const updatedPrice = parseFloat(prompt("Price:", p.price));
+      const updatedImage = prompt("Image URL:", p.image)?.trim();
+      const updatedDescription = prompt("Description:", p.description)?.trim();
+      const updatedTagsArray = prompt(
+        "Tags (comma separated):",
+        Array.isArray(p?.tags) ? p.tags.join(", ") : p?.tags ?? ""
+      )
+        ?.split(",")
+        .map(t => t.trim())
+        .filter(t => t);
+
       const updatedProduct = {
-        name: prompt("Name:", p.name),
-        price: parseFloat(prompt("Price:", p.price)),
-        image: prompt("Image URL:", p.image),
-        description: prompt("Description:", p.description),
-        tags: prompt("Tags (comma separated):", p.tags).split(",").map(t => t.trim())
+        name: updatedName,
+        price: updatedPrice,
+        image: updatedImage,
+        description: updatedDescription,
+        tagArray: updatedTagsArray,
+        tags: updatedTagsArray.join(",")
       };
 
       if (!updatedProduct.name) return alert("Name is required!");
       if (isNaN(updatedProduct.price) || updatedProduct.price <= 0) return alert("Price must be positive!");
 
       const url = await getBaseUrl('products');
+      if (!url) return;
+
       await fetch(`${url}/${p.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -137,11 +154,14 @@ document.querySelector(".add-form").addEventListener("submit", async (e) => {
     price: parseFloat(priceInput.value),
     image: imageInput.value.trim(),
     description: descInput.value.trim(),
-    tags: selectedTags
+    tagArray: selectedTags,
+    tags: selectedTags.join(",")
   };
+  
 
   try {
     const url = await getBaseUrl('products');
+    if (!url) return;
     await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
