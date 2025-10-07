@@ -42,9 +42,9 @@ export async function setupContactForm() {
         const errors = await response.json();
 
         // Laat inline foutmeldingen zien
-        if (errors.name) errorName.textContent = errors.name;
-        if (errors.email) errorEmail.textContent = errors.email;
-        if (errors.message) errorMessage.textContent = errors.message;
+        if (errors?.name) errorName.textContent = errors.name;
+        if (errors?.email) errorEmail.textContent = errors.email;
+        if (errors?.message) errorMessage.textContent = errors.message;
 
         generalMessage.textContent = "⚠️ Please fix the errors below.";
         generalMessage.className = "error-message general";

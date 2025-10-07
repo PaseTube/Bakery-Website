@@ -28,7 +28,7 @@ export async function getBaseUrls() {
     ];
   } else {
     return [
-      'https://production-server'
+      ''// geen production link!
     ];
   }
 }
