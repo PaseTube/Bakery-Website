@@ -10,9 +10,9 @@ async function hashInput(input) {
               .join("");
 }
 
-document.getElementById("keyForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const inputKey = document.getElementById("keyInput").value;
+document.getElementById("keyForm")?.addEventListener?.("submit", async (e) => {
+  e?.preventDefault?.();
+  const inputKey = document.getElementById("keyInput")?.value;
   const hash = await hashInput(inputKey);
 
   if (hash === correctHash) {

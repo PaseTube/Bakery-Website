@@ -19,40 +19,48 @@ export async function setupContactForm() {
     e.preventDefault();
 
     // Reset fouten
-    errorName.textContent = "";
-    errorEmail.textContent = "";
-    errorMessage.textContent = "";
-    generalMessage.textContent = "";
-    generalMessage.className = "";
+    if (errorName) errorName.textContent = "";
+    if (errorEmail) errorEmail.textContent = "";
+    if (errorMessage) errorMessage.textContent = "";
+    if (generalMessage) {
+      generalMessage.textContent = "";
+      generalMessage.className = "";
+    }
 
     const formData = {
-      name: document.querySelector("#name").value.trim(),
-      email: document.querySelector("#email").value.trim(),
-      message: document.querySelector("#message").value.trim()
+      name: document.querySelector("#name")?.value?.trim() ?? "",
+      email: document.querySelector("#email")?.value?.trim() ?? "",
+      message: document.querySelector("#message")?.value?.trim() ?? ""
     };
 
     try {
-      const response = await fetch("http://localhost:5206/api/contact", {
+      const url = "http://localhost:5206/api/contact";
+      if (!url) return;
+      const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) {
-        const errors = await response.json();
+      if (!response?.ok) {
+        const errors = await response?.json?.();
 
         // Laat inline foutmeldingen zien
-        if (errors.name) errorName.textContent = errors.name;
-        if (errors.email) errorEmail.textContent = errors.email;
-        if (errors.message) errorMessage.textContent = errors.message;
+        if (errors?.name && errorName) errorName.textContent = errors.name;
+        if (errors?.email && errorEmail) errorEmail.textContent = errors.email;
+        if (errors?.message && errorMessage) errorMessage.textContent = errors.message;
 
-        generalMessage.textContent = "⚠️ Please fix the errors below.";
-        generalMessage.className = "error-message general";
+        if (generalMessage) {
+          generalMessage.textContent = "⚠️ Please fix the errors below.";
+          generalMessage.className = "error-message general";
+        }
       } else {
-        const data = await response.json();
-        generalMessage.textContent = `✅ ${data.message}`;
-        generalMessage.className = "success-message general";
-        form.reset();
+        const data = await response?.json?.();
+        if (generalMessage) {
+          generalMessage.textContent = `✅ ${data?.message}`;
+          generalMessage.className = "success-message general";
+        }
+        form?.reset?.();
       }
     } catch (err) {
       console.error("Unexpected error:", err);

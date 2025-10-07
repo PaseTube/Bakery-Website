@@ -22,36 +22,36 @@ const playButton = document.querySelector('#playButton');
 
 if (video && playButton) {
   function toggleVideo(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
     try {
-      if (video.paused) {
-        const playPromise = video.play();
+      if (video?.paused) {
+        const playPromise = video?.play?.();
         if (playPromise !== undefined) {
-          playPromise.then(() => playButton.classList.add('hidden'))
+          playPromise.then(() => playButton?.classList?.add?.('hidden'))
                      .catch(err => console.error('Error playing video:', err));
         }
       } else {
-        video.pause();
-        playButton.classList.remove('hidden');
+        video?.pause?.();
+        playButton?.classList?.remove?.('hidden');
       }
     } catch (err) {
       console.error('Error toggling video:', err);
     }
   }
 
-  playButton.addEventListener('click', toggleVideo);
-  video.addEventListener('click', toggleVideo);
+  playButton?.addEventListener?.('click', toggleVideo);
+  video?.addEventListener?.('click', toggleVideo);
 
-  video.addEventListener('pause', () => playButton.classList.remove('hidden'));
-  video.addEventListener('play', () => playButton.classList.add('hidden'));
-  video.addEventListener('ended', () => {
-    playButton.classList.remove('hidden');
+  video?.addEventListener?.('pause', () => playButton?.classList?.remove?.('hidden'));
+  video?.addEventListener?.('play', () => playButton?.classList?.add?.('hidden'));
+  video?.addEventListener?.('ended', () => {
+    playButton?.classList?.remove?.('hidden');
     video.currentTime = 0;
   });
-  video.addEventListener('loadedmetadata', () => playButton.classList.remove('hidden'));
-  playButton.addEventListener('touchend', (e) => {
-    e.preventDefault();
+  video?.addEventListener?.('loadedmetadata', () => playButton?.classList?.remove?.('hidden'));
+  playButton?.addEventListener?.('touchend', (e) => {
+    e?.preventDefault?.();
     toggleVideo(e);
   });
 }
@@ -71,7 +71,7 @@ if (video && playButton) {
     const span = document.createElement("span");
     span.textContent = word[i];
     span.style.animationDelay = `${Math.random()}s`;
-    loaderText.appendChild(span);
+    loaderText?.appendChild?.(span);
   }
 
   // change colors
@@ -82,7 +82,7 @@ if (video && playButton) {
 
   // stop animation + scale
   setTimeout(() => {
-    loaderText.querySelectorAll("span").forEach(span => {
+    loaderText?.querySelectorAll?.("span")?.forEach?.(span => {
       span.style.animation = "none";
       span.style.transform = "translateY(0)";
     });
@@ -93,7 +93,7 @@ if (video && playButton) {
   // fade out and remove
   setTimeout(() => {
     loaderOverlay.style.opacity = "0";
-    setTimeout(() => loaderOverlay.remove(), 1500);
+    setTimeout(() => loaderOverlay?.remove?.(), 1500);
   }, 5500);
 })();
 
@@ -103,9 +103,9 @@ if (video && playButton) {
 const cursor = document.querySelector('#cursor');
 if (cursor) {
   document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e?.clientX + 'px';
+    cursor.style.top = e?.clientY + 'px';
   });
-  document.addEventListener('mousedown', () => cursor.classList.add('pressed'));
-  document.addEventListener('mouseup', () => cursor.classList.remove('pressed'));
+  document.addEventListener('mousedown', () => cursor.classList?.add?.('pressed'));
+  document.addEventListener('mouseup', () => cursor.classList?.remove?.('pressed'));
 }

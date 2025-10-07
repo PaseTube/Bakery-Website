@@ -5,13 +5,18 @@ export async function fetchFromMultipleBases(endpoint) {
   const bases = await getBaseUrls();
 
   for (const base of bases) {
+    const url = `${base}/${endpoint}`;
+    if (!url) {
+      console.warn('No URL provided for fetch. Skipping.');
+      continue;
+    }
     try {
-      const response = await fetch(`${base}/${endpoint}`);
-      if (response.ok) {
-        return await response.json();
+      const response = await fetch(url);
+      if (response?.ok) {
+        return await response?.json?.();
       }
     } catch (err) {
-      console.warn(`Could not fetch from ${base}:`, err.message);
+      console.warn(`Could not fetch from ${base}:`, err?.message);
     }
   }
 
@@ -36,7 +41,12 @@ export async function getBaseUrls() {
 // Convenience function: build a URL for one base
 export async function getBaseUrl(endpoint) {
   const bases = await getBaseUrls();
-  return `${bases[0]}/${endpoint}`;
+  const url = `${bases?.[0]}/${endpoint}`;
+  if (!url) {
+    console.warn('No URL provided for getBaseUrl.');
+    return '';
+  }
+  return url;
 }
 
 // Extra helpers (optioneel)
@@ -45,7 +55,7 @@ export async function getData() {
 }
 
 export async function getDiningData() {
-  return fetchFromMultipleBases('dining');
+  return fetchFromMultipleBases('diningItems');
 }
 
 export async function getBakeryData() {

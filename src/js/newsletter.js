@@ -7,7 +7,7 @@ export async function initNewsletterForm() {
     form.addEventListener("submit", async (e) => {
         e.preventDefault(); // voorkomt page refresh
 
-        const email = document.querySelector("#newsletter-email")?.value?.trim();
+        const email = document.querySelector("#newsletter-email").value.trim();
         if (!email) {
             showPopup("❌ Vul een geldig e-mailadres in.");
             return;
@@ -20,13 +20,13 @@ export async function initNewsletterForm() {
             //     body: JSON.stringify({ email })
             // });
 
-            // const data = await response?.json();
+            // const data = await response.json();
 
-            if (data?.success) {
-                showPopup("✅ " + data?.message);
+            if (data.success) {
+                showPopup("✅ " + data.message);
                 form.reset();
             } else {
-                showPopup("❌ " + data?.message);
+                showPopup("❌ " + data.message);
             }
         } catch (err) {
             console.error(err);
