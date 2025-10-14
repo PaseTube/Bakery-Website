@@ -1,31 +1,71 @@
-
-export function setupContactForm() {
-  const form = document.getElementById('contact-form');
+// contactForm.js
+export async function setupContactForm() {
+  const form = document.querySelector("#contact-form");
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+
+  const errorName = document.querySelector("#error-name");
+  const errorEmail = document.querySelector("#error-email");
+  const errorMessage = document.querySelector("#error-message");
+
+  // Container voor algemene meldingen
+  let generalMessage = document.querySelector("#form-message");
+  if (!generalMessage) {
+    generalMessage = document.createElement("div");
+    generalMessage.id = "form-message";
+    form.prepend(generalMessage);
+  }
+
+  form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
 
-    let errors = [];
+    // Reset fouten
+    if (errorName) errorName.textContent = "";
+    if (errorEmail) errorEmail.textContent = "";
+    if (errorMessage) errorMessage.textContent = "";
+    if (generalMessage) {
+      generalMessage.textContent = "";
+      generalMessage.className = "";
+    }
 
-    if (!name.value.trim()) errors.push("Name is required");
-    if (!email.value.trim()) errors.push("Email is required");
-    if (!message.value.trim()) errors.push("Message is required");
+    const formData = {
+      name: document.querySelector("#name")?.value?.trim() ?? "",
+      email: document.querySelector("#email")?.value?.trim() ?? "",
+      message: document.querySelector("#message")?.value?.trim() ?? ""
+    };
 
-    // Highlight empty fields
-    [name, email, message].forEach(field => {
-      if (!field.value.trim()) {
-        field.style.borderColor = 'red';
+    try {
+      const url = "http://localhost:5206/api/contact";
+      if (!url) return;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response?.ok) {
+        const errors = await response?.json?.();
+
+        // Laat inline foutmeldingen zien
+        if (errors?.name && errorName) errorName.textContent = errors.name;
+        if (errors?.email && errorEmail) errorEmail.textContent = errors.email;
+        if (errors?.message && errorMessage) errorMessage.textContent = errors.message;
+
+        if (generalMessage) {
+          generalMessage.textContent = "⚠️ Please fix the errors below.";
+          generalMessage.className = "error-message general";
+        }
       } else {
-        field.style.borderColor = '';
+        const data = await response?.json?.();
+        if (generalMessage) {
+          generalMessage.textContent = `✅ ${data?.message}`;
+          generalMessage.className = "success-message general";
+        }
+        form?.reset?.();
       }
-    });
-
-    // Show alert if there are errors (does NOT prevent submission)
-    if (errors.length) {
-      alert(errors.join("\n"));
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      generalMessage.textContent = "❌ Something went wrong. Please try again later.";
+      generalMessage.className = "error-message general";
     }
   });
 }

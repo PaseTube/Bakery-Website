@@ -1,15 +1,24 @@
+// nav-menu.js
 export function setupNavMenu() {
+  // idempotent guard to avoid double-binding
+  if (window.__navMenuInitialized) return;
+  window.__navMenuInitialized = true;
+
   const openBtn = document.querySelector('#openModal');
   const closeBtn = document.querySelector('#closeModal');
   const modal = document.querySelector('#modal');
-  const galleryImg = document.querySelector('#gallery-random');
   const openChefBtn = document.querySelector('#openChefModal');
   const chefModal = document.querySelector('#chef-modal');
   const closeChefBtn = document.querySelector('#closeChefModal');
+  const burger = document.querySelector('#burger');
+  const nav = document.querySelector('#main-nav');
+  const topScrollBtn = document.querySelector("#backToTopBtn");
+  const navbar = document.querySelector('#navbar');
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const topScrollBtn = document.querySelector("#backToTopBtn");
-
+  // ---------------------------
+  // Scroll back-to-top button
+  // ---------------------------
+  if (topScrollBtn) {
     window.addEventListener("scroll", () => {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         topScrollBtn.style.display = "block";
@@ -19,58 +28,63 @@ export function setupNavMenu() {
     });
 
     window.topFunction = function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-  });
-
-  function closeAllModals() {
-    modal.classList.remove("open");
-    chefModal.classList.remove("open");
-    // if more add here!
   }
 
-  openBtn.addEventListener("click", (e) => {
+  // ---------------------------
+  // Modal helpers
+  // ---------------------------
+  function closeAllModals() {
+    modal?.classList.remove("open");
+    chefModal?.classList.remove("open");
+  }
+
+  openBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     closeAllModals();
-    modal.classList.add("open");
+    modal?.classList.add("open");
   });
 
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("open");
-  });
+  closeBtn?.addEventListener("click", () => modal?.classList.remove("open"));
 
-  openChefBtn.addEventListener("click", (e) => {
+  openChefBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     closeAllModals();
-    chefModal.classList.add("open");
+    chefModal?.classList.add("open");
   });
 
-  closeChefBtn.addEventListener("click", () => {
-    chefModal.classList.remove("open");
+  closeChefBtn?.addEventListener("click", () => chefModal?.classList.remove("open"));
+
+  // ---------------------------
+  // Burger menu
+  // ---------------------------
+  burger?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+    burger?.classList.toggle('open');
+    // console.log('Burger clicked:', {
+    //   navClasses: nav?.className,
+    //   burgerClasses: burger?.className
+    // });
+    // bug test
   });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('#burger');
-    const nav = document.querySelector('#main-nav');
-
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      burger.classList.toggle('open');
+  // ---------------------------
+  // Navbar scroll effect
+  // ---------------------------
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
-  });
+  }
 
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('#navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
+  // ---------------------------
+  // Fade-in sections
+  // ---------------------------
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -79,7 +93,15 @@ export function setupNavMenu() {
     });
   });
 
-  document.querySelectorAll('.fade-in-section').forEach(section => {
-    observer.observe(section);
-  });
+  document.querySelectorAll('.fade-in-section')
+    .forEach(section => observer.observe(section));
+}
+
+// Safe initializer that ensures DOM is ready before setup runs
+export function initNavMenu() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setupNavMenu());
+  } else {
+    setupNavMenu();
+  }
 }

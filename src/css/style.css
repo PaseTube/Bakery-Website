@@ -1,3 +1,12 @@
+/* Style imports */
+@import 'navbar.css';
+@import 'hero.css';
+@import 'story.css';
+@import 'dining.css';
+@import 'news.css';
+@import 'footer.css';
+@import 'contact.css';
+
 /* Google Fonts import centraal */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap');
@@ -218,7 +227,7 @@ select {
 
 .text-description {
     margin-bottom: 3.125rem;
-    color: #fff;
+    color: black;
 }
 
 .text {
@@ -232,8 +241,25 @@ select {
     font-weight: bold;
     word-spacing: 0.5px;
     font-family: playfair-display, serif;
-    color: #fff;
+    color: black;
     margin: 0;
+}
+
+/* important use cause needs to effect if the text is black on some pages */
+.text-white{
+    color: white !important;
+}
+
+/* ============ Contact form handeling ============ */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-weight: bold;
 }
 
 
@@ -318,3 +344,4 @@ select {
         max-width: 100%;
     }
 }
+

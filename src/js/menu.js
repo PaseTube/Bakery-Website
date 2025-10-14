@@ -1,4 +1,4 @@
-import { getData } from './fetch.js';
+import { getMenuItemsData } from './fetch.js';
 
 // Menu Slideshow Class
 export class MenuSlideshow {
@@ -13,32 +13,32 @@ export class MenuSlideshow {
     }
 
     initializeElements() {
-        this.popup = document.querySelector('#popup');
-        this.popupContrainer = document.querySelector('#popup');
-        this.popupContent = this.popupContrainer.querySelector('.popup-content');
-        this.openBtn = document.querySelector('#openPopup');
-        this.closeBtn = document.querySelector('#closePopup');
-        this.slidesContainer = document.querySelector('#slidesContainer');
-        this.dotsContainer = document.querySelector('#dotsContainer');
-        this.prevBtn = document.querySelector('#prevBtn');
-        this.nextBtn = document.querySelector('#nextBtn');
-        this.currentSlideSpan = document.querySelector('#currentSlide');
-        this.totalSlidesSpan = document.querySelector('#totalSlides');
+    this.popup = document.querySelector('#popup');
+    this.popupContrainer = document.querySelector('#popup');
+    this.popupContent = this.popupContrainer?.querySelector?.('.popup-content');
+    this.openBtn = document.querySelector('#openPopup');
+    this.closeBtn = document.querySelector('#closePopup');
+    this.slidesContainer = document.querySelector('#slidesContainer');
+    this.dotsContainer = document.querySelector('#dotsContainer');
+    this.prevBtn = document.querySelector('#prevBtn');
+    this.nextBtn = document.querySelector('#nextBtn');
+    this.currentSlideSpan = document.querySelector('#currentSlide');
+    this.totalSlidesSpan = document.querySelector('#totalSlides');
     }
 
     bindEvents() {
-        this.openBtn.addEventListener('click', () => this.openPopup());
-        this.closeBtn.addEventListener('click', () => this.closePopup());
-        this.popup.addEventListener('click', (e) => {
-            if (e.target === this.popup) this.closePopup();
+        this.openBtn?.addEventListener?.('click', () => this.openPopup());
+        this.closeBtn?.addEventListener?.('click', () => this.closePopup());
+        this.popup?.addEventListener?.('click', (e) => {
+            if (e?.target === this.popup) this.closePopup();
         });
 
-        this.prevBtn.addEventListener('click', () => this.previousSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        this.prevBtn?.addEventListener?.('click', () => this.previousSlide());
+        this.nextBtn?.addEventListener?.('click', () => this.nextSlide());
 
         document.addEventListener('keydown', (e) => {
-            if (!this.popup.classList.contains('show')) return;
-            switch (e.key) {
+            if (!this.popup?.classList?.contains?.('show')) return;
+            switch (e?.key) {
                 case 'ArrowLeft':
                     this.previousSlide();
                     break;
@@ -70,15 +70,15 @@ export class MenuSlideshow {
 
     async loadSlideshow() {
         try {
-            this.data = await getData();
+            this.data = await getMenuItemsData();
 
-            if (this.data.length === 0) {
+            if (this.data?.length === 0) {
                 this.popupContent.style.background = `url('https://picsum.photos/200') center center / cover no-repeat`;
                 this.popupContent.style.position = 'relative';
 
                 const mask = document.createElement('div');
                 mask.className = 'popup-mask';
-                this.popupContent.appendChild(mask);
+                this.popupContent?.appendChild?.(mask);
 
                 this.slidesContainer.innerHTML = `<div class="slide active"><h3>No menu items found</h3></div>`;
                 return;
@@ -97,54 +97,54 @@ export class MenuSlideshow {
     createSlides() {
         this.slidesContainer.innerHTML = '';
 
-        this.data.forEach((item) => {
+        this.data?.forEach?.((item) => {
             const slide = document.createElement('div');
             slide.className = 'slide';
             slide.innerHTML = `
-                <h3>${item.name}</h3>
-                <div class="price">€${item.price.toFixed(2).replace('.', ',')}</div>
-                <div class="description">${item.description || ''}</div>
+                <h3>${item?.name}</h3>
+                <div class="price">€${item?.price?.toFixed?.(2)?.replace?.('.', ',')}</div>
+                <div class="description">${item?.description || ''}</div>
             `;
-            this.slidesContainer.appendChild(slide);
+            this.slidesContainer?.appendChild?.(slide);
         });
 
-        this.slides = this.slidesContainer.querySelectorAll('.slide');
+        this.slides = this.slidesContainer?.querySelectorAll?.('.slide');
     }
 
     createDots() {
         this.dotsContainer.innerHTML = '';
 
-        this.data.forEach((_, index) => {
+        this.data?.forEach?.((_, index) => {
             const dot = document.createElement('span');
             dot.className = 'dot';
-            dot.addEventListener('click', () => this.currentSlideIndex(index));
-            this.dotsContainer.appendChild(dot);
+            dot?.addEventListener?.('click', () => this.currentSlideIndex(index));
+            this.dotsContainer?.appendChild?.(dot);
         });
     }
 
     showSlide(index) {
-        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.slides?.forEach?.(slide => slide?.classList?.remove?.('active'));
 
-        if (this.slides[index]) {
-            this.slides[index].classList.add('active');
+        if (this.slides?.[index]) {
+            this.slides[index]?.classList?.add?.('active');
         }
 
-        const currentItem = this.data[index];
-        this.popupContent.style.background = `url('${currentItem.image}') center center / cover no-repeat`;
+        const currentItem = this.data?.[index];
+        this.popupContent.style.background = `url('${currentItem?.image}') center center / cover no-repeat`;
         this.popupContent.style.position = 'center center';
         this.popupContent.style.color = 'white';
         this.popupContent.style.width = '1400px';
 
-        if (!this.popupContent.querySelector('.popup-mask')) {
+        if (!this.popupContent?.querySelector?.('.popup-mask')) {
             const mask = document.createElement('div');
             mask.className = 'popup-mask';
-            this.popupContent.appendChild(mask);
+            this.popupContent?.appendChild?.(mask);
         }
 
-        const dots = this.dotsContainer.querySelectorAll('.dot');
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[index]) {
-            dots[index].classList.add('active');
+        const dots = this.dotsContainer?.querySelectorAll?.('.dot');
+        dots?.forEach?.(dot => dot?.classList?.remove?.('active'));
+        if (dots?.[index]) {
+            dots[index]?.classList?.add?.('active');
         }
 
         this.currentSlideSpan.textContent = index + 1;
@@ -170,7 +170,7 @@ export class MenuSlideshow {
     }
 
     updateSlideCounter() {
-        this.totalSlidesSpan.textContent = this.data.length;
+    this.totalSlidesSpan.textContent = this.data?.length;
     }
 
     startAutoSlide() {

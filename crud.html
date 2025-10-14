@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product CRUD</title>
+  <link rel="stylesheet" href="/src/css/crud.css">
+</head>
+
+<body>
+  <h1 class="page-title">Product Management</h1>
+
+  <!-- Add Product Form -->
+  <form class="product-form add-form">
+    <input type="text" class="input name" placeholder="Name" required>
+    <input type="number" step="0.01" class="input price" placeholder="Price" required>
+    <input type="text" class="input image" placeholder="Image URL">
+    <textarea class="input description" placeholder="Description"></textarea>
+
+    <!-- Replace tags input with a multiple select -->
+    <label for="tags">Tags:</label>
+    <small>tip: CTRL + Left mouse click if need more tags</small>
+    <select id="tags" name="tags" class="input tags dropdown-tags" multiple>
+      
+        <!-- Options will be populated with JavaScript -->
+    </select>
+
+    <button type="submit" class="btn">Add Product</button>
+</form>
+
+
+  <h2 class="section-title">Products</h2>
+  <ul class="product-list"></ul>
+
+  <script type="module" src="./src/js/crud.js"></script>
+</body>
+
+</html>

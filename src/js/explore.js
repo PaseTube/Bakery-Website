@@ -8,8 +8,8 @@ let popupDataContainer;
  * Closes all open modals
  */
 export function closeAllModals() {
-    document.querySelectorAll('.explore-popup.open').forEach(modal => {
-        modal.classList.remove('open');
+    document.querySelectorAll('.explore-popup.open')?.forEach?.(modal => {
+        modal?.classList?.remove?.('open');
     });
 }
 
@@ -20,9 +20,9 @@ export function closeAllModals() {
 export function renderExploreItem(item) {
     if (!popupDataContainer) return;
     popupDataContainer.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" style="width:100%; max-height:300px; object-fit:cover;"/>
-        <h2>${item.name}</h2>
-        <p>${item.description}</p>
+        <img src="${item?.image}" alt="${item?.name}" style="width:100%; max-height:300px; object-fit:cover;"/>
+        <h2>${item?.name}</h2>
+        <p>${item?.description}</p>
     `;
 }
 
@@ -33,13 +33,13 @@ export function renderExploreItem(item) {
 export async function openExplorePopup(id) {
     closeAllModals();
     const data = await getExploreItemsData();
-    const item = data.find(el => String(el.id) === String(id));
+    const item = data?.find?.(el => String(el?.id) === String(id));
     if (item) {
         renderExploreItem(item);
     } else {
-        popupDataContainer.innerHTML = `<p>Item not found.</p>`;
+        if (popupDataContainer) popupDataContainer.innerHTML = `<p>Item not found.</p>`;
     }
-    heroExploreContainer.classList.add('open');
+    heroExploreContainer?.classList?.add?.('open');
 }
 
 /**
@@ -52,18 +52,17 @@ export function setupExploreSection() {
     popupDataContainer = document.querySelector('#explore-popup-data');
 
     // Add click listeners to buttons, extracting ID from the "id" attribute
-    document.querySelectorAll('.explore-button').forEach(el => {
-        el.addEventListener('click', (e) => {
-            e.preventDefault();
-
+    document.querySelectorAll('.explore-button')?.forEach?.(el => {
+        el?.addEventListener?.('click', (e) => {
+            e?.preventDefault?.();
             // Extract the numeric ID from the button `id` (e.g., "explore-1")
-            const id = el.id.split('-').pop(); // Gets "1" or "2"
+            const id = el?.id?.split?.('-')?.pop?.(); // Gets "1" or "2"
             openExplorePopup(id); // Open popup for this ID
         });
     });
 
     // Add close functionality to the "close" button
-    closeHeroContainer?.addEventListener('click', () => {
-        heroExploreContainer.classList.remove('open');
+    closeHeroContainer?.addEventListener?.('click', () => {
+        heroExploreContainer?.classList?.remove?.('open');
     });
 }

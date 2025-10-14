@@ -1,108 +1,71 @@
+// fetch.js
 
+// Helper function to fetch from multiple base URLs
+export async function fetchFromMultipleBases(endpoint) {
+  const bases = await getBaseUrls();
 
-export async function getData() {
-  const url = getApiUrl('favorites');
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
+  for (const base of bases) {
+    const url = `${base}/${endpoint}`;
+    if (!url) {
+      console.warn('No URL provided for fetch. Skipping.');
+      continue;
     }
-
-    const json = await response.json();
-    return json;
-
-  } catch (error) {
-    console.error('Error fetching favorites data:', error.message);
-    return [];
+    try {
+      const response = await fetch(url);
+      if (response?.ok) {
+        return await response?.json?.();
+      }
+    } catch (err) {
+      console.warn(`Could not fetch from ${base}:`, err?.message);
+    }
   }
+
+  // If none worked, return empty array
+  return [];
+}
+
+// Determine the bases depending on environment
+export async function getBaseUrls() {
+  // In Vite gebruik je import.meta.env in plaats van process.env
+  if (import.meta.env.MODE === 'development') {
+    return [
+      'http://localhost:5206/api'
+    ];
+  } else {
+    return [
+      'https://production-server'
+    ];
+  }
+}
+
+// Convenience function: build a URL for one base
+export async function getBaseUrl(endpoint) {
+  const bases = await getBaseUrls();
+  const url = `${bases?.[0]}/${endpoint}`;
+  if (!url) {
+    console.warn('No URL provided for getBaseUrl.');
+    return '';
+  }
+  return url;
+}
+
+// Extra helpers (optioneel)
+export async function getData() {
+  return fetchFromMultipleBases('favorites');
 }
 
 export async function getDiningData() {
-  const url = getApiUrl('dining');
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    return json;
-
-  } catch (error) {
-    console.error('Error fetching dining data:', error.message);
-    return [];
-  }
+  return fetchFromMultipleBases('diningItems');
 }
 
 export async function getBakeryData() {
-  const url = getApiUrl('bakeryGoods');
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    return json;
-
-  } catch (error) {
-    console.error('Error fetching bakery data:', error.message);
-    return [];
-  }
+  return fetchFromMultipleBases('bakeryItems');
 }
 
 export async function getMenuItemsData() {
-  const url = getApiUrl('menuItems');
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    return json;
-
-  } catch (error) {
-    console.error('Error fetching menu items data:', error.message);
-    return [];
-  }
+  return fetchFromMultipleBases('products');
 }
 
 export async function getExploreItemsData() {
-  const url = getApiUrl('exploreItems');
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const json = await response.json();
-    return json;
-
-  } catch (error) {
-    console.error('Error fetching explore items data:', error.message);
-    return [];
-  }
-}
-
-export function getApiUrl(endpoint) {
-  const baseUrl =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : '';
-
-  // Combineer baseUrl met het juiste endpoint
-  return process.env.NODE_ENV === 'development'
-    ? `${baseUrl}/${endpoint}`
-    : `${baseUrl}/api/${endpoint}`;
+  return fetchFromMultipleBases('exploreItems');
 }
