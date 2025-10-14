@@ -24,10 +24,27 @@ export async function renderDiningData() {
         const card = document.createElement('div');
         card.classList?.add?.('cards-2');
 
-        card.innerHTML = `
-            <img loading="lazy" src="${item.image}" alt="${item.name}" />
-            <h3>${item.name}</h3>
-        `;
+        // Image
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = item?.image || '';
+        img.alt = item?.name || 'Image';
+        img.addEventListener('error', () => {
+            img.style.display = 'none';
+            if (!card.querySelector('.image-unavailable')) {
+                const ph = document.createElement('p');
+                ph.className = 'image-unavailable';
+                ph.textContent = 'Image unavailable';
+                card.appendChild(ph);
+            }
+        });
+
+        // Title
+        const h3 = document.createElement('h3');
+        h3.textContent = item?.name || 'Untitled';
+
+        card.appendChild(img);
+        card.appendChild(h3);
 
         container?.appendChild?.(card);
     });
@@ -97,33 +114,70 @@ export function openPopup(id) {
     const popup = document.querySelector('#bakery-popup');
     const popupInner = document.querySelector('.bakery-popup-inner');
     // Show loading state
-    if (popupInner) popupInner.innerHTML = '<p style="color: #666;">Loading...</p>';
+    if (popupInner) {
+        const loadingP = document.createElement('p');
+        loadingP.style.color = '#666';
+        loadingP.textContent = 'Loading...';
+        popupInner.innerHTML = '';
+        popupInner.appendChild(loadingP);
+    }
     popup?.classList?.add?.('active');
     // Find the item data
     const item = bakeryData.find(item => String(item.id) === String(id));
     // Simulate loading delay and show content
     setTimeout(() => {
         if (item) {
-            let imageSrc = item.image || 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop';
-            if (!imageSrc?.startsWith?.('http') && !imageSrc?.startsWith?.('/')) {
+            let imageSrc = item.image || '';
+            if (imageSrc && !imageSrc?.startsWith?.('http') && !imageSrc?.startsWith?.('/')) {
                 imageSrc = '/' + imageSrc;
             }
             if (popupInner) {
-                popupInner.innerHTML = `
-                    <h2>${item.name}</h2>
-                    <img src="${imageSrc}" 
-                         alt="${item.name}" 
-                         loading="lazy" 
-                         onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop'" />
-                    <p>${item.description || 'Experience our carefully crafted culinary creation, made with passion and attention to detail.'}</p>
-                `;
+                // Clear loading
+                popupInner.innerHTML = '';
+                // Title
+                const h2 = document.createElement('h2');
+                h2.textContent = item.name || 'Untitled';
+                popupInner.appendChild(h2);
+
+                // Image (only add if we have a src)
+                if (imageSrc) {
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = item.name || 'Image';
+                    img.loading = 'lazy';
+                    // On error hide the image and show a placeholder text
+                    img.addEventListener('error', () => {
+                        img.style.display = 'none';
+                        if (!popupInner.querySelector('.image-unavailable')) {
+                            const ph = document.createElement('p');
+                            ph.className = 'image-unavailable';
+                            ph.textContent = 'Image unavailable';
+                            popupInner.insertBefore(ph, img.nextSibling);
+                        }
+                    });
+                    popupInner.appendChild(img);
+                } else {
+                    const ph = document.createElement('p');
+                    ph.className = 'image-unavailable';
+                    ph.textContent = 'Image unavailable';
+                    popupInner.appendChild(ph);
+                }
+
+                // Description
+                const desc = document.createElement('p');
+                desc.textContent = item.description || 'Experience our carefully crafted culinary creation, made with passion and attention to detail.';
+                popupInner.appendChild(desc);
             }
         } else {
             if (popupInner) {
-                popupInner.innerHTML = `
-                    <h2>Item Not Found</h2>
-                    <p class="bakery-no-data">Sorry, we couldn't find information for this item.</p>
-                `;
+                popupInner.innerHTML = '';
+                const h2 = document.createElement('h2');
+                h2.textContent = 'Item Not Found';
+                const p = document.createElement('p');
+                p.className = 'bakery-no-data';
+                p.textContent = "Sorry, we couldn't find information for this item.";
+                popupInner.appendChild(h2);
+                popupInner.appendChild(p);
             }
         }
     }, 300);
