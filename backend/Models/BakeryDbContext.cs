@@ -6,4 +6,5 @@ public class BakeryDbContext : DbContext
     public DbSet<Product> Products { get; set; }
     public DbSet<ExploreItem> ExploreItems { get; set; }
     public DbSet<DiningItem> DiningItems { get; set; }
+    public DbSet<BakeryItem> BakeryItems { get; set; }
 }
