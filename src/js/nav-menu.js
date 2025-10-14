@@ -1,5 +1,9 @@
 // nav-menu.js
 export function setupNavMenu() {
+  // idempotent guard to avoid double-binding
+  if (window.__navMenuInitialized) return;
+  window.__navMenuInitialized = true;
+
   const openBtn = document.querySelector('#openModal');
   const closeBtn = document.querySelector('#closeModal');
   const modal = document.querySelector('#modal');
@@ -91,4 +95,13 @@ export function setupNavMenu() {
 
   document.querySelectorAll('.fade-in-section')
     .forEach(section => observer.observe(section));
+}
+
+// Safe initializer that ensures DOM is ready before setup runs
+export function initNavMenu() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setupNavMenu());
+  } else {
+    setupNavMenu();
+  }
 }

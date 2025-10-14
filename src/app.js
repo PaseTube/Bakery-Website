@@ -3,7 +3,7 @@ import './css/style.css';
 
 // JAVASCRIPTS!
 import './js/fetch.js'; // Only for fetch utilities, no side effects
-import { setupNavMenu } from './js/nav-menu.js';
+import { initNavMenu } from './js/nav-menu.js';
 import { setupDiningCardFeatures } from './js/dining-card.js';
 import { setupExploreSection as initializeExploreSection } from './js/explore.js';
 import { setupMenuSlideshow } from './js/menu.js';
@@ -13,7 +13,7 @@ import { initNewsletterForm } from "./js/newsletter.js";
 
 import './js/main.js';
 
-setupNavMenu();
+initNavMenu();
 setupDiningCardFeatures();
 setupExploreSection() && initializeExploreSection();
 setupMenuSlideshow();
